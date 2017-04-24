@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+   vcpui plugin metadata.
+   The <plugin> tag doesn't contain any moduleUri property because it is an HTML plugin.
+-->
+
+<plugin id="com.mycompany.vcpui.vcpui"
+      defaultBundle="com_mycompany_vcpui">
+
+   <resources>
+      <resource locale="{locale}">
+         <module uri="locales/vcp-ui-{locale}.swf"/>
+      </resource>
+   </resources>
+
+   <dependencies>
+      <!-- Allow HTML Client to display plugin icons in menus, shortcuts, object lists -->
+      <dependency type="css" uri="vcpui/assets/css/plugin-icons.css" />
+   </dependencies>
+
+    <!-- Home view shortcut -->
+
+   <extension id="com.mycompany.vcpui.homeShortcut">
+      <extendedPoint>vise.home.shortcuts</extendedPoint>
+      <object>
+         <name>#{app.name}</name>
+         <categoryUid>vsphere.core.controlcenter.monitoringCategory</categoryUid>
+         <targetViewUid>com.mycompany.vcpui.mainView</targetViewUid>
+      </object>
+   </extension>
+
+   <!-- Main view 
+
+   <extension id="com.mycompany.vcpui.mainView">
+      <extendedPoint>vise.global.views</extendedPoint>
+      <object>
+         <name>#{app.name}</name>
+         <componentClass className="com.vmware.vsphere.client.htmlbridge.HtmlView">
+            <object>
+               <root>
+                  <url>/vsphere-client/vcpui/index.html#/monitor</url>
+               </root>
+            </object>
+         </componentClass>
+      </object>
+   </extension>
+   
+   -->
+
+   <!-- Host monitor sample view -->
+
+   <extension id="com.mycompany.vcpui.host.monitor">
+      <extendedPoint>vsphere.core.host.monitorViews</extendedPoint>
+      <object>
+         <name>#{monitorTab.label}</name>
+         <componentClass className="com.vmware.vsphere.client.htmlbridge.HtmlView">
+            <object>
+               <root>
+                  <url>/vsphere-client/vcpui/resources/host-monitor.html</url>
+               </root>
+            </object>
+         </componentClass>
+      </object>
+   </extension>
+
+   <!-- Sample Actions on Hosts -->
+
+   <extension id="com.mycompany.vcpui.actionSet">
+      <extendedPoint>vise.actions.sets</extendedPoint>
+      <object>
+         <actions>
+            <com.vmware.actionsfw.ActionSpec>
+               <uid>com.mycompany.vcpui.sampleAction1</uid>
+               <label>#{sampleAction1.name}</label>
+               <icon>#{addIcon}</icon>
+               <delegate>
+                  <className>com.vmware.vsphere.client.htmlbridge.HtmlActionDelegate</className>
+                  <object><root>
+                     <!-- actionUrl maps to ActionsController on the java side -->
+                     <actionUrl>/vsphere-client/vcpui/rest/actions.html</actionUrl>
+                  </root></object>
+               </delegate>
+            </com.vmware.actionsfw.ActionSpec>
+
+             <com.vmware.actionsfw.ActionSpec>
+               <uid>com.mycompany.vcpui.sampleAction2</uid>
+               <label>#{sampleAction2.name}</label>
+               <icon>#{editIcon}</icon>
+               <delegate>
+                  <className>com.vmware.vsphere.client.htmlbridge.HtmlActionDelegate</className>
+                  <object><root>
+                     <!-- actionUrl can be shared between several actions -->
+                     <actionUrl>/vsphere-client/vcpui/rest/actions.html</actionUrl>
+                  </root></object>
+               </delegate>
+            </com.vmware.actionsfw.ActionSpec>
+          </actions>
+      </object>
+      <metadata>
+         <objectType>HostSystem</objectType>
+      </metadata>
+   </extension>
+
+   <!--
+      This adds a sub-menu to the Host menu, using the actions defined above
+   -->
+   <extension id="com.mycompany.vcpui.hostMenu">
+      <extendedPoint>vsphere.core.menus.solutionMenus</extendedPoint>
+      <object>
+         <!-- <label> is required here because it is an extension to an existing menu -->
+         <label>#{sampleMenu.label}</label>
+         <uid>com.mycompany.vcpui.hostMenu</uid>
+         <children>
+            <Array>
+               <com.vmware.actionsfw.ActionMenuItemSpec>
+                  <type>action</type>
+                  <uid>com.mycompany.vcpui.sampleAction1</uid>
+               </com.vmware.actionsfw.ActionMenuItemSpec>
+               <com.vmware.actionsfw.ActionMenuItemSpec>
+                  <type>action</type>
+                  <uid>com.mycompany.vcpui.sampleAction2</uid>
+               </com.vmware.actionsfw.ActionMenuItemSpec>
+            </Array>
+         </children>
+      </object>
+      <metadata>
+         <objectType>HostSystem</objectType>
+      </metadata>
+   </extension>
+   
+   <!-- Home view shortcut -->
+
+   <extension id="com.mycompany.vcpui.homeShortcut">
+      <extendedPoint>vise.home.shortcuts</extendedPoint>
+      <object>
+         <name>#{app.name}</name>
+         <categoryUid>vsphere.core.controlcenter.monitoringCategory</categoryUid>
+         <targetViewUid>com.mycompany.vcpui.mainView</targetViewUid>
+      </object>
+   </extension>
+
+   <!-- Main view -->
+
+   <extension id="com.mycompany.vcpui.mainView">
+      <extendedPoint>vise.global.views</extendedPoint>
+      <object>
+         <name>#{app.name}</name>
+         <componentClass className="com.vmware.vsphere.client.htmlbridge.HtmlView">
+            <object>
+               <root>
+                  <url>/vsphere-client/vcpui/index.html#/global</url>
+               </root>
+            </object>
+         </componentClass>
+      </object>
+   </extension>
+
+   <!-- Host monitor sample view -->
+
+   <extension id="com.mycompany.vcpui.host.monitor">
+      <extendedPoint>vsphere.core.host.monitorViews</extendedPoint>
+      <object>
+         <name>#{monitorTab.label}</name>
+         <componentClass className="com.vmware.vsphere.client.htmlbridge.HtmlView">
+            <object>
+               <root>
+                  <url>/vsphere-client/vcpui/index.html#/host</url>
+               </root>
+            </object>
+            <metadata>
+         		<!-- Filter this extension only for VirtualMachine objects -->
+         		<objectType>HostSystem</objectType>
+      		</metadata>
+         </componentClass>
+      </object>
+   </extension>
+   
+   <!-- Datacenter monitor sample view -->
+   <extension id="com.mycompany.vcpui.datacenter.monitor">
+      <extendedPoint>vsphere.core.datacenter.monitorViews</extendedPoint>
+      <object>
+         <name>#{monitorTab.label}</name>
+         <componentClass className="com.vmware.vsphere.client.htmlbridge.HtmlView">
+            <object>
+               <root>
+                  <url>/vsphere-client/vcpui/index.html#/datacenter</url>
+               </root>
+            </object>
+            <metadata>
+         		<!-- Filter this extension only for VirtualMachine objects -->
+         		<objectType>Datacenter</objectType>
+      		</metadata>
+         </componentClass>
+      </object>
+   </extension>
+   
+   <!-- Datastore monitor sample view -->
+     <extension id="com.mycompany.vcpui.datastore.monitor">
+      <extendedPoint>vsphere.core.datastore.monitorViews</extendedPoint>
+      <object>
+         <name>#{monitorTab.label}</name>
+         <componentClass className="com.vmware.vsphere.client.htmlbridge.HtmlView">
+            <object>
+               <root>
+                  <url>/vsphere-client/vcpui/index.html#/datastore</url>
+               </root>
+            </object>
+            <metadata>
+         		<!-- Filter this extension only for VirtualMachine objects -->
+         		<objectType>Datastore</objectType>
+      		</metadata>
+         </componentClass>
+      </object>
+   </extension>
+   
+   <!-- Cluster monitor sample view -->
+     <extension id="com.mycompany.vcpui.dscluster.monitor">
+      <extendedPoint>vsphere.core.dscluster.monitorViews</extendedPoint>
+      <object>
+         <name>#{monitorTab.label}</name>
+         <componentClass className="com.vmware.vsphere.client.htmlbridge.HtmlView">
+            <object>
+               <root>
+                  <url>/vsphere-client/vcpui/index.html#/cluster</url>
+               </root>
+            </object>
+            <metadata>
+               	<!-- Filter this extension only for VirtualMachine objects -->
+         		<objectType>StoragePod</objectType>
+      		</metadata>
+         </componentClass>
+      </object>
+   </extension>
+   
+   
+   <!-- Summary Port-let Through O/P Graph  -->
+   <extension id="com.mycompany.vcpui.summaryViews.throughOP">
+      <extendedPoint>vsphere.core.host.summarySectionViews.html</extendedPoint>
+      <object>
+         <name>#{summaryView.ThroughOP}</name>
+         <componentClass className="com.vmware.vsphere.client.htmlbridge.HtmlView">
+            <object>
+               <root>
+                  <url>/vsphere-client/vcpui/index.html#/summary-portlet/throughOP</url>
+                  <dialogTitle>Through O/P</dialogTitle>
+                  <dialogSize>250,250</dialogSize>
+               </root>
+            </object>
+         </componentClass>
+      </object>
+   </extension>
+   
+    <!-- Summary Port-let i O/P Graph  Flex client-->
+
+   <extension id="com.mycompany.vcpui.summaryViews.iOPs">
+      <extendedPoint>vsphere.core.host.summarySectionViews.html</extendedPoint>
+      <object>
+         <name>#{summaryView.iOP}</name>
+         <componentClass className="com.mycompany.vcpui.summaryViews.iOPs"/>
+      </object>
+   </extension>
+   
+   <!-- Summary Port-let i O/P Graph  -->
+   <extension id="com.mycompany.vcpui.summaryViews.iOPs">
+      <extendedPoint>vsphere.core.host.summarySectionViews.html</extendedPoint>
+      <object>
+         <name>#{summaryView.iOP}</name>
+         <componentClass className="com.vmware.vsphere.client.htmlbridge.HtmlView">
+            <object>
+               <root>
+                  <url>/vsphere-client/vcpui/index.html#/summary-portlet/iOP</url>
+                  <dialogTitle>iOPs</dialogTitle>
+                  <dialogSize>250,250</dialogSize>
+                  <scrollPolicy>no</scrollPolicy>
+               </root>
+            </object>
+         </componentClass>
+      </object>
+   </extension>
+   
+   <!-- Summary Port-let i O/P Graph  -->
+   <extension id="com.mycompany.vcpui.summaryViews.tintriPerf">
+      <extendedPoint>vsphere.core.host.summarySectionViews.html</extendedPoint>
+      <object>
+         <name>#{summaryView.tintriPerf}</name>
+         <componentClass className="com.vmware.vsphere.client.htmlbridge.HtmlView">
+            <object>
+               <root>
+                  <url>/vsphere-client/vcpui/index.html#/summary-portlet/tintriPerf</url>
+                  <dialogTitle>Tintri Performance</dialogTitle>
+                  <dialogSize>250,250</dialogSize>
+               </root>
+            </object>
+         </componentClass>
+      </object>
+   </extension>
+   
+   <!-- Monitor Views 
+   <extension id="com.mycompany.vcpui.datastore.monitor">
+      <extendedPoint>vsphere.core.host.monitorViews</extendedPoint>
+      <object>
+         <name>DataStore Monitor</name>
+         <componentClass className="com.vmware.vsphere.client.htmlbridge.HtmlView">
+            <object>
+               <root>
+                  <url>/vsphere-client/vcpui/index.html#/monitor</url>
+               </root>
+            </object>
+            <metadata>         		
+         		<objectType>Datastore</objectType>
+      		</metadata>
+         </componentClass>
+      </object>
+   </extension>
+   -->
+   <!-- Monitor Views 
+   <extension id="com.mycompany.vcpui.datastore.freenas.monitor">
+      <extendedPoint>vsphere.core.host.monitorViews</extendedPoint>
+      <object>
+         <name>DataStore Monitor</name>
+         <componentClass className="com.vmware.vsphere.client.htmlbridge.HtmlView">
+            <object>
+               <root>
+                  <url>/vsphere-client/vcpui/index.html#/monitor</url>
+               </root>
+            </object>
+            <metadata>         		
+         		<objectType>Datastore</objectType>
+      		</metadata>
+         </componentClass>
+      </object>
+   </extension>
+   -->
+   <extension id="com.mycompany.vcpui.homeShortcut">
+      <extendedPoint>vise.home.shortcuts</extendedPoint>
+      <object>
+         <name>POP UP</name>
+         <categoryUid>vsphere.core.controlcenter.monitoringCategory</categoryUid>
+         <targetViewUid>com.mycompany.vcpui.mainView</targetViewUid>
+      </object>
+   </extension>
+   
+   <!-- 
+    <extension id="com.mycompany.vcpui.mainView">
+      <extendedPoint>vise.global.views</extendedPoint>
+      <object>
+         <name>POP UP</name>
+         <componentClass className="com.vmware.vsphere.client.htmlbridge.HtmlView">
+            <object>
+               <root>
+                  <url>/vsphere-client/vcpui/index.html#/monitor</url>
+               </root>
+            </object>
+         </componentClass>
+      </object>
+   </extension>
+-->
+</plugin>
