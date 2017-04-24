@@ -635,7 +635,7 @@ var HOSTComponent = (function () {
         this.loadVolumeInfo({ uuid: 45345 }); //TODO remove after fix first row click issue
     };
     HOSTComponent.prototype.ngAfterViewInit = function () {
-        console.log(window['WEB_PLATFORM'].getObjectId());
+        console.log(decodeURIComponent(window['WEB_PLATFORM'].getObjectId()));
     };
     HOSTComponent.prototype.loadDeviceLst = function () {
         var _this = this;
@@ -648,7 +648,6 @@ var HOSTComponent = (function () {
             console.log(err);
         });
     };
-
     HOSTComponent.prototype.loadVolumeInfo = function (data) {
         var _this = this;
         this.service.getVoumeLst(data, host_component_config_1.HostConfig.volumeServiceProvider)
