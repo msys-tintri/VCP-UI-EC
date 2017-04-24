@@ -3389,7 +3389,7 @@ exports.GlobalRoutingModule = GlobalRoutingModule;
 
 exports.GlobalConfig = {
     deviceServiceProvider: {
-        url: 'http://172.30.36.223:8080/UserManagement/rest/UserService/response',
+        url: 'https://win-rhq2-vc65.tintri.local.com/ui/tintristorage/rest/ttstorage/datastore',
         type: 'POST',
         contentType: 'application/json'
     },
