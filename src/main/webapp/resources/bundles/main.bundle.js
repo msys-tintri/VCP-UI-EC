@@ -604,10 +604,10 @@ var HOSTComponent = (function () {
     HOSTComponent.prototype.hideConnectedHost = function () {
         this.showHostDialog = false;
     };
-    // ui/vcpui/resources/
     HOSTComponent.prototype.ngOnInit = function () {
         var _this = this;
         console.log(this);
+        console.log(window['WEB_PLATFORM'].getObjectId());
         this.deviceGridOptions = {
             columnDefs: host_component_config_1.deviceColumnDefs,
             rowData: null,
@@ -877,7 +877,6 @@ var GLOBALComponent = (function () {
     }
     GLOBALComponent.prototype.ngOnInit = function () {
         var _this = this;
-        console.log(this);
         this.deviceGridOptions = {
             columnDefs: global_component_config_1.deviceLstColumnDefs,
             rowData: null,
@@ -2165,7 +2164,6 @@ var AppComponent = (function () {
         this.service = service;
         this.isAuthenticated = true;
         this.hideDialog = false;
-        console.log(window['WEB_PLATFORM'].getObjectId());
         router.events.subscribe(function (val) {
             _this.isAuthenticated = _this.service.checkCredentials();
         });
