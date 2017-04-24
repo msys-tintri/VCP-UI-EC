@@ -2165,6 +2165,7 @@ var AppComponent = (function () {
         this.service = service;
         this.isAuthenticated = true;
         this.hideDialog = false;
+        console.log(window['WEB_PLATFORM'].getObjectId());
         router.events.subscribe(function (val) {
             _this.isAuthenticated = _this.service.checkCredentials();
         });
