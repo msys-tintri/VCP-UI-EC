@@ -1,0 +1,37 @@
+<project name="build-plugin-package" default="build" >
+   <description>
+       Creates the plugin package folder from vcp-ui and vcp-service:
+             vcpui
+                  plugin-package.xml
+                  /plugins
+                     gson-2.3.1.jar
+                     vcp-ui.war
+                     vcp-service.jar
+
+   </description>
+
+   <property environment="env"/>
+   <property name="VSPHERE_SDK_HOME" value="${env.VSPHERE_SDK_HOME}"/>
+   <property name="BUILD_DIR" value="${basedir}/target"/>
+   <property name="SERVICE_DIR" value="${basedir}/../vcp-service"/>
+
+   <target name="build" depends="buildUiWar, buildServiceJar, createPluginPackageDir"/>
+
+   <target name="buildUiWar">
+      <ant antfile="${basedir}/build-war.xml" dir="${basedir}" inheritAll="false"/>
+   </target>
+
+   <target name="buildServiceJar">
+      <ant antfile="${SERVICE_DIR}/build-java.xml" dir="${SERVICE_DIR}" inheritAll="false"/>
+   </target>
+
+   <target name="createPluginPackageDir">
+      <mkdir dir="${BUILD_DIR}/vcpui" />
+      <mkdir dir="${BUILD_DIR}/vcpui/plugins" />
+      <copy todir="${BUILD_DIR}/vcpui" file="plugin-package.xml"/>
+      <copy todir="${BUILD_DIR}/vcpui/plugins" file="${BUILD_DIR}/vcp-ui.war"/>
+      <copy todir="${BUILD_DIR}/vcpui/plugins" file="${SERVICE_DIR}/target/vcp-service.jar"/>
+      <copy todir="${BUILD_DIR}/vcpui/plugins" file="${VSPHERE_SDK_HOME}/libs/gson-2.3.1.jar"/>
+   </target>
+
+</project>
