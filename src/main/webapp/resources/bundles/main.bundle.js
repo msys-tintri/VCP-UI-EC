@@ -607,7 +607,6 @@ var HOSTComponent = (function () {
     HOSTComponent.prototype.ngOnInit = function () {
         var _this = this;
         console.log(this);
-        console.log(window['WEB_PLATFORM'].getObjectId());
         this.deviceGridOptions = {
             columnDefs: host_component_config_1.deviceColumnDefs,
             rowData: null,
@@ -634,6 +633,9 @@ var HOSTComponent = (function () {
         };
         this.loadDeviceLst();
         this.loadVolumeInfo({ uuid: 45345 }); //TODO remove after fix first row click issue
+    };
+    HOSTComponent.prototype.ngAfterViewInit = function () {
+        console.log(window['WEB_PLATFORM'].getObjectId());
     };
     HOSTComponent.prototype.loadDeviceLst = function () {
         var _this = this;
