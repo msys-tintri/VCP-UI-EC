@@ -648,6 +648,7 @@ var HOSTComponent = (function () {
             console.log(err);
         });
     };
+
     HOSTComponent.prototype.loadVolumeInfo = function (data) {
         var _this = this;
         this.service.getVoumeLst(data, host_component_config_1.HostConfig.volumeServiceProvider)
