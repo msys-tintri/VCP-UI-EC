@@ -1817,6 +1817,9 @@ var DATASTOREComponent = (function () {
         this.showHostDialog = false;
         this._tmpAreaChartData = index_2._tmpMultiAreaChartDatafn();
     }
+    DATASTOREComponent.prototype.ngAfterViewInit = function () {
+        console.log(decodeURIComponent(window['WEB_PLATFORM'].getObjectId()));
+    };
     DATASTOREComponent.prototype.onDeviceLstCellClicked = function (event) {
         console.log(event);
         if (event.colDef.field == "performance") {
