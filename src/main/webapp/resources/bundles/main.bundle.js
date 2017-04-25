@@ -606,7 +606,7 @@ var HOSTComponent = (function () {
     };
     HOSTComponent.prototype.ngOnInit = function () {
         var _this = this;
-        console.log(this);
+        console.log(decodeURIComponent(window['WEB_PLATFORM'].getObjectId()));
         this.deviceGridOptions = {
             columnDefs: host_component_config_1.deviceColumnDefs,
             rowData: null,
