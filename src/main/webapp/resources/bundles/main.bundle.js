@@ -1838,7 +1838,7 @@ var DATASTOREComponent = (function () {
     };
     DATASTOREComponent.prototype.ngOnInit = function () {
         var _this = this;
-        console.log(this);
+        datastore_component_config_1.DataStoreConfig.deviceServiceProvider.url.replace('$expression', (decodeURIComponent(window['WEB_PLATFORM'].getObjectId()).split(":")[3] || false) + '');
         this.deviceGridOptions = {
             columnDefs: datastore_component_config_1.deviceColumnDefs,
             rowData: null,
@@ -3308,7 +3308,7 @@ exports.DataStoreRoutingModule = DataStoreRoutingModule;
 
 exports.DataStoreConfig = {
     deviceServiceProvider: {
-        url: '/api/getStorageLst',
+        url: 'https://172.30.36.223:9443/ui/tintristorage/rest/ttstorage/fndatastore?datastore=$expression',
         type: 'POST',
         contentType: 'application/json'
     },
