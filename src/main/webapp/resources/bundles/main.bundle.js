@@ -3469,19 +3469,19 @@ exports.DataStoreConfig = {
     }
 };
 exports.deviceColumnDefs = [
-    { headerName: "Device Name", field: "dsName" },
-    { headerName: "Serial", field: "serial" },
-    { headerName: "Error Events", field: "errEvents" },
-    { headerName: "Capacity", field: "capacity" },
-    { headerName: "Target", field: "target" },
-    { headerName: "Extent", field: "extentName" },
-    { headerName: "Host Name", field: "hostName" }
+    { headerName: "Device Name", field: "dsName", width: 120 },
+    { headerName: "Serial", field: "serial", width: 120 },
+    { headerName: "Error Events", field: "errEvents", width: 120 },
+    { headerName: "Capacity", field: "capacity", width: 120 },
+    { headerName: "Target", field: "target", width: 120 },
+    { headerName: "Extent", field: "extentName", width: 120 },
+    { headerName: "Host Name", field: "hostName", width: 120 }
 ];
 exports.volumeColumnDefs = [
-    { headerName: "Name", field: "volName", width: 100 },
-    { headerName: "Size", field: "volAvail", width: 100 },
-    { headerName: "Capacity", field: "volUsed", width: 100 },
-    { headerName: "File System", field: "volFstype", width: 100 }
+    { headerName: "Name", field: "volName", width: 150 },
+    { headerName: "Size", field: "volAvail", width: 150 },
+    { headerName: "Capacity", field: "volUsed", width: 150 },
+    { headerName: "File System", field: "volFstype", width: 150 }
 ];
 //# sourceMappingURL=D:/Tintri/POC_13_4_2017_Angular/VCP-UI/src/datastore.component.config.js.map
 
@@ -4556,7 +4556,7 @@ module.exports = "\r\n<ul id=\"demoTabs\" class=\"nav\" role=\"tablist\">\r\n  <
 /***/ 780:
 /***/ (function(module, exports) {
 
-module.exports = "<section class=\"dataCenterView\">\r\n  <tabs>\r\n    <tab tabTitle=\"Provision\" class=\"datacenter--provision\">\r\n      <section class=\"datastore--system flLeft\">\r\n        <header class=\"system--header flLeft\">\r\n          <label class=\"header--label\">System</label>\r\n          <button class=\"refresh flRight\" (click)=\"loadDeviceLst($event)\"> Refresh</button>\r\n          <label class=\"deviceLst--refreshTime flRight\">Last Refreshed on {{_timeStamp}}</label>\r\n        </header>\r\n        <div style=\"width: 100%;height: 200px;min-height: 100px;\" class=\"flLeft\">\r\n          <ag-grid-ng2 style=\"width: 80%;height: 100%\" #agGrid class=\" ag-material\"\r\n                       [gridOptions]=\"deviceGridOptions\"\r\n                       [rowData]=\"deviceGridOptions.rowData\"\r\n                       (rowClicked) =\"loadVolumeInfo($event.node.data)\">\r\n          </ag-grid-ng2>\r\n        </div>\r\n      </section>\r\n      <section class=\"datastore--volume flLeft\">\r\n        <header class=\"volume--header flLeft\">\r\n          <label class=\"header--label\">Volume Mapping</label>\r\n        </header>\r\n        <!--<div class=\"agGridWrapper flLeft\">-->\r\n        <div style=\"width:100%;height: 200px;\" class=\"flLeft\">\r\n          <ag-grid-ng2 style=\"width: 80%;height:100%\" #agGrid class=\" ag-material\"\r\n                       [gridOptions]=\"volumeGridOptions\"\r\n                       [rowData]=\"volumeGridOptions.rowData\"\r\n                       (cellClicked)=\"onDeviceLstCellClicked($event)\">\r\n          </ag-grid-ng2>\r\n        </div>\r\n        <!--</div>-->\r\n      </section>\r\n    </tab>\r\n  </tabs>\r\n</section>\r\n<performanceDialog-component (dialogClose) = \"closePerformanceDialog($event)\" headerTxt=\"Performance Graph\" [data] = \"_tmpAreaChartData\" *ngIf=\"showPerformanceDialog\" height=\"400\" title=\"\"></performanceDialog-component>\r\n<connected-host (closeConnectedHost)=\"hideConnectedHost()\" *ngIf=\"showHostDialog\"></connected-host>\r\n\r\n"
+module.exports = "<section class=\"dataCenterView\">\r\n\r\n  <tabs>\r\n    <tab tabTitle=\"Provision\" class=\"datacenter--provision\">\r\n      <section class=\"datastore--system flLeft\">\r\n        <header class=\"system--header flLeft\">\r\n          <label class=\"header--label\">System</label>\r\n          <button class=\"refresh flRight\" (click)=\"loadDeviceLst($event)\"> Refresh</button>\r\n          <label class=\"deviceLst--refreshTime flRight\">Last Refreshed on {{_timeStamp}}</label>\r\n        </header>\r\n        <div style=\"width: 100%;height: 200px;min-height: 100px;\" class=\"flLeft\">\r\n          <ag-grid-ng2 style=\"width: 80%;height: 100%\" #agGrid class=\" ag-material\"\r\n                       [gridOptions]=\"deviceGridOptions\"\r\n                       [rowData]=\"deviceGridOptions.rowData\"\r\n                       (rowClicked) =\"loadVolumeInfo($event.node.data)\">\r\n          </ag-grid-ng2>\r\n        </div>\r\n      </section>\r\n      <section class=\"datastore--volume flLeft\">\r\n        <header class=\"volume--header flLeft\">\r\n          <label class=\"header--label\">Volume Mapping</label>\r\n        </header>\r\n        <!--<div class=\"agGridWrapper flLeft\">-->\r\n        <div style=\"width:100%;height: 200px;\" class=\"flLeft\">\r\n          <ag-grid-ng2 style=\"width: 80%;height:100%\" #agGrid class=\" ag-material\"\r\n                       [gridOptions]=\"volumeGridOptions\"\r\n                       [rowData]=\"volumeGridOptions.rowData\"\r\n                       (cellClicked)=\"onDeviceLstCellClicked($event)\">\r\n          </ag-grid-ng2>\r\n        </div>\r\n        <!--</div>-->\r\n      </section>\r\n    </tab>\r\n  </tabs>\r\n</section>\r\n<performanceDialog-component (dialogClose) = \"closePerformanceDialog($event)\" headerTxt=\"Performance Graph\" [data] = \"_tmpAreaChartData\" *ngIf=\"showPerformanceDialog\" height=\"400\" title=\"\"></performanceDialog-component>\r\n<connected-host (closeConnectedHost)=\"hideConnectedHost()\" *ngIf=\"showHostDialog\"></connected-host>\r\n\r\n"
 
 /***/ }),
 
