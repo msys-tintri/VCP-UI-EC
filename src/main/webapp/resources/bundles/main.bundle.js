@@ -59,7 +59,7 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgEAYAAAAj
 /***/ 1046:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(510);
+module.exports = __webpack_require__(511);
 
 
 /***/ }),
@@ -75,13 +75,13 @@ module.exports = __webpack_require__(510);
 function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
+__export(__webpack_require__(648));
+__export(__webpack_require__(644));
 __export(__webpack_require__(647));
-__export(__webpack_require__(643));
 __export(__webpack_require__(646));
 __export(__webpack_require__(645));
-__export(__webpack_require__(644));
+__export(__webpack_require__(650));
 __export(__webpack_require__(649));
-__export(__webpack_require__(648));
 //# sourceMappingURL=D:/workspace/VCP-UI/src/index.js.map
 
 /***/ }),
@@ -192,11 +192,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = __webpack_require__(0);
 var platform_browser_1 = __webpack_require__(35);
-var global_components_1 = __webpack_require__(280);
+var global_components_1 = __webpack_require__(279);
 var main_1 = __webpack_require__(106);
 var shared_module_1 = __webpack_require__(88);
-var index_1 = __webpack_require__(430);
-var keys_1 = __webpack_require__(666);
+var index_1 = __webpack_require__(431);
+var keys_1 = __webpack_require__(667);
 var GLOBALModule = (function () {
     function GLOBALModule() {
     }
@@ -222,51 +222,7 @@ exports.GLOBALModule = GLOBALModule;
 
 /***/ }),
 
-/***/ 139:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/**
- * Created by Dominic on 3/1/2017.
- */
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = __webpack_require__(0);
-var http_1 = __webpack_require__(132);
-var Rx_1 = __webpack_require__(149);
-__webpack_require__(78);
-var PostReq = (function () {
-    function PostReq(http) {
-        this.http = http;
-    }
-    PostReq.prototype.send = function (config) {
-        var headers = new http_1.Headers();
-        headers.append('Content-Type', config.contentType);
-        return this.http.post(config.url, JSON.stringify(config.payLoad), headers)
-            .map(function (response) { return response.json(); })
-            .catch(function (error) { return Rx_1.Observable.throw(error || 'Server error'); });
-    };
-    PostReq = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof http_1.Http !== 'undefined' && http_1.Http) === 'function' && _a) || Object])
-    ], PostReq);
-    return PostReq;
-    var _a;
-}());
-exports.PostReq = PostReq;
-//# sourceMappingURL=D:/workspace/VCP-UI/src/post.service.js.map
-
-/***/ }),
-
-/***/ 192:
+/***/ 191:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -424,7 +380,7 @@ exports.DataCenterWizardComponent = DataCenterWizardComponent;
 
 /***/ }),
 
-/***/ 193:
+/***/ 192:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -442,7 +398,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Created by Dominic on 2/22/2017.
  */
 var core_1 = __webpack_require__(0);
-var datacenter_component_config_1 = __webpack_require__(654);
+var datacenter_component_config_1 = __webpack_require__(655);
 var index_1 = __webpack_require__(71);
 var router_1 = __webpack_require__(30);
 var index_2 = __webpack_require__(105);
@@ -559,7 +515,7 @@ exports.DATACENTERComponent = DATACENTERComponent;
 
 /***/ }),
 
-/***/ 194:
+/***/ 193:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -577,7 +533,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Created by Dominic on 2/22/2017.
  */
 var core_1 = __webpack_require__(0);
-var host_component_config_1 = __webpack_require__(661);
+var host_component_config_1 = __webpack_require__(662);
 var index_1 = __webpack_require__(71);
 var index_2 = __webpack_require__(105);
 var HOSTComponent = (function () {
@@ -675,7 +631,7 @@ exports.HOSTComponent = HOSTComponent;
 
 /***/ }),
 
-/***/ 195:
+/***/ 194:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -699,9 +655,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = __webpack_require__(0);
 __webpack_require__(78);
-__webpack_require__(215);
-__webpack_require__(149);
-var post_service_1 = __webpack_require__(139);
+__webpack_require__(214);
+__webpack_require__(148);
+//import {PostReq} from "./post.service";
+var get_service_1 = __webpack_require__(280);
 var DataCenterService = (function (_super) {
     __extends(DataCenterService, _super);
     function DataCenterService() {
@@ -721,13 +678,13 @@ var DataCenterService = (function (_super) {
         __metadata('design:paramtypes', [])
     ], DataCenterService);
     return DataCenterService;
-}(post_service_1.PostReq));
+}(get_service_1.GetReq));
 exports.DataCenterService = DataCenterService;
 //# sourceMappingURL=D:/workspace/VCP-UI/src/datacenter.service.js.map
 
 /***/ }),
 
-/***/ 279:
+/***/ 278:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -745,7 +702,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Created by Dominic on 2/22/2017.
  */
 var core_1 = __webpack_require__(0);
-var cluster_component_config_1 = __webpack_require__(651);
+var cluster_component_config_1 = __webpack_require__(652);
 var index_1 = __webpack_require__(71);
 var router_1 = __webpack_require__(30);
 var index_2 = __webpack_require__(105);
@@ -843,7 +800,7 @@ exports.CLUSTERComponent = CLUSTERComponent;
 
 /***/ }),
 
-/***/ 280:
+/***/ 279:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -861,7 +818,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Created by Dominic on 2/22/2017.
  */
 var core_1 = __webpack_require__(0);
-var global_component_config_1 = __webpack_require__(659);
+var global_component_config_1 = __webpack_require__(660);
 var index_1 = __webpack_require__(71);
 // TODO remove after integrating with service
 var index_2 = __webpack_require__(105);
@@ -996,7 +953,93 @@ exports.GLOBALComponent = GLOBALComponent;
 
 /***/ }),
 
-/***/ 415:
+/***/ 280:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * Created by Dominic on 3/1/2017.
+ */
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var core_1 = __webpack_require__(0);
+var http_1 = __webpack_require__(132);
+var Rx_1 = __webpack_require__(148);
+__webpack_require__(78);
+var GetReq = (function () {
+    function GetReq(http) {
+        this.http = http;
+    }
+    GetReq.prototype.send = function (config) {
+        return this.http.get(config.url)
+            .map(function (response) { return response.json(); })
+            .catch(function (error) { return Rx_1.Observable.throw(error || 'Server error'); });
+    };
+    GetReq = __decorate([
+        core_1.Injectable(), 
+        __metadata('design:paramtypes', [(typeof (_a = typeof http_1.Http !== 'undefined' && http_1.Http) === 'function' && _a) || Object])
+    ], GetReq);
+    return GetReq;
+    var _a;
+}());
+exports.GetReq = GetReq;
+//# sourceMappingURL=D:/workspace/VCP-UI/src/get.service.js.map
+
+/***/ }),
+
+/***/ 281:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * Created by Dominic on 3/1/2017.
+ */
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var core_1 = __webpack_require__(0);
+var http_1 = __webpack_require__(132);
+var Rx_1 = __webpack_require__(148);
+__webpack_require__(78);
+var PostReq = (function () {
+    function PostReq(http) {
+        this.http = http;
+    }
+    PostReq.prototype.send = function (config) {
+        var headers = new http_1.Headers();
+        headers.append('Content-Type', config.contentType);
+        return this.http.post(config.url, JSON.stringify(config.payLoad), headers)
+            .map(function (response) { return response.json(); })
+            .catch(function (error) { return Rx_1.Observable.throw(error || 'Server error'); });
+    };
+    PostReq = __decorate([
+        core_1.Injectable(), 
+        __metadata('design:paramtypes', [(typeof (_a = typeof http_1.Http !== 'undefined' && http_1.Http) === 'function' && _a) || Object])
+    ], PostReq);
+    return PostReq;
+    var _a;
+}());
+exports.PostReq = PostReq;
+//# sourceMappingURL=D:/workspace/VCP-UI/src/post.service.js.map
+
+/***/ }),
+
+/***/ 416:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1015,8 +1058,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = __webpack_require__(0);
 var router_1 = __webpack_require__(30);
-var areaChart_component_config_1 = __webpack_require__(634);
-var post_service_1 = __webpack_require__(139);
+var areaChart_component_config_1 = __webpack_require__(635);
+var post_service_1 = __webpack_require__(281);
 var AreaChartComponent = (function () {
     function AreaChartComponent(route, postService) {
         var _this = this;
@@ -1124,7 +1167,7 @@ exports.AreaChartComponent = AreaChartComponent;
 
 /***/ }),
 
-/***/ 416:
+/***/ 417:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1261,7 +1304,7 @@ exports.ConnectedHostComponent = ConnectedHostComponent;
 
 /***/ }),
 
-/***/ 417:
+/***/ 418:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1339,7 +1382,7 @@ exports.MultiBarChartComponent = MultiBarChartComponent;
 
 /***/ }),
 
-/***/ 418:
+/***/ 419:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1357,9 +1400,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = __webpack_require__(0);
-var performanceListView_component_config_1 = __webpack_require__(639);
+var performanceListView_component_config_1 = __webpack_require__(640);
 var router_1 = __webpack_require__(30);
-var post_service_1 = __webpack_require__(139);
+var post_service_1 = __webpack_require__(281);
 var PerformanceListViewComponent = (function () {
     function PerformanceListViewComponent(route, postService) {
         var _this = this;
@@ -1399,7 +1442,7 @@ exports.PerformanceListViewComponent = PerformanceListViewComponent;
 
 /***/ }),
 
-/***/ 419:
+/***/ 420:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1444,7 +1487,7 @@ exports.TabComponent = TabComponent;
 
 /***/ }),
 
-/***/ 420:
+/***/ 421:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1491,7 +1534,7 @@ exports.TreeComponent = TreeComponent;
 
 /***/ }),
 
-/***/ 421:
+/***/ 422:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1553,7 +1596,7 @@ exports.TreeNodeComponent = TreeNodeComponent;
 
 /***/ }),
 
-/***/ 422:
+/***/ 423:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1588,7 +1631,7 @@ exports.AppHeader = AppHeader;
 
 /***/ }),
 
-/***/ 423:
+/***/ 424:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1599,24 +1642,24 @@ exports.AppHeader = AppHeader;
 function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
-__export(__webpack_require__(422));
-__export(__webpack_require__(424));
-__export(__webpack_require__(641));
-__export(__webpack_require__(419));
-__export(__webpack_require__(635));
-__export(__webpack_require__(640));
-__export(__webpack_require__(415));
-__export(__webpack_require__(417));
-__export(__webpack_require__(638));
-__export(__webpack_require__(192));
+__export(__webpack_require__(423));
+__export(__webpack_require__(425));
+__export(__webpack_require__(642));
 __export(__webpack_require__(420));
-__export(__webpack_require__(421));
+__export(__webpack_require__(636));
+__export(__webpack_require__(641));
 __export(__webpack_require__(416));
+__export(__webpack_require__(418));
+__export(__webpack_require__(639));
+__export(__webpack_require__(191));
+__export(__webpack_require__(421));
+__export(__webpack_require__(422));
+__export(__webpack_require__(417));
 //# sourceMappingURL=D:/workspace/VCP-UI/src/index.js.map
 
 /***/ }),
 
-/***/ 424:
+/***/ 425:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1635,7 +1678,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = __webpack_require__(0);
 var index_1 = __webpack_require__(71);
-var login_component_config_1 = __webpack_require__(642);
+var login_component_config_1 = __webpack_require__(643);
 var LoginComponent = (function () {
     function LoginComponent(_service) {
         this._service = _service;
@@ -1692,7 +1735,7 @@ exports.LoginComponent = LoginComponent;
 
 /***/ }),
 
-/***/ 425:
+/***/ 426:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1713,7 +1756,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = __webpack_require__(0);
 var platform_browser_1 = __webpack_require__(35);
 var shared_module_1 = __webpack_require__(88);
-var index_1 = __webpack_require__(652);
+var index_1 = __webpack_require__(653);
 var main_1 = __webpack_require__(106);
 var ClusterModule = (function () {
     function ClusterModule() {
@@ -1742,7 +1785,7 @@ exports.ClusterModule = ClusterModule;
 
 /***/ }),
 
-/***/ 426:
+/***/ 427:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1761,9 +1804,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = __webpack_require__(0);
 var platform_browser_1 = __webpack_require__(35);
-var index_1 = __webpack_require__(655);
+var index_1 = __webpack_require__(656);
 var main_1 = __webpack_require__(106);
-var datacenter_service_1 = __webpack_require__(195);
+var datacenter_service_1 = __webpack_require__(194);
 var shared_module_1 = __webpack_require__(88);
 var DataCenterModule = (function () {
     function DataCenterModule() {
@@ -1789,7 +1832,7 @@ exports.DataCenterModule = DataCenterModule;
 
 /***/ }),
 
-/***/ 427:
+/***/ 428:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1807,7 +1850,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Created by Dominic on 2/22/2017.
  */
 var core_1 = __webpack_require__(0);
-var datastore_component_config_1 = __webpack_require__(657);
+var datastore_component_config_1 = __webpack_require__(658);
 var index_1 = __webpack_require__(71);
 //TODO remove after integrating with service
 var index_2 = __webpack_require__(105);
@@ -1909,7 +1952,7 @@ exports.DATASTOREComponent = DATASTOREComponent;
 
 /***/ }),
 
-/***/ 428:
+/***/ 429:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1928,9 +1971,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = __webpack_require__(0);
 var platform_browser_1 = __webpack_require__(35);
-var index_1 = __webpack_require__(429);
+var index_1 = __webpack_require__(430);
 var main_1 = __webpack_require__(106);
-var datacenter_service_1 = __webpack_require__(195);
+var datacenter_service_1 = __webpack_require__(194);
 var shared_module_1 = __webpack_require__(88);
 var DataStoreModule = (function () {
     function DataStoreModule() {
@@ -1957,24 +2000,6 @@ exports.DataStoreModule = DataStoreModule;
 
 /***/ }),
 
-/***/ 429:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/**
- * Created by Dominic on 07-03-2017.
- */
-
-function __export(m) {
-    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
-}
-__export(__webpack_require__(427));
-__export(__webpack_require__(656));
-__export(__webpack_require__(428));
-//# sourceMappingURL=D:/workspace/VCP-UI/src/index.js.map
-
-/***/ }),
-
 /***/ 430:
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1986,14 +2011,32 @@ __export(__webpack_require__(428));
 function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
-__export(__webpack_require__(280));
-__export(__webpack_require__(658));
-__export(__webpack_require__(138));
+__export(__webpack_require__(428));
+__export(__webpack_require__(657));
+__export(__webpack_require__(429));
 //# sourceMappingURL=D:/workspace/VCP-UI/src/index.js.map
 
 /***/ }),
 
 /***/ 431:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * Created by Dominic on 07-03-2017.
+ */
+
+function __export(m) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
+__export(__webpack_require__(279));
+__export(__webpack_require__(659));
+__export(__webpack_require__(138));
+//# sourceMappingURL=D:/workspace/VCP-UI/src/index.js.map
+
+/***/ }),
+
+/***/ 432:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2012,7 +2055,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = __webpack_require__(0);
 var platform_browser_1 = __webpack_require__(35);
-var index_1 = __webpack_require__(662);
+var index_1 = __webpack_require__(663);
 var main_1 = __webpack_require__(106);
 var shared_module_1 = __webpack_require__(88);
 var HostModule = (function () {
@@ -2040,7 +2083,7 @@ exports.HostModule = HostModule;
 
 /***/ }),
 
-/***/ 432:
+/***/ 433:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2076,7 +2119,7 @@ exports.SUMMARYComponent = SUMMARYComponent;
 
 /***/ }),
 
-/***/ 509:
+/***/ 510:
 /***/ (function(module, exports) {
 
 function webpackEmptyContext(req) {
@@ -2085,24 +2128,24 @@ function webpackEmptyContext(req) {
 webpackEmptyContext.keys = function() { return []; };
 webpackEmptyContext.resolve = webpackEmptyContext;
 module.exports = webpackEmptyContext;
-webpackEmptyContext.id = 509;
+webpackEmptyContext.id = 510;
 
 
 /***/ }),
 
-/***/ 510:
+/***/ 511:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var platform_browser_dynamic_1 = __webpack_require__(600);
-var app_module_1 = __webpack_require__(632);
+var platform_browser_dynamic_1 = __webpack_require__(601);
+var app_module_1 = __webpack_require__(633);
 platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(app_module_1.AppModule);
 //# sourceMappingURL=D:/workspace/VCP-UI/src/main.js.map
 
 /***/ }),
 
-/***/ 630:
+/***/ 631:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2118,8 +2161,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = __webpack_require__(0);
 var router_1 = __webpack_require__(30);
-var login_component_1 = __webpack_require__(424);
-var host_components_1 = __webpack_require__(194);
+var login_component_1 = __webpack_require__(425);
+var host_components_1 = __webpack_require__(193);
 var common_1 = __webpack_require__(37);
 var appRoutes = [
     { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -2148,7 +2191,7 @@ exports.AppRoutingModule = AppRoutingModule;
 
 /***/ }),
 
-/***/ 631:
+/***/ 632:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2202,7 +2245,7 @@ exports.AppComponent = AppComponent;
 
 /***/ }),
 
-/***/ 632:
+/***/ 633:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2223,21 +2266,21 @@ var core_1 = __webpack_require__(0);
 var platform_browser_1 = __webpack_require__(35);
 var forms_1 = __webpack_require__(53);
 var http_1 = __webpack_require__(132);
-var app_routes_1 = __webpack_require__(633);
-var app_component_1 = __webpack_require__(631);
-var appHeader_component_1 = __webpack_require__(422);
+var app_routes_1 = __webpack_require__(634);
+var app_component_1 = __webpack_require__(632);
+var appHeader_component_1 = __webpack_require__(423);
 var http_2 = __webpack_require__(132);
 var global_module_1 = __webpack_require__(138);
-var cluster_module_1 = __webpack_require__(425);
-var app_routing_module_1 = __webpack_require__(630);
-var datacenter_module_1 = __webpack_require__(426);
+var cluster_module_1 = __webpack_require__(426);
+var app_routing_module_1 = __webpack_require__(631);
+var datacenter_module_1 = __webpack_require__(427);
 var shared_module_1 = __webpack_require__(88);
-var datastore_module_1 = __webpack_require__(428);
-var host_module_1 = __webpack_require__(431);
-var summary_module_1 = __webpack_require__(665);
-var multiBarChart_component_1 = __webpack_require__(417);
-var datacenterwizard_component_1 = __webpack_require__(192);
-var datacenterwizard_module_1 = __webpack_require__(637);
+var datastore_module_1 = __webpack_require__(429);
+var host_module_1 = __webpack_require__(432);
+var summary_module_1 = __webpack_require__(666);
+var multiBarChart_component_1 = __webpack_require__(418);
+var datacenterwizard_component_1 = __webpack_require__(191);
+var datacenterwizard_module_1 = __webpack_require__(638);
 var progressindicator_component_1 = __webpack_require__(137);
 var common_1 = __webpack_require__(37);
 var index_1 = __webpack_require__(71);
@@ -2292,7 +2335,7 @@ exports.AppModule = AppModule;
 
 /***/ }),
 
-/***/ 633:
+/***/ 634:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2300,7 +2343,7 @@ exports.AppModule = AppModule;
  * Created by Dominic on 2/22/2017.
  */
 
-var index_1 = __webpack_require__(423);
+var index_1 = __webpack_require__(424);
 //Need to add default routing
 // As the current configuration not supported hence not added
 //{ path: '',   redirectTo: '/login', pathMatch: 'full' },
@@ -2312,7 +2355,7 @@ exports.VMWebSphereClientAppRoutes = [
 
 /***/ }),
 
-/***/ 634:
+/***/ 635:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2342,7 +2385,7 @@ exports.AreaChartConfig = {
 
 /***/ }),
 
-/***/ 635:
+/***/ 636:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2449,7 +2492,7 @@ exports.BarChartComponent = BarChartComponent;
 
 /***/ }),
 
-/***/ 636:
+/***/ 637:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2471,7 +2514,7 @@ var common_1 = __webpack_require__(37);
 var forms_1 = __webpack_require__(53);
 var router_1 = __webpack_require__(30);
 // import {DataStoreDetailsComponent} from "./DataStoreDetailsComponent/datastoredetails.component";
-var datacenter_components_1 = __webpack_require__(193);
+var datacenter_components_1 = __webpack_require__(192);
 var dataCenterWaizardRoutes = [
     { path: 'datacenter', component: datacenter_components_1.DATACENTERComponent,
         children: []
@@ -2500,7 +2543,7 @@ exports.DataCenterWizardRoutingModule = DataCenterWizardRoutingModule;
 
 /***/ }),
 
-/***/ 637:
+/***/ 638:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2518,7 +2561,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = __webpack_require__(0);
-var datacenterwizard_routing_module_1 = __webpack_require__(636);
+var datacenterwizard_routing_module_1 = __webpack_require__(637);
 var platform_browser_1 = __webpack_require__(35);
 var DataCenterWizardModule = (function () {
     function DataCenterWizardModule() {
@@ -2543,7 +2586,7 @@ exports.DataCenterWizardModule = DataCenterWizardModule;
 
 /***/ }),
 
-/***/ 638:
+/***/ 639:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2666,7 +2709,7 @@ exports.PerformanceChartDialogComponent = PerformanceChartDialogComponent;
 
 /***/ }),
 
-/***/ 639:
+/***/ 640:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2687,7 +2730,7 @@ exports.PerformanceListViewConfig = {
 
 /***/ }),
 
-/***/ 640:
+/***/ 641:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2758,7 +2801,7 @@ exports.PieChartComponent = PieChartComponent;
 
 /***/ }),
 
-/***/ 641:
+/***/ 642:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2776,7 +2819,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = __webpack_require__(0);
-var tab_component_1 = __webpack_require__(419);
+var tab_component_1 = __webpack_require__(420);
 var Tabs = (function () {
     function Tabs() {
         this.onTabChange = new core_1.EventEmitter();
@@ -2821,7 +2864,7 @@ exports.Tabs = Tabs;
 
 /***/ }),
 
-/***/ 642:
+/***/ 643:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2837,7 +2880,7 @@ exports.LoginComponentConfig = {
 
 /***/ }),
 
-/***/ 643:
+/***/ 644:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2870,7 +2913,7 @@ exports.url = '/api/authenticate';
 
 /***/ }),
 
-/***/ 644:
+/***/ 645:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2959,7 +3002,7 @@ exports._tmpMultiBarChartDatafn = function () {
 
 /***/ }),
 
-/***/ 645:
+/***/ 646:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2971,7 +3014,7 @@ exports._tmpMultiBarChartDatafn = function () {
 
 /***/ }),
 
-/***/ 646:
+/***/ 647:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2983,7 +3026,7 @@ exports._tmpMultiBarChartDatafn = function () {
 
 /***/ }),
 
-/***/ 647:
+/***/ 648:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2995,7 +3038,7 @@ exports._tmpMultiBarChartDatafn = function () {
 
 /***/ }),
 
-/***/ 648:
+/***/ 649:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3007,7 +3050,7 @@ exports._tmpMultiBarChartDatafn = function () {
 
 /***/ }),
 
-/***/ 649:
+/***/ 650:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3019,7 +3062,7 @@ exports._tmpMultiBarChartDatafn = function () {
 
 /***/ }),
 
-/***/ 650:
+/***/ 651:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3040,7 +3083,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = __webpack_require__(0);
 var forms_1 = __webpack_require__(53);
 var router_1 = __webpack_require__(30);
-var cluster_components_1 = __webpack_require__(279);
+var cluster_components_1 = __webpack_require__(278);
 var platform_browser_1 = __webpack_require__(35);
 var clusterRoutes = [
     { path: 'cluster', component: cluster_components_1.CLUSTERComponent }
@@ -3068,7 +3111,7 @@ exports.ClusterRoutingModule = ClusterRoutingModule;
 
 /***/ }),
 
-/***/ 651:
+/***/ 652:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3116,7 +3159,7 @@ exports.volumeColumnDefs = [
 
 /***/ }),
 
-/***/ 652:
+/***/ 653:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3127,14 +3170,14 @@ exports.volumeColumnDefs = [
 function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
-__export(__webpack_require__(279));
-__export(__webpack_require__(650));
-__export(__webpack_require__(425));
+__export(__webpack_require__(278));
+__export(__webpack_require__(651));
+__export(__webpack_require__(426));
 //# sourceMappingURL=D:/workspace/VCP-UI/src/index.js.map
 
 /***/ }),
 
-/***/ 653:
+/***/ 654:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3156,9 +3199,9 @@ var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(37);
 var forms_1 = __webpack_require__(53);
 var router_1 = __webpack_require__(30);
-var datacenter_components_1 = __webpack_require__(193);
+var datacenter_components_1 = __webpack_require__(192);
 var global_module_1 = __webpack_require__(138);
-var datacenterwizard_component_1 = __webpack_require__(192);
+var datacenterwizard_component_1 = __webpack_require__(191);
 var dataCenterRoutes = [
     { path: 'datacenter', component: datacenter_components_1.DATACENTERComponent },
     { path: 'datastorewizard', component: datacenterwizard_component_1.DataCenterWizardComponent }
@@ -3187,7 +3230,7 @@ exports.DataCenterRoutingModule = DataCenterRoutingModule;
 
 /***/ }),
 
-/***/ 654:
+/***/ 655:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3242,7 +3285,7 @@ exports.volumeColumnDefs = [
 
 /***/ }),
 
-/***/ 655:
+/***/ 656:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3253,14 +3296,14 @@ exports.volumeColumnDefs = [
 function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
-__export(__webpack_require__(193));
-__export(__webpack_require__(653));
-__export(__webpack_require__(426));
+__export(__webpack_require__(192));
+__export(__webpack_require__(654));
+__export(__webpack_require__(427));
 //# sourceMappingURL=D:/workspace/VCP-UI/src/index.js.map
 
 /***/ }),
 
-/***/ 656:
+/***/ 657:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3282,7 +3325,7 @@ var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(37);
 var forms_1 = __webpack_require__(53);
 var router_1 = __webpack_require__(30);
-var index_1 = __webpack_require__(429);
+var index_1 = __webpack_require__(430);
 var global_module_1 = __webpack_require__(138);
 var dataStoreRoutes = [
     { path: 'datastore', component: index_1.DATASTOREComponent }
@@ -3311,7 +3354,7 @@ exports.DataStoreRoutingModule = DataStoreRoutingModule;
 
 /***/ }),
 
-/***/ 657:
+/***/ 658:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3347,7 +3390,7 @@ exports.volumeColumnDefs = [
 
 /***/ }),
 
-/***/ 658:
+/***/ 659:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3369,7 +3412,7 @@ var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(37);
 var forms_1 = __webpack_require__(53);
 var router_1 = __webpack_require__(30);
-var index_1 = __webpack_require__(430);
+var index_1 = __webpack_require__(431);
 var globalRoutes = [
     { path: 'global', component: index_1.GLOBALComponent }
 ];
@@ -3396,7 +3439,7 @@ exports.GlobalRoutingModule = GlobalRoutingModule;
 
 /***/ }),
 
-/***/ 659:
+/***/ 660:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3446,7 +3489,7 @@ exports.deviceListColumnDefs = [
 
 /***/ }),
 
-/***/ 660:
+/***/ 661:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3468,7 +3511,7 @@ var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(37);
 var forms_1 = __webpack_require__(53);
 var router_1 = __webpack_require__(30);
-var host_components_1 = __webpack_require__(194);
+var host_components_1 = __webpack_require__(193);
 var global_module_1 = __webpack_require__(138);
 var hostRoutes = [
     { path: 'host', component: host_components_1.HOSTComponent }
@@ -3497,7 +3540,7 @@ exports.HostRoutingModule = HostRoutingModule;
 
 /***/ }),
 
-/***/ 661:
+/***/ 662:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3542,7 +3585,7 @@ exports.volumeColumnDefs = [
 
 /***/ }),
 
-/***/ 662:
+/***/ 663:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3553,14 +3596,14 @@ exports.volumeColumnDefs = [
 function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
-__export(__webpack_require__(194));
-__export(__webpack_require__(431));
-__export(__webpack_require__(660));
+__export(__webpack_require__(193));
+__export(__webpack_require__(432));
+__export(__webpack_require__(661));
 //# sourceMappingURL=D:/workspace/VCP-UI/src/index.js.map
 
 /***/ }),
 
-/***/ 663:
+/***/ 664:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3571,16 +3614,16 @@ __export(__webpack_require__(660));
 function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
-__export(__webpack_require__(193));
+__export(__webpack_require__(192));
+__export(__webpack_require__(278));
+__export(__webpack_require__(428));
 __export(__webpack_require__(279));
-__export(__webpack_require__(427));
-__export(__webpack_require__(280));
-__export(__webpack_require__(194));
+__export(__webpack_require__(193));
 //# sourceMappingURL=D:/workspace/VCP-UI/src/index.js.map
 
 /***/ }),
 
-/***/ 664:
+/***/ 665:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3601,9 +3644,9 @@ var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(37);
 var forms_1 = __webpack_require__(53);
 var router_1 = __webpack_require__(30);
-var summary_component_1 = __webpack_require__(432);
-var areaChart_component_1 = __webpack_require__(415);
-var performanceListView_component_1 = __webpack_require__(418);
+var summary_component_1 = __webpack_require__(433);
+var areaChart_component_1 = __webpack_require__(416);
+var performanceListView_component_1 = __webpack_require__(419);
 var summaryRoutes = [
     {
         path: 'summary-portlet', component: summary_component_1.SUMMARYComponent,
@@ -3647,7 +3690,7 @@ exports.SummaryRoutingModule = SummaryRoutingModule;
 
 /***/ }),
 
-/***/ 665:
+/***/ 666:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3666,8 +3709,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = __webpack_require__(0);
 var platform_browser_1 = __webpack_require__(35);
-var summary_routing_module_1 = __webpack_require__(664);
-var summary_component_1 = __webpack_require__(432);
+var summary_routing_module_1 = __webpack_require__(665);
+var summary_component_1 = __webpack_require__(433);
 var shared_module_1 = __webpack_require__(88);
 var SummaryModule = (function () {
     function SummaryModule() {
@@ -3693,7 +3736,7 @@ exports.SummaryModule = SummaryModule;
 
 /***/ }),
 
-/***/ 666:
+/***/ 667:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3734,7 +3777,7 @@ exports.KeysPipe = KeysPipe;
 
 /***/ }),
 
-/***/ 667:
+/***/ 668:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3778,7 +3821,7 @@ exports.AuthGuard = AuthGuard;
 
 /***/ }),
 
-/***/ 668:
+/***/ 669:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3802,7 +3845,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = __webpack_require__(0);
 __webpack_require__(78);
-var post_service_1 = __webpack_require__(139);
+var post_service_1 = __webpack_require__(281);
 var AuthenticationService = (function (_super) {
     __extends(AuthenticationService, _super);
     function AuthenticationService() {
@@ -3833,7 +3876,7 @@ exports.AuthenticationService = AuthenticationService;
 
 /***/ }),
 
-/***/ 669:
+/***/ 670:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3857,10 +3900,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = __webpack_require__(0);
 __webpack_require__(78);
+var get_service_1 = __webpack_require__(280);
 __webpack_require__(78);
-__webpack_require__(215);
-__webpack_require__(149);
-var post_service_1 = __webpack_require__(139);
+__webpack_require__(214);
+__webpack_require__(148);
 var ClusterService = (function (_super) {
     __extends(ClusterService, _super);
     function ClusterService() {
@@ -3880,51 +3923,9 @@ var ClusterService = (function (_super) {
         __metadata('design:paramtypes', [])
     ], ClusterService);
     return ClusterService;
-}(post_service_1.PostReq));
+}(get_service_1.GetReq));
 exports.ClusterService = ClusterService;
 //# sourceMappingURL=D:/workspace/VCP-UI/src/cluster.service.js.map
-
-/***/ }),
-
-/***/ 670:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/**
- * Created by Dominic on 3/1/2017.
- */
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = __webpack_require__(0);
-var http_1 = __webpack_require__(132);
-var Rx_1 = __webpack_require__(149);
-__webpack_require__(78);
-var GetReq = (function () {
-    function GetReq(http) {
-        this.http = http;
-    }
-    GetReq.prototype.send = function (config) {
-        return this.http.get(config.url)
-            .map(function (response) { return response.json(); })
-            .catch(function (error) { return Rx_1.Observable.throw(error || 'Server error'); });
-    };
-    GetReq = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof http_1.Http !== 'undefined' && http_1.Http) === 'function' && _a) || Object])
-    ], GetReq);
-    return GetReq;
-    var _a;
-}());
-exports.GetReq = GetReq;
-//# sourceMappingURL=D:/workspace/VCP-UI/src/get.service.js.map
 
 /***/ }),
 
@@ -3952,9 +3953,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = __webpack_require__(0);
 __webpack_require__(78);
-__webpack_require__(215);
-__webpack_require__(149);
-var get_service_1 = __webpack_require__(670);
+__webpack_require__(214);
+__webpack_require__(148);
+var get_service_1 = __webpack_require__(280);
 var GlobalService = (function (_super) {
     __extends(GlobalService, _super);
     function GlobalService() {
@@ -4067,12 +4068,12 @@ exports.UserProfile = UserProfile;
 function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
-__export(__webpack_require__(667));
 __export(__webpack_require__(668));
+__export(__webpack_require__(669));
 __export(__webpack_require__(673));
 __export(__webpack_require__(671));
-__export(__webpack_require__(669));
-__export(__webpack_require__(195));
+__export(__webpack_require__(670));
+__export(__webpack_require__(194));
 __export(__webpack_require__(672));
 //# sourceMappingURL=D:/workspace/VCP-UI/src/index.js.map
 
@@ -4338,7 +4339,7 @@ exports = module.exports = __webpack_require__(19)();
 
 
 // module
-exports.push([module.i, "/**\n * Created by CSS33 on 2/28/2017.\n */\n/**\n * Created by Dominic on 28-02-2017.\n */\n.global--header, .global--section, .global--footer {\n  width: 100%; }\n\n.global--header {\n  height: 42px; }\n\n.deviceLst--toolbar, .eventLst--toolBar {\n  width: 50%;\n  margin: 1%; }\n  .deviceLst--toolbar a, .eventLst--toolBar a {\n    width: 15px;\n    margin: 0.5%;\n    height: 15px;\n    cursor: pointer;\n    background-size: cover; }\n\n.deviceLst--add {\n  background: url(" + __webpack_require__(1035) + ") no-repeat 0 0; }\n\n.deviceLst--delete {\n  background: url(" + __webpack_require__(1037) + ") no-repeat 0 0; }\n\n.deviceLst--refresh {\n  background: url(" + __webpack_require__(1042) + ") no-repeat 0 0; }\n\n.deviceLst--edit {\n  background: url(" + __webpack_require__(1038) + ") no-repeat 0 0; }\n\n.eventLst--info {\n  background: url(" + __webpack_require__(1040) + ") no-repeat 0 0; }\n\n.eventLst--warning {\n  background: url(" + __webpack_require__(1044) + ") no-repeat 0 0; }\n\n.eventLst--error {\n  background: url(" + __webpack_require__(1039) + ") no-repeat 0 0; }\n\n.storageDeviceLst {\n  width: 95%;\n  height: 250px;\n  margin: 1% 0 4% 2%; }\n\n.systemInfo {\n  width: 25%;\n  padding-left: 1%;\n  border: 1px solid #CDCFD3;\n  border-radius: 5px;\n  margin: 2%; }\n\n.systemSpec--dataStore, .systemSpec--ipAddress, .systemSpec--upTime {\n  width: 100%;\n  margin: 1%; }\n\n.systemSpec--dataStore {\n  margin: 2% 0 1% 8%; }\n\n.volumeCount {\n  margin: 2% 0 2% 10%;\n  width: 65%;\n  border: 2px solid #CDCFD3;\n  border-radius: 5px; }\n  .volumeCount label {\n    width: 100%;\n    text-align: right;\n    padding-right: 5%; }\n\n.detailedSummary, .deviceLst--header, .global--header {\n  float: left;\n  margin: 0 2%;\n  width: 95%; }\n\n.header--label {\n  text-transform: capitalize;\n  text-decoration: underline;\n  font-weight: 800; }\n\ntabs .System, tabs .Events {\n  float: left;\n  width: 100%;\n  border: 1px solid #CDCFD3;\n  border-radius: 0px 5px 5px 5px; }\n\n.performanceInfo {\n  width: 70%;\n  position: relative; }\n\n.performanceInfo--barChart {\n  width: 80%;\n  padding: 5% 0 0 8%; }\n\n.eventLst--header, .eventsLst {\n  width: 80%;\n  margin: 0 2%; }\n\n.eventsLst {\n  height: 170px; }\n\n.volumeLst {\n  width: 15%;\n  border: 2px solid #CDCFD3;\n  border-radius: 5px; }\n\n.volumeItemSummary {\n  width: 55%;\n  margin: 0 2%; }\n  .volumeItemSummary li .value {\n    font-style: italic;\n    margin-left: 3%; }\n\n.volumeLst--header {\n  margin: 4% 0 0 0;\n  border-bottom: 3px solid #CDCFD3;\n  padding: 0 25%;\n  width: 100%; }\n\n.volumeLst--ul {\n  max-height: 350px;\n  overflow: auto;\n  padding: 0; }\n  .volumeLst--ul li {\n    border: 1px solid #CDCFD3;\n    cursor: pointer; }\n  .volumeLst--ul li:hover {\n    background-color: #f8f8f8 !important; }\n  .volumeLst--ul li:nth-child(even) {\n    background-color: #f3f7fb; }\n\n.volumeItemSummary--li {\n  width: 45%;\n  margin: 3% auto; }\n  .volumeItemSummary--li .key:after {\n    content: ':';\n    font-weight: 600;\n    text-align: left; }\n  .volumeItemSummary--li .value {\n    font-weight: 100;\n    text-align: left; }\n\n.capacityGraph {\n  width: 25%; }\n  .capacityGraph piechart-component {\n    margin-top: 8%;\n    float: left; }\n  .capacityGraph h3 {\n    text-align: center; }\n\n.volExtents {\n  width: 100%;\n  padding: 5%;\n  float: left; }\n", ""]);
+exports.push([module.i, "/**\n * Created by CSS33 on 2/28/2017.\n */\n/**\n * Created by Dominic on 28-02-2017.\n */\n.global--header, .global--section, .global--footer {\n  width: 100%; }\n\n.global--header {\n  height: 42px; }\n\n.deviceLst--toolbar, .eventLst--toolBar {\n  width: 50%;\n  margin: 1%; }\n  .deviceLst--toolbar a, .eventLst--toolBar a {\n    width: 15px;\n    margin: 0.5%;\n    height: 15px;\n    cursor: pointer;\n    background-size: cover; }\n\n.deviceLst--add {\n  background: url(" + __webpack_require__(1035) + ") no-repeat 0 0; }\n\n.deviceLst--delete {\n  background: url(" + __webpack_require__(1037) + ") no-repeat 0 0; }\n\n.deviceLst--refresh {\n  background: url(" + __webpack_require__(1042) + ") no-repeat 0 0; }\n\n.deviceLst--edit {\n  background: url(" + __webpack_require__(1038) + ") no-repeat 0 0; }\n\n.eventLst--info {\n  background: url(" + __webpack_require__(1040) + ") no-repeat 0 0; }\n\n.eventLst--warning {\n  background: url(" + __webpack_require__(1044) + ") no-repeat 0 0; }\n\n.eventLst--error {\n  background: url(" + __webpack_require__(1039) + ") no-repeat 0 0; }\n\n.storageDeviceLst {\n  width: 95%;\n  height: 250px;\n  margin: 1% 0 4% 2%; }\n\n.systemInfo {\n  width: 25%;\n  padding-left: 1%;\n  border: 1px solid #CDCFD3;\n  border-radius: 5px;\n  margin: 2%; }\n\n.systemSpec--dataStore, .systemSpec--ipAddress, .systemSpec--upTime {\n  width: 100%;\n  margin: 1%; }\n\n.systemSpec--dataStore {\n  margin: 2% 0 1% 8%; }\n\n.volumeCount {\n  margin: 2% 0 2% 10%;\n  width: 65%;\n  border: 2px solid #CDCFD3;\n  border-radius: 5px; }\n  .volumeCount label {\n    width: 100%;\n    text-align: right;\n    padding-right: 5%; }\n\n.detailedSummary, .deviceLst--header, .global--header {\n  float: left;\n  margin: 0 2%;\n  width: 95%; }\n\n.header--label {\n  text-transform: capitalize;\n  text-decoration: underline;\n  font-weight: 800; }\n\ntabs .System, tabs .Events {\n  float: left;\n  width: 100%;\n  border: 1px solid #CDCFD3;\n  border-radius: 0px 5px 5px 5px; }\n\n.performanceInfo {\n  width: 70%;\n  position: relative; }\n\n.performanceInfo--barChart {\n  width: 80%;\n  padding: 5% 0 0 8%; }\n\n.eventLst--header, .eventsLst {\n  width: 80%;\n  margin: 0 2%; }\n\n.eventsLst {\n  height: 170px; }\n\n.volumeLst {\n  width: 15%;\n  border: 2px solid #CDCFD3;\n  border-radius: 5px; }\n\n.volumeItemSummary {\n  width: 55%;\n  margin: 0 2%; }\n  .volumeItemSummary li .value {\n    font-style: italic;\n    margin-left: 3%; }\n\n.volumeLst--header {\n  margin: 4% 0 0 0;\n  border-bottom: 3px solid #CDCFD3;\n  padding: 0 25%;\n  width: 100%; }\n\n.volumeLst--ul {\n  max-height: 350px;\n  overflow: auto;\n  padding: 0; }\n  .volumeLst--ul li {\n    border: 1px solid #CDCFD3;\n    cursor: pointer; }\n  .volumeLst--ul li:hover {\n    background-color: #f8f8f8 !important; }\n  .volumeLst--ul li:nth-child(even) {\n    background-color: #f3f7fb; }\n\n.volumeItemSummary--li {\n  width: 45%;\n  margin: 3% auto; }\n  .volumeItemSummary--li .key:after {\n    content: ':';\n    font-weight: 600;\n    text-align: left; }\n  .volumeItemSummary--li .value {\n    font-weight: 100;\n    text-align: left; }\n\n.capacityGraph {\n  width: 25%; }\n  .capacityGraph piechart-component {\n    margin-top: 8%;\n    float: left; }\n  .capacityGraph h3 {\n    text-align: center; }\n\n.volExtents {\n  width: 100%;\n  padding: 5%; }\n", ""]);
 
 // exports
 
@@ -4485,7 +4486,7 @@ module.exports = "<section class=\"dataCenterView\">\n  <tabs>\n    <tab tabTitl
 /***/ 770:
 /***/ (function(module, exports) {
 
-module.exports = "<header class=\"global--header flLeft\">\n  <label class=\"header--label\">System</label>\n</header>\n\n<section class=\"global--section flLeft\">\n  <section class=\"deviceLst\">\n    <header class=\"deviceLst--header flLeft\">\n      <div class=\"deviceLst--toolbar flLeft\">\n        <a class=\"deviceLst--add flLeft\" title=\"Add\"></a>\n        <a class=\"deviceLst--delete flLeft\" title=\"Delete\"></a>\n        <a class=\"deviceLst--refresh flLeft\" title=\"Refresh\" (click)=\"loadDeviceLst($event)\"></a>\n        <a class=\"deviceLst--edit flLeft\" title=\"Edit\"></a>\n      </div>\n      <label class=\"deviceLst--refreshTime flRight\">Last Refreshed on {{_timeStamp}}</label>\n    </header>\n    <section class=\"storageDeviceLst flLeft\">\n      <div class=\"grid--wrapper\">\n        <ag-grid-ng2 style=\"width: 100%;height: inherit;\" #agGrid class=\"ag-material\"\n                     [gridOptions]=\"deviceGridOptions\"\n                     [rowData]=\"deviceGridOptions.rowData\"\n                     (rowClicked)=\"loadDeviceInfo($event)\">\n        </ag-grid-ng2>\n      </div>\n    </section>\n    <section class=\"detailedSummary flLeft\">\n      <tabs (onTabChange)=\"tabselectionChange($event)\">\n        <tab tabTitle=\"System\" class=\"System\">\n          <section class=\"systemInfo hide flLeft\">\n            <section class=\"systemSpec hide\">\n              <label class=\"systemSpec--ipAddress flLeft\"> Ip Address <span class=\"ipValue\">192.17.271.0</span></label>\n              <label class=\"systemSpec--upTime flLeft\"> Up Time<span class=\"ipValue\">Up since 1 Day 5 Hrs</span></label>\n              <label class=\"systemSpec--dataStore flLeft\"> 5 Datastores</label>\n              <section class=\"volumeCount flLeft\">\n                <label class=\"connectedVolumes flLeft\"> connected values : <span>6</span></label>\n                <label class=\"connectedGroup flLeft\"> connected volumeGroup : <span>2</span></label>\n              </section>\n            </section>\n            <!--<piechart-component height=\"300\" [data]=\"_tmpPieChartData\"></piechart-component>-->\n          </section>\n          <section class=\"performanceInfo hide flLeft\">\n            <select class=\"performanceInfo--timeFrame\" (change)='refreshAreaChart($event)'>\n              <option value=\"0.25\"> Last 15 Minutes</option>\n              <option value=\"1.00\"> Last 1 Hour</option>\n              <option value=\"24.0\"> Last 24 Hour</option>\n              <option value=\"10080\"> Last One week</option>\n            </select>\n            <areachart-component class=\"flLeft hide performanceInfo--areaChart\" height=\"250\" [data]=\"_tmpAreaChartData\"\n                                 title=\"Performance\"></areachart-component>\n            <multiBarChart-component class=\"flLeft  hide performanceInfo--barChart\" height=\"100\"\n                                     [data]=\"_tmpBarChart\"></multiBarChart-component>\n          </section>\n          <section class=\"volumeSummary\">\n            <section class=\"volumeLst hide flLeft\">\n              <label class=\"volumeLst--header\">Volumes List</label>\n              <ul class=\"volumeLst--ul\">\n                <li *ngFor=\"let volumeItem  of _volumeLst\" (click)=\"getVoumeItemSummary(volumeItem)\">\n                  <label>{{volumeItem.vol_name}}</label>\n                </li>\n              </ul>\n            </section>\n            <section class=\"volumeItemSummary flLeft\">\n              <ul>\n                <li class=\"flLeft volumeItemSummary--li\">\n                  <label class=\"key\">naa</label>\n                  <label class=\"value\">{{_volumeItemSummary.naa}}</label>\n                </li>\n                <li class=\"flLeft volumeItemSummary--li\">\n                  <label class=\"key\">HostName</label>\n                  <label class=\"value\">{{_volumeItemSummary.HostName}}</label>\n                </li>\n                <li class=\"flLeft volumeItemSummary--li\">\n                  <label class=\"key\">lunId</label>\n                  <label class=\"value\">{{_volumeItemSummary.lunId}}</label>\n                </li>\n                <li class=\"flLeft volumeItemSummary--li\">\n                  <label class=\"key\">extentType</label>\n                  <label class=\"value\">{{_volumeItemSummary.extentType}}</label>\n                </li>\n                <li class=\"flLeft volumeItemSummary--li\">\n                  <label class=\"key\">extentPath</label>\n                  <label class=\"value\">{{_volumeItemSummary.extentPath}}</label>\n                </li>\n                <li class=\"flLeft volumeItemSummary--li\">\n                  <label class=\"key\">VolumeName</label>\n                  <label class=\"value\">{{_volumeItemSummary.VolumeName}}</label>\n                </li>\n                <li class=\"flLeft volumeItemSummary--li\">\n                  <label class=\"key\">type</label>\n                  <label class=\"value\">{{_volumeItemSummary.type}}</label>\n                </li>\n                <li class=\"flLeft volumeItemSummary--li\">\n                  <label class=\"key\">volMountpoint</label>\n                  <label class=\"value\">{{_volumeItemSummary.volMountpoint}}</label>\n                </li>\n                <li class=\"flLeft volumeItemSummary--li\">\n                  <label class=\"key\">volStatus</label>\n                  <label class=\"value\">{{_volumeItemSummary.volStatus}}</label>\n                </li>\n              </ul>\n            </section>\n            <section class=\"capacityGraph flLeft\">\n              <h3>Volume Capacity</h3>\n              <piechart-component height=\"300\" [data]=\"_volumeItemSummary.capacityGraphData\"></piechart-component>\n            </section>\n          </section>\n        </tab>\n        <tab tabTitle=\"Extents\" class=\"volExtents\">\n          <ag-grid-ng2 style=\"width: 100%;\" #agGrid class=\"ag-material\"\n                       [gridOptions]=\"extendGridOptions\"\n                       rowHeight=\"22\"\n                       [rowData]=\"extendGridOptions.rowData\">\n          </ag-grid-ng2>\n        </tab>\n\n        <tab tabTitle=\"Associated Targets\" class=\"extentTarget\">\n          <ag-grid-ng2  style=\"width: 100%;height: 500px;\" #agGrid\n                        class=\"ag-material\"\n                        [gridOptions]=\"extentTargetGridOptions\"\n                        [rowData]=\"extentTargetGridOptions.rowData\">\n          </ag-grid-ng2>\n        </tab>\n      </tabs>\n    </section>\n  </section>\n</section>\n<footer class=\"global--footer flLeft\"></footer>\n\n\n"
+module.exports = "<header class=\"global--header flLeft\">\n  <label class=\"header--label\">System</label>\n</header>\n\n<section class=\"global--section flLeft\">\n  <section class=\"deviceLst\">\n    <header class=\"deviceLst--header flLeft\">\n      <div class=\"deviceLst--toolbar flLeft\">\n        <a class=\"deviceLst--add flLeft\" title=\"Add\"></a>\n        <a class=\"deviceLst--delete flLeft\" title=\"Delete\"></a>\n        <a class=\"deviceLst--refresh flLeft\" title=\"Refresh\" (click)=\"loadDeviceLst($event)\"></a>\n        <a class=\"deviceLst--edit flLeft\" title=\"Edit\"></a>\n      </div>\n      <label class=\"deviceLst--refreshTime flRight\">Last Refreshed on {{_timeStamp}}</label>\n    </header>\n    <section class=\"storageDeviceLst flLeft\">\n      <div class=\"grid--wrapper\">\n        <ag-grid-ng2 style=\"width: 100%;height: inherit;\" #agGrid class=\"ag-material\"\n                     [gridOptions]=\"deviceGridOptions\"\n                     [rowData]=\"deviceGridOptions.rowData\"\n                     (rowClicked)=\"loadDeviceInfo($event)\">\n        </ag-grid-ng2>\n      </div>\n    </section>\n    <section class=\"detailedSummary flLeft\">\n      <tabs (onTabChange)=\"tabselectionChange($event)\">\n        <tab tabTitle=\"System\" class=\"System\">\n          <section class=\"systemInfo hide flLeft\">\n            <section class=\"systemSpec hide\">\n              <label class=\"systemSpec--ipAddress flLeft\"> Ip Address <span class=\"ipValue\">192.17.271.0</span></label>\n              <label class=\"systemSpec--upTime flLeft\"> Up Time<span class=\"ipValue\">Up since 1 Day 5 Hrs</span></label>\n              <label class=\"systemSpec--dataStore flLeft\"> 5 Datastores</label>\n              <section class=\"volumeCount flLeft\">\n                <label class=\"connectedVolumes flLeft\"> connected values : <span>6</span></label>\n                <label class=\"connectedGroup flLeft\"> connected volumeGroup : <span>2</span></label>\n              </section>\n            </section>\n            <!--<piechart-component height=\"300\" [data]=\"_tmpPieChartData\"></piechart-component>-->\n          </section>\n          <section class=\"performanceInfo hide flLeft\">\n            <select class=\"performanceInfo--timeFrame\" (change)='refreshAreaChart($event)'>\n              <option value=\"0.25\"> Last 15 Minutes</option>\n              <option value=\"1.00\"> Last 1 Hour</option>\n              <option value=\"24.0\"> Last 24 Hour</option>\n              <option value=\"10080\"> Last One week</option>\n            </select>\n            <areachart-component class=\"flLeft hide performanceInfo--areaChart\" height=\"250\" [data]=\"_tmpAreaChartData\"\n                                 title=\"Performance\"></areachart-component>\n            <multiBarChart-component class=\"flLeft  hide performanceInfo--barChart\" height=\"100\"\n                                     [data]=\"_tmpBarChart\"></multiBarChart-component>\n          </section>\n          <section class=\"volumeSummary\">\n            <section class=\"volumeLst hide flLeft\">\n              <label class=\"volumeLst--header\">Volumes List</label>\n              <ul class=\"volumeLst--ul\">\n                <li *ngFor=\"let volumeItem  of _volumeLst\" (click)=\"getVoumeItemSummary(volumeItem)\">\n                  <label>{{volumeItem.vol_name}}</label>\n                </li>\n              </ul>\n            </section>\n            <section class=\"volumeItemSummary flLeft\">\n              <ul>\n                <li class=\"flLeft volumeItemSummary--li\">\n                  <label class=\"key\">naa</label>\n                  <label class=\"value\">{{_volumeItemSummary.naa}}</label>\n                </li>\n                <li class=\"flLeft volumeItemSummary--li\">\n                  <label class=\"key\">HostName</label>\n                  <label class=\"value\">{{_volumeItemSummary.HostName}}</label>\n                </li>\n                <li class=\"flLeft volumeItemSummary--li\">\n                  <label class=\"key\">lunId</label>\n                  <label class=\"value\">{{_volumeItemSummary.lunId}}</label>\n                </li>\n                <li class=\"flLeft volumeItemSummary--li\">\n                  <label class=\"key\">extentType</label>\n                  <label class=\"value\">{{_volumeItemSummary.extentType}}</label>\n                </li>\n                <li class=\"flLeft volumeItemSummary--li\">\n                  <label class=\"key\">extentPath</label>\n                  <label class=\"value\">{{_volumeItemSummary.extentPath}}</label>\n                </li>\n                <li class=\"flLeft volumeItemSummary--li\">\n                  <label class=\"key\">VolumeName</label>\n                  <label class=\"value\">{{_volumeItemSummary.VolumeName}}</label>\n                </li>\n                <li class=\"flLeft volumeItemSummary--li\">\n                  <label class=\"key\">type</label>\n                  <label class=\"value\">{{_volumeItemSummary.type}}</label>\n                </li>\n                <li class=\"flLeft volumeItemSummary--li\">\n                  <label class=\"key\">volMountpoint</label>\n                  <label class=\"value\">{{_volumeItemSummary.volMountpoint}}</label>\n                </li>\n                <li class=\"flLeft volumeItemSummary--li\">\n                  <label class=\"key\">volStatus</label>\n                  <label class=\"value\">{{_volumeItemSummary.volStatus}}</label>\n                </li>\n              </ul>\n            </section>\n            <section class=\"capacityGraph flLeft\">\n              <h3>Volume Capacity</h3>\n              <piechart-component height=\"300\" [data]=\"_volumeItemSummary.capacityGraphData\"></piechart-component>\n            </section>\n          </section>\n        </tab>\n        <tab tabTitle=\"Extents\" class=\"volExtents\">\n          <ag-grid-ng2 style=\"width: 100%;;height: 500px;\" #agGrid class=\"ag-material\"\n                       [gridOptions]=\"extendGridOptions\"\n                       [rowData]=\"extendGridOptions.rowData\">\n          </ag-grid-ng2>\n        </tab>\n\n        <tab tabTitle=\"Associated Targets\" class=\"extentTarget\">\n          <ag-grid-ng2  style=\"width: 100%;height: 500px;\" #agGrid\n                        class=\"ag-material\"\n                        [gridOptions]=\"extentTargetGridOptions\"\n                        [rowData]=\"extentTargetGridOptions.rowData\">\n          </ag-grid-ng2>\n        </tab>\n      </tabs>\n    </section>\n  </section>\n</section>\n<footer class=\"global--footer flLeft\"></footer>\n\n\n"
 
 /***/ }),
 
@@ -4526,16 +4527,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = __webpack_require__(0);
 var platform_browser_1 = __webpack_require__(35);
 var main_1 = __webpack_require__(106);
-var datacenter_service_1 = __webpack_require__(195);
-var index_1 = __webpack_require__(663);
-var index_2 = __webpack_require__(423);
+var datacenter_service_1 = __webpack_require__(194);
+var index_1 = __webpack_require__(664);
+var index_2 = __webpack_require__(424);
 var ng2_nvd3_1 = __webpack_require__(752);
-var datacenterwizard_component_1 = __webpack_require__(192);
+var datacenterwizard_component_1 = __webpack_require__(191);
 var progressindicator_component_1 = __webpack_require__(137);
-var connectedHost_component_1 = __webpack_require__(416);
-var tree_component_1 = __webpack_require__(420);
-var treeNode_component_1 = __webpack_require__(421);
-var performanceListView_component_1 = __webpack_require__(418);
+var connectedHost_component_1 = __webpack_require__(417);
+var tree_component_1 = __webpack_require__(421);
+var treeNode_component_1 = __webpack_require__(422);
+var performanceListView_component_1 = __webpack_require__(419);
 var forms_1 = __webpack_require__(53);
 var SharedModule = (function () {
     function SharedModule() {
