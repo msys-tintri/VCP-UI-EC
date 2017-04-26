@@ -854,8 +854,13 @@ var GLOBALComponent = (function () {
             enableColResize: true,
             enableSorting: true,
             rowSelection: 'single',
+            suppressAutoSize: false,
+            animateRows: true,
             onGridReady: function () {
                 _this.extendGridOptions.api.sizeColumnsToFit();
+            },
+            onRowDataChanged: function (e) {
+                console.log(e);
             }
         };
         this.extentTargetGridOptions = {
@@ -1898,6 +1903,7 @@ var DATASTOREComponent = (function () {
                 _this.deviceGridOptions.api.sizeColumnsToFit();
             }
         };
+        datastore_component_config_1.DataStoreConfig.volumeServiceProvider.url = datastore_component_config_1.DataStoreConfig.volumeServiceProvider.url.replace('$expression', (decodeURIComponent(window['WEB_PLATFORM'].getObjectId()).split(":")[3] || false) + '');
         this.volumeGridOptions = {
             columnDefs: datastore_component_config_1.volumeColumnDefs,
             rowData: null,
@@ -1912,24 +1918,25 @@ var DATASTOREComponent = (function () {
             }
         };
         this.loadDeviceLst();
-        this.loadVolumeInfo({ uuid: 45345 }); //TODO remove after fix first row click issue
+        this.loadVolumeInfo(); //TODO remove after fix first row click issue
     };
     DATASTOREComponent.prototype.loadDeviceLst = function () {
         var _this = this;
         this.service.getDeviceLst(this.auth.getUserProfile(), datastore_component_config_1.DataStoreConfig.deviceServiceProvider)
             .subscribe(function (data) {
-            console.log("Data..:", data);
-            _this.deviceGridOptions.rowData = data;
+            if (data)
+                _this.deviceGridOptions.rowData = data[0];
         }, function (err) {
             _this.deviceGridOptions.rowData = [];
             console.log(err);
         });
     };
-    DATASTOREComponent.prototype.loadVolumeInfo = function (data) {
+    DATASTOREComponent.prototype.loadVolumeInfo = function () {
         var _this = this;
-        this.service.getVoumeLst(data, datastore_component_config_1.DataStoreConfig.volumeServiceProvider)
+        this.service.getVoumeLst(this.auth.getUserProfile(), datastore_component_config_1.DataStoreConfig.volumeServiceProvider)
             .subscribe(function (data) {
-            _this.volumeGridOptions.rowData = data;
+            if (data && data[0].storage)
+                _this.volumeGridOptions.rowData = data[0].storage.vol;
         }, function (err) {
             _this.volumeGridOptions.rowData = [];
             console.log(err);
@@ -3366,25 +3373,25 @@ exports.DataStoreConfig = {
         contentType: 'application/json'
     },
     volumeServiceProvider: {
-        url: '/api/getVolumeMappingLst',
+        url: 'https://172.30.36.223:9443/ui/tintristorage/rest/ttstorage/fndatastore?datastore=$expression',
         type: 'GET',
         contentType: 'application/json'
     }
 };
 exports.deviceColumnDefs = [
-    { headerName: "Device Name", field: "deviceName" },
-    { headerName: "State", field: "state" },
-    { headerName: "Error Events", field: "errEvents" }
+    { headerName: "Device Name", field: "dsName" },
+    { headerName: "Serial", field: "serial" },
+    { headerName: "Error Events", field: "errEvents" },
+    { headerName: "Capacity", field: "capacity" },
+    { headerName: "Target", field: "target" },
+    { headerName: "Extent", field: "extentName" },
+    { headerName: "Host Name", field: "hostName" }
 ];
 exports.volumeColumnDefs = [
-    { headerName: "Name", field: "name", width: 100 },
-    { headerName: "Size", field: "size", width: 100 },
-    { headerName: "Capacity", field: "capacity", width: 100 },
-    { headerName: "NAA", field: "naa", width: 100 },
-    { headerName: "DataStore", field: "dataStore", width: 100 },
-    { headerName: "Dedup", field: "dedup", width: 100 },
-    { headerName: "Host", field: "host", width: 100 },
-    { headerName: "Performance", field: "performance", width: 100 }
+    { headerName: "Name", field: "volName", width: 100 },
+    { headerName: "Size", field: "volAvail", width: 100 },
+    { headerName: "Capacity", field: "volUsed", width: 100 },
+    { headerName: "File System", field: "volFstype", width: 100 }
 ];
 //# sourceMappingURL=D:/workspace/VCP-UI/src/datastore.component.config.js.map
 
@@ -4486,7 +4493,7 @@ module.exports = "<section class=\"dataCenterView\">\n  <tabs>\n    <tab tabTitl
 /***/ 770:
 /***/ (function(module, exports) {
 
-module.exports = "<header class=\"global--header flLeft\">\n  <label class=\"header--label\">System</label>\n</header>\n\n<section class=\"global--section flLeft\">\n  <section class=\"deviceLst\">\n    <header class=\"deviceLst--header flLeft\">\n      <div class=\"deviceLst--toolbar flLeft\">\n        <a class=\"deviceLst--add flLeft\" title=\"Add\"></a>\n        <a class=\"deviceLst--delete flLeft\" title=\"Delete\"></a>\n        <a class=\"deviceLst--refresh flLeft\" title=\"Refresh\" (click)=\"loadDeviceLst($event)\"></a>\n        <a class=\"deviceLst--edit flLeft\" title=\"Edit\"></a>\n      </div>\n      <label class=\"deviceLst--refreshTime flRight\">Last Refreshed on {{_timeStamp}}</label>\n    </header>\n    <section class=\"storageDeviceLst flLeft\">\n      <div class=\"grid--wrapper\">\n        <ag-grid-ng2 style=\"width: 100%;height: inherit;\" #agGrid class=\"ag-material\"\n                     [gridOptions]=\"deviceGridOptions\"\n                     [rowData]=\"deviceGridOptions.rowData\"\n                     (rowClicked)=\"loadDeviceInfo($event)\">\n        </ag-grid-ng2>\n      </div>\n    </section>\n    <section class=\"detailedSummary flLeft\">\n      <tabs (onTabChange)=\"tabselectionChange($event)\">\n        <tab tabTitle=\"System\" class=\"System\">\n          <section class=\"systemInfo hide flLeft\">\n            <section class=\"systemSpec hide\">\n              <label class=\"systemSpec--ipAddress flLeft\"> Ip Address <span class=\"ipValue\">192.17.271.0</span></label>\n              <label class=\"systemSpec--upTime flLeft\"> Up Time<span class=\"ipValue\">Up since 1 Day 5 Hrs</span></label>\n              <label class=\"systemSpec--dataStore flLeft\"> 5 Datastores</label>\n              <section class=\"volumeCount flLeft\">\n                <label class=\"connectedVolumes flLeft\"> connected values : <span>6</span></label>\n                <label class=\"connectedGroup flLeft\"> connected volumeGroup : <span>2</span></label>\n              </section>\n            </section>\n            <!--<piechart-component height=\"300\" [data]=\"_tmpPieChartData\"></piechart-component>-->\n          </section>\n          <section class=\"performanceInfo hide flLeft\">\n            <select class=\"performanceInfo--timeFrame\" (change)='refreshAreaChart($event)'>\n              <option value=\"0.25\"> Last 15 Minutes</option>\n              <option value=\"1.00\"> Last 1 Hour</option>\n              <option value=\"24.0\"> Last 24 Hour</option>\n              <option value=\"10080\"> Last One week</option>\n            </select>\n            <areachart-component class=\"flLeft hide performanceInfo--areaChart\" height=\"250\" [data]=\"_tmpAreaChartData\"\n                                 title=\"Performance\"></areachart-component>\n            <multiBarChart-component class=\"flLeft  hide performanceInfo--barChart\" height=\"100\"\n                                     [data]=\"_tmpBarChart\"></multiBarChart-component>\n          </section>\n          <section class=\"volumeSummary\">\n            <section class=\"volumeLst hide flLeft\">\n              <label class=\"volumeLst--header\">Volumes List</label>\n              <ul class=\"volumeLst--ul\">\n                <li *ngFor=\"let volumeItem  of _volumeLst\" (click)=\"getVoumeItemSummary(volumeItem)\">\n                  <label>{{volumeItem.vol_name}}</label>\n                </li>\n              </ul>\n            </section>\n            <section class=\"volumeItemSummary flLeft\">\n              <ul>\n                <li class=\"flLeft volumeItemSummary--li\">\n                  <label class=\"key\">naa</label>\n                  <label class=\"value\">{{_volumeItemSummary.naa}}</label>\n                </li>\n                <li class=\"flLeft volumeItemSummary--li\">\n                  <label class=\"key\">HostName</label>\n                  <label class=\"value\">{{_volumeItemSummary.HostName}}</label>\n                </li>\n                <li class=\"flLeft volumeItemSummary--li\">\n                  <label class=\"key\">lunId</label>\n                  <label class=\"value\">{{_volumeItemSummary.lunId}}</label>\n                </li>\n                <li class=\"flLeft volumeItemSummary--li\">\n                  <label class=\"key\">extentType</label>\n                  <label class=\"value\">{{_volumeItemSummary.extentType}}</label>\n                </li>\n                <li class=\"flLeft volumeItemSummary--li\">\n                  <label class=\"key\">extentPath</label>\n                  <label class=\"value\">{{_volumeItemSummary.extentPath}}</label>\n                </li>\n                <li class=\"flLeft volumeItemSummary--li\">\n                  <label class=\"key\">VolumeName</label>\n                  <label class=\"value\">{{_volumeItemSummary.VolumeName}}</label>\n                </li>\n                <li class=\"flLeft volumeItemSummary--li\">\n                  <label class=\"key\">type</label>\n                  <label class=\"value\">{{_volumeItemSummary.type}}</label>\n                </li>\n                <li class=\"flLeft volumeItemSummary--li\">\n                  <label class=\"key\">volMountpoint</label>\n                  <label class=\"value\">{{_volumeItemSummary.volMountpoint}}</label>\n                </li>\n                <li class=\"flLeft volumeItemSummary--li\">\n                  <label class=\"key\">volStatus</label>\n                  <label class=\"value\">{{_volumeItemSummary.volStatus}}</label>\n                </li>\n              </ul>\n            </section>\n            <section class=\"capacityGraph flLeft\">\n              <h3>Volume Capacity</h3>\n              <piechart-component height=\"300\" [data]=\"_volumeItemSummary.capacityGraphData\"></piechart-component>\n            </section>\n          </section>\n        </tab>\n        <tab tabTitle=\"Extents\" class=\"volExtents\">\n          <ag-grid-ng2 style=\"width: 100%;;height: 500px;\" #agGrid class=\"ag-material\"\n                       [gridOptions]=\"extendGridOptions\"\n                       [rowData]=\"extendGridOptions.rowData\">\n          </ag-grid-ng2>\n        </tab>\n\n        <tab tabTitle=\"Associated Targets\" class=\"extentTarget\">\n          <ag-grid-ng2  style=\"width: 100%;height: 500px;\" #agGrid\n                        class=\"ag-material\"\n                        [gridOptions]=\"extentTargetGridOptions\"\n                        [rowData]=\"extentTargetGridOptions.rowData\">\n          </ag-grid-ng2>\n        </tab>\n      </tabs>\n    </section>\n  </section>\n</section>\n<footer class=\"global--footer flLeft\"></footer>\n\n\n"
+module.exports = "<header class=\"global--header flLeft\">\n  <label class=\"header--label\">System</label>\n</header>\n\n<section class=\"global--section flLeft\">\n  <section class=\"deviceLst\">\n    <header class=\"deviceLst--header flLeft\">\n      <div class=\"deviceLst--toolbar flLeft\">\n        <a class=\"deviceLst--add flLeft\" title=\"Add\"></a>\n        <a class=\"deviceLst--delete flLeft\" title=\"Delete\"></a>\n        <a class=\"deviceLst--refresh flLeft\" title=\"Refresh\" (click)=\"loadDeviceLst($event)\"></a>\n        <a class=\"deviceLst--edit flLeft\" title=\"Edit\"></a>\n      </div>\n      <label class=\"deviceLst--refreshTime flRight\">Last Refreshed on {{_timeStamp}}</label>\n    </header>\n    <section class=\"storageDeviceLst flLeft\">\n      <div class=\"grid--wrapper\">\n        <ag-grid-ng2 style=\"width: 100%;height: inherit;\" #agGrid class=\"ag-material\"\n                     [gridOptions]=\"deviceGridOptions\"\n                     [rowData]=\"deviceGridOptions.rowData\"\n                     (rowClicked)=\"loadDeviceInfo($event)\">\n        </ag-grid-ng2>\n      </div>\n    </section>\n    <section class=\"detailedSummary flLeft\">\n      <tabs (onTabChange)=\"tabselectionChange($event)\">\n        <tab tabTitle=\"System\" class=\"System\">\n          <section class=\"systemInfo hide flLeft\">\n            <section class=\"systemSpec hide\">\n              <label class=\"systemSpec--ipAddress flLeft\"> Ip Address <span class=\"ipValue\">192.17.271.0</span></label>\n              <label class=\"systemSpec--upTime flLeft\"> Up Time<span class=\"ipValue\">Up since 1 Day 5 Hrs</span></label>\n              <label class=\"systemSpec--dataStore flLeft\"> 5 Datastores</label>\n              <section class=\"volumeCount flLeft\">\n                <label class=\"connectedVolumes flLeft\"> connected values : <span>6</span></label>\n                <label class=\"connectedGroup flLeft\"> connected volumeGroup : <span>2</span></label>\n              </section>\n            </section>\n            <!--<piechart-component height=\"300\" [data]=\"_tmpPieChartData\"></piechart-component>-->\n          </section>\n          <section class=\"performanceInfo hide flLeft\">\n            <select class=\"performanceInfo--timeFrame\" (change)='refreshAreaChart($event)'>\n              <option value=\"0.25\"> Last 15 Minutes</option>\n              <option value=\"1.00\"> Last 1 Hour</option>\n              <option value=\"24.0\"> Last 24 Hour</option>\n              <option value=\"10080\"> Last One week</option>\n            </select>\n            <areachart-component class=\"flLeft hide performanceInfo--areaChart\" height=\"250\" [data]=\"_tmpAreaChartData\"\n                                 title=\"Performance\"></areachart-component>\n            <multiBarChart-component class=\"flLeft  hide performanceInfo--barChart\" height=\"100\"\n                                     [data]=\"_tmpBarChart\"></multiBarChart-component>\n          </section>\n          <section class=\"volumeSummary\">\n            <section class=\"volumeLst hide flLeft\">\n              <label class=\"volumeLst--header\">Volumes List</label>\n              <ul class=\"volumeLst--ul\">\n                <li *ngFor=\"let volumeItem  of _volumeLst\" (click)=\"getVoumeItemSummary(volumeItem)\">\n                  <label>{{volumeItem.vol_name}}</label>\n                </li>\n              </ul>\n            </section>\n            <section class=\"volumeItemSummary flLeft\">\n              <ul>\n                <li class=\"flLeft volumeItemSummary--li\">\n                  <label class=\"key\">naa</label>\n                  <label class=\"value\">{{_volumeItemSummary.naa}}</label>\n                </li>\n                <li class=\"flLeft volumeItemSummary--li\">\n                  <label class=\"key\">HostName</label>\n                  <label class=\"value\">{{_volumeItemSummary.HostName}}</label>\n                </li>\n                <li class=\"flLeft volumeItemSummary--li\">\n                  <label class=\"key\">lunId</label>\n                  <label class=\"value\">{{_volumeItemSummary.lunId}}</label>\n                </li>\n                <li class=\"flLeft volumeItemSummary--li\">\n                  <label class=\"key\">extentType</label>\n                  <label class=\"value\">{{_volumeItemSummary.extentType}}</label>\n                </li>\n                <li class=\"flLeft volumeItemSummary--li\">\n                  <label class=\"key\">extentPath</label>\n                  <label class=\"value\">{{_volumeItemSummary.extentPath}}</label>\n                </li>\n                <li class=\"flLeft volumeItemSummary--li\">\n                  <label class=\"key\">VolumeName</label>\n                  <label class=\"value\">{{_volumeItemSummary.VolumeName}}</label>\n                </li>\n                <li class=\"flLeft volumeItemSummary--li\">\n                  <label class=\"key\">type</label>\n                  <label class=\"value\">{{_volumeItemSummary.type}}</label>\n                </li>\n                <li class=\"flLeft volumeItemSummary--li\">\n                  <label class=\"key\">volMountpoint</label>\n                  <label class=\"value\">{{_volumeItemSummary.volMountpoint}}</label>\n                </li>\n                <li class=\"flLeft volumeItemSummary--li\">\n                  <label class=\"key\">volStatus</label>\n                  <label class=\"value\">{{_volumeItemSummary.volStatus}}</label>\n                </li>\n              </ul>\n            </section>\n            <section class=\"capacityGraph flLeft\">\n              <h3>Volume Capacity</h3>\n              <piechart-component height=\"300\" [data]=\"_volumeItemSummary.capacityGraphData\"></piechart-component>\n            </section>\n          </section>\n        </tab>\n        <tab tabTitle=\"Extents\" class=\"volExtents\">\n          <ag-grid-ng2 style=\"width: 100%; height: 250px \" #agGrid class=\"ag-material\"\n                       [gridOptions]=\"extendGridOptions\"\n                       [rowData]=\"extendGridOptions.rowData\">\n          </ag-grid-ng2>\n        </tab>\n        <tab tabTitle=\"Associated Targets\" class=\"extentTarget\">\n          <ag-grid-ng2 #agExtentGrid style=\"width: 100%;height: 500px;\" #agGrid\n                       class=\"ag-material\"\n                       [gridOptions]=\"extentTargetGridOptions\"\n                       [rowData]=\"extentTargetGridOptions.rowData\">\n          </ag-grid-ng2>\n        </tab>\n      </tabs>\n    </section>\n  </section>\n</section>\n<footer class=\"global--footer flLeft\"></footer>\n\n\n"
 
 /***/ }),
 
