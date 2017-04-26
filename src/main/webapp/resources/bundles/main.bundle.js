@@ -1941,8 +1941,9 @@ var DATASTOREComponent = (function () {
         var _this = this;
         this.service.getDeviceLst(this.auth.getUserProfile(), datastore_component_config_1.DataStoreConfig.deviceServiceProvider)
             .subscribe(function (data) {
-            if (data)
-                _this.deviceGridOptions.rowData = data[0];
+            if (data) {
+                _this.deviceGridOptions.rowData = [data[0]];
+            }
             var rowLen = data.length;
             if (rowLen > 0)
                 _this.deviceLstHeight = ((data.length) * _this.deviceGridOptions.rowHeight) < _this.deviceLstHeight ? ((rowLen + 1) * _this.deviceGridOptions.rowHeight) : _this.deviceLstHeight;
@@ -1955,8 +1956,9 @@ var DATASTOREComponent = (function () {
         var _this = this;
         this.service.getVoumeLst(this.auth.getUserProfile(), datastore_component_config_1.DataStoreConfig.volumeServiceProvider)
             .subscribe(function (data) {
-            if (data && data[0].storage)
-                _this.volumeGridOptions.rowData = data[0].storage.vol;
+            if (data && data[0].storage) {
+                _this.volumeGridOptions.rowData = [data[0].storage.vol];
+            }
             var rowLen = _this.volumeGridOptions.rowData.length;
             if (rowLen > 0)
                 _this.volumeLstHeight = ((rowLen) * _this.volumeGridOptions.rowHeight) < _this.volumeLstHeight ? ((rowLen + 1) * _this.volumeGridOptions.rowHeight) : _this.volumeLstHeight;
@@ -3402,19 +3404,19 @@ exports.DataStoreConfig = {
     }
 };
 exports.deviceColumnDefs = [
-    { headerName: "Device Name", field: "dsName" },
-    { headerName: "Serial", field: "serial" },
-    { headerName: "Error Events", field: "errEvents" },
-    { headerName: "Capacity", field: "capacity" },
-    { headerName: "Target", field: "target" },
-    { headerName: "Extent", field: "extentName" },
-    { headerName: "Host Name", field: "hostName" }
+    { headerName: "Device Name", field: "dsName", width: 120 },
+    { headerName: "Serial", field: "serial", width: 120 },
+    { headerName: "Error Events", field: "errEvents", width: 120 },
+    { headerName: "Capacity", field: "capacity", width: 120 },
+    { headerName: "Target", field: "target", width: 120 },
+    { headerName: "Extent", field: "extentName", width: 120 },
+    { headerName: "Host Name", field: "hostName", width: 120 }
 ];
 exports.volumeColumnDefs = [
-    { headerName: "Name", field: "volName", width: 100 },
-    { headerName: "Size", field: "volAvail", width: 100 },
-    { headerName: "Capacity", field: "volUsed", width: 100 },
-    { headerName: "File System", field: "volFstype", width: 100 }
+    { headerName: "Name", field: "volName", width: 150 },
+    { headerName: "Size", field: "volAvail", width: 150 },
+    { headerName: "Capacity", field: "volUsed", width: 150 },
+    { headerName: "File System", field: "volFstype", width: 150 }
 ];
 //# sourceMappingURL=D:/workspace/VCP-UI/src/datastore.component.config.js.map
 
