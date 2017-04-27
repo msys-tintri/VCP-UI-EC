@@ -3396,11 +3396,6 @@ exports.DataStoreConfig = {
         url: 'https://win-rhq2-vc65.tintri.local.com/ui/tintristorage/rest/ttstorage/fndatastore?datastore=$expression',
         type: 'GET',
         contentType: 'application/json'
-    },
-    volumeServiceProvider: {
-        url: 'https://win-rhq2-vc65.tintri.local.com/ui/tintristorage/rest/ttstorage/fndatastore?datastore=$expression',
-        type: 'GET',
-        contentType: 'application/json'
     }
 };
 exports.deviceColumnDefs = [
