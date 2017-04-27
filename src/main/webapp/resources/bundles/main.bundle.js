@@ -1945,13 +1945,18 @@ var DATASTOREComponent = (function () {
             .subscribe(function (data) {
             if (data) {
                 _this.deviceGridOptions.rowData = [data[0]];
+                if (data[0].storage && data[0].storage.vol)
+                    _this.volumeGridOptions.rowData = data[0].storage.vol;
+                else
+                    _this.volumeGridOptions.rowData = [];
             }
-            var rowLen = data.length || 1;
-            if (rowLen > 0)
-                _this.deviceLstHeight = ((data.length) * _this.deviceGridOptions.rowHeight) < _this.deviceLstHeight ? ((rowLen + 1) * _this.deviceGridOptions.rowHeight) : _this.deviceLstHeight;
-            _this.loadVolumeInfo(data[0].storage && data[0].storage.vol ? ([data[0].storage.vol]) : []);
+            if (data.length > 0)
+                _this.deviceLstHeight = ((data.length) * _this.deviceGridOptions.rowHeight) < _this.deviceLstHeight ? ((data.length + 1) * _this.deviceGridOptions.rowHeight) : _this.deviceLstHeight;
+            if (_this.volumeGridOptions.rowData.length > 0)
+                _this.volumeLstHeight = ((_this.volumeGridOptions.rowData.length) * _this.volumeGridOptions.rowHeight) < _this.volumeLstHeight ? ((_this.volumeGridOptions.rowData.length + 1) * _this.volumeGridOptions.rowHeight) : _this.volumeLstHeight;
         }, function (err) {
             _this.deviceGridOptions.rowData = [];
+            _this.volumeGridOptions.rowData = [];
             console.log(err);
         });
     };
