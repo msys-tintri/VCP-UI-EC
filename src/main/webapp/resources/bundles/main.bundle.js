@@ -1924,7 +1924,6 @@ var DATASTOREComponent = (function () {
                 _this.deviceGridOptions.api.sizeColumnsToFit();
             }
         };
-        datastore_component_config_1.DataStoreConfig.volumeServiceProvider.url = datastore_component_config_1.DataStoreConfig.volumeServiceProvider.url.replace('$expression', (decodeURIComponent(window['WEB_PLATFORM'].getObjectId()).split(":")[3] || false) + '');
         this.volumeGridOptions = {
             columnDefs: datastore_component_config_1.volumeColumnDefs,
             rowData: null,
@@ -1950,7 +1949,7 @@ var DATASTOREComponent = (function () {
             var rowLen = data.length || 1;
             if (rowLen > 0)
                 _this.deviceLstHeight = ((data.length) * _this.deviceGridOptions.rowHeight) < _this.deviceLstHeight ? ((rowLen + 1) * _this.deviceGridOptions.rowHeight) : _this.deviceLstHeight;
-            _this.loadVolumeInfo(data.storage && data.storage.vol ? ([data.storage.vol]) : []);
+            _this.loadVolumeInfo(data[0].storage && data[0].storage.vol ? ([data[0].storage.vol]) : []);
         }, function (err) {
             _this.deviceGridOptions.rowData = [];
             console.log(err);
