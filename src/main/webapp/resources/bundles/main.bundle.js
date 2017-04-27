@@ -1946,7 +1946,7 @@ var DATASTOREComponent = (function () {
             if (data) {
                 _this.deviceGridOptions.rowData = [data[0]];
                 if (data[0].storage && data[0].storage.vol)
-                    _this.volumeGridOptions.rowData = data[0].storage.vol;
+                    _this.volumeGridOptions.rowData = [data[0].storage.vol];
                 else
                     _this.volumeGridOptions.rowData = [];
             }
