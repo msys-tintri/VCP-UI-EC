@@ -4353,7 +4353,7 @@ exports = module.exports = __webpack_require__(21)();
 
 
 // module
-exports.push([module.i, "/**\n * Created by Dominic on 3/3/2017.\n */\n.system--header {\n  width: 95%; }\n\n.datastore--volume, .datastore--system {\n  width: 100%;\n  min-height: 200px;\n  margin-bottom: 5%; }\n\n.refresh {\n  margin: 0 2%; }\n", ""]);
+exports.push([module.i, "/**\n * Created by Dominic on 3/3/2017.\n */\n.system--header {\n  width: 95%;\n  margin-bottom: 2%; }\n\n.datastore--volume, .datastore--system {\n  width: 100%;\n  min-height: 200px;\n  margin-bottom: 5%; }\n\n.refresh {\n  margin: 0 2%; }\n", ""]);
 
 // exports
 
