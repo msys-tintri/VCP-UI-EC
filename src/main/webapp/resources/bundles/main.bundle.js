@@ -9,6 +9,7 @@ webpackJsonp([0,5],{
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_index__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__(25);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__models_index__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_date_util_service__ = __webpack_require__(734);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CLUSTERComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -24,12 +25,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var CLUSTERComponent = (function () {
-    function CLUSTERComponent(auth, service, router) {
+    function CLUSTERComponent(auth, service, router, dateUtil) {
         this.auth = auth;
         this.service = service;
         this.router = router;
-        this._timeStamp = new Date();
+        this.dateUtil = dateUtil;
+        this._timeStamp = '';
         this.showHostDialog = false;
         this.showPerformanceDialog = false;
         this._tmpAreaChartData = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__models_index__["_tmpMultiAreaChartDatafn"])();
@@ -53,6 +56,7 @@ var CLUSTERComponent = (function () {
     CLUSTERComponent.prototype.ngOnInit = function () {
         var _this = this;
         console.log(this);
+        this._timeStamp = this.dateUtil.getCurrentDateAndTime();
         this.clusterGridOptions = {
             columnDefs: __WEBPACK_IMPORTED_MODULE_1__cluster_component_config__["a" /* deviceColumnDefs */],
             rowData: null,
@@ -106,12 +110,12 @@ var CLUSTERComponent = (function () {
             selector: 'cluster-component',
             template: __webpack_require__(463),
             styles: [__webpack_require__(444)],
-            providers: [__WEBPACK_IMPORTED_MODULE_2__services_index__["e" /* ClusterService */]]
+            providers: [__WEBPACK_IMPORTED_MODULE_2__services_index__["e" /* ClusterService */], __WEBPACK_IMPORTED_MODULE_5__services_date_util_service__["a" /* DateUtil */]]
         }), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_index__["b" /* AuthenticationService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__services_index__["b" /* AuthenticationService */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_index__["e" /* ClusterService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__services_index__["e" /* ClusterService */]) === 'function' && _b) || Object, (typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* Router */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* Router */]) === 'function' && _c) || Object])
+        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_index__["b" /* AuthenticationService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__services_index__["b" /* AuthenticationService */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_index__["e" /* ClusterService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__services_index__["e" /* ClusterService */]) === 'function' && _b) || Object, (typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* Router */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* Router */]) === 'function' && _c) || Object, (typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_5__services_date_util_service__["a" /* DateUtil */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_5__services_date_util_service__["a" /* DateUtil */]) === 'function' && _d) || Object])
     ], CLUSTERComponent);
     return CLUSTERComponent;
-    var _a, _b, _c;
+    var _a, _b, _c, _d;
 }());
 //# sourceMappingURL=D:/workspace/VCP-UI/src/cluster.components.js.map
 
@@ -1180,6 +1184,7 @@ var DataCenterModule = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__datastore_component_config__ = __webpack_require__(344);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_index__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_index__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_date_util_service__ = __webpack_require__(734);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DATASTOREComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1194,11 +1199,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var DATASTOREComponent = (function () {
-    function DATASTOREComponent(auth, service) {
+    function DATASTOREComponent(auth, service, dateUtil) {
         this.auth = auth;
         this.service = service;
-        this._timeStamp = new Date();
+        this.dateUtil = dateUtil;
+        this._timeStamp = '';
         this.showPerformanceDialog = false;
         this.showHostDialog = false;
         this._tmpAreaChartData = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__models_index__["_tmpMultiAreaChartDatafn"])();
@@ -1242,6 +1249,7 @@ var DATASTOREComponent = (function () {
     };
     DATASTOREComponent.prototype.ngOnInit = function () {
         var _this = this;
+        this._timeStamp = this.dateUtil.getCurrentDateAndTime();
         __WEBPACK_IMPORTED_MODULE_1__datastore_component_config__["a" /* DataStoreConfig */].deviceServiceProvider.url = __WEBPACK_IMPORTED_MODULE_1__datastore_component_config__["a" /* DataStoreConfig */].deviceServiceProvider.url.replace('$expression', (decodeURIComponent(window['WEB_PLATFORM'].getObjectId()).split(":")[3] || false) + '');
         this.deviceGridOptions = {
             columnDefs: __WEBPACK_IMPORTED_MODULE_1__datastore_component_config__["b" /* deviceColumnDefs */],
@@ -1305,12 +1313,12 @@ var DATASTOREComponent = (function () {
             selector: 'datastore-component',
             styles: [__webpack_require__(446)],
             template: __webpack_require__(465),
-            providers: [__WEBPACK_IMPORTED_MODULE_2__services_index__["c" /* DataCenterService */]]
+            providers: [__WEBPACK_IMPORTED_MODULE_2__services_index__["c" /* DataCenterService */], __WEBPACK_IMPORTED_MODULE_4__services_date_util_service__["a" /* DateUtil */]]
         }), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_index__["b" /* AuthenticationService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__services_index__["b" /* AuthenticationService */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_index__["c" /* DataCenterService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__services_index__["c" /* DataCenterService */]) === 'function' && _b) || Object])
+        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_index__["b" /* AuthenticationService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__services_index__["b" /* AuthenticationService */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_index__["c" /* DataCenterService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__services_index__["c" /* DataCenterService */]) === 'function' && _b) || Object, (typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__services_date_util_service__["a" /* DateUtil */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_4__services_date_util_service__["a" /* DateUtil */]) === 'function' && _c) || Object])
     ], DATASTOREComponent);
     return DATASTOREComponent;
-    var _a, _b;
+    var _a, _b, _c;
 }());
 //# sourceMappingURL=D:/workspace/VCP-UI/src/datastore.components.js.map
 
@@ -4380,35 +4388,35 @@ module.exports = "<section class=\"dialog dialog-loginForm\" *ngIf=\"shouldAuthe
 /***/ 463:
 /***/ (function(module, exports) {
 
-module.exports = "<section class=\"clusterView\">\n  <tabs>\n    <tab tabTitle=\"Provisioning\" class=\"cluster--provision\">\n      <section class=\"cluster--system flLeft\">\n        <header class=\"system--header flLeft\">\n          <div>\n            <label class=\"header--label\">Systems</label>\n          </div>\n          <div style=\"width:100%\">\n            <div style=\"width:40%\" class=\"flLeft\">\n              <button (click)=\"addDataStoreDetails()\">Add Data Store</button>\n            </div>\n            <div style=\"width:40%\" class=\"flLeft\">\n              <label class=\"deviceLst--refreshTime flLeft\">{{_timeStamp}}</label>\n            </div>\n            <div style=\"width:20%\" class=\"flLeft\">\n              <button class=\"refresh\" (click)=\"loadDeviceLst($event)\">Refresh</button>\n            </div>\n          </div>\n        </header>\n        <div style=\"width: 100%;height: 200px;\" class=\"flLeft\">\n          <ag-grid-angular style=\"width: 80%;height: 100%;\" #agGrid class=\"  vmWare--skyblue\"\n                       [gridOptions]=\"clusterGridOptions\"\n                       [rowData]=\"clusterGridOptions.rowData\"\n                       (cellClicked)=\"onDeviceLstCellClicked($event)\"\n                       (rowClicked) =\"loadVolumeInfo($event.node.data)\">\n          </ag-grid-angular>\n        </div>\n      </section>\n      <section class=\"cluster--volume flLeft\">\n        <header class=\"volume--header flLeft\">\n          <label class=\"header--label\">Volume Mapping</label>\n        </header>\n        <div style=\"width:100%;height: 200px;\" class=\"flLeft\">\n          <ag-grid-angular style=\"width: 80%;height: 100%;\" #agGrid class=\"ag-fresh\"\n                       [gridOptions]=\"volumeGridOptions\"\n                       [rowData]=\"volumeGridOptions.rowData\"\n                       (cellClicked)=\"onDeviceLstCellClicked($event)\">\n          </ag-grid-angular>\n        </div>\n      </section>\n    </tab>\n  </tabs>\n</section>\n<performanceDialog-component [data]=\"_tmpAreaChartData\"  (dialogClose) = \"closePerformanceDialog($event)\" headerTxt=\"Performance Graph\" *ngIf=\"showPerformanceDialog\" height=\"400\" title=\"\"></performanceDialog-component>\n<connected-host (closeConnectedHost)=\"hideConnectedHost()\" *ngIf=\"showHostDialog\"></connected-host>\n\n"
+module.exports = "<section class=\"clusterView\">\n  <tabs>\n    <tab tabTitle=\"Provisioning\" class=\"cluster--provision\">\n      <section class=\"cluster--system flLeft\">\n        <header class=\"system--header flLeft\">\n          <div>\n            <label class=\"header--label\">Systems</label>\n          </div>\n          <div style=\"width:100%\">\n            <div style=\"width:40%\" class=\"flLeft\">\n              <button (click)=\"addDataStoreDetails()\">Add Data Store</button>\n            </div>\n            <div style=\"width:50%;text-align: right;\" class=\"flLeft\">\n              <label class=\"deviceLst--refreshTime\">{{_timeStamp}}</label>\n            </div>\n            <div style=\"width:10%;text-align: right;\" class=\"flLeft\">\n              <button class=\"refresh\" (click)=\"loadDeviceLst($event)\">Refresh</button>\n            </div>\n          </div>\n        </header>\n        <div style=\"width: 100%;height: 200px;\" class=\"flLeft\">\n          <ag-grid-angular style=\"width: 100%;height: 100%;\" #agGrid class=\"  vmWare--skyblue\"\n                       [gridOptions]=\"clusterGridOptions\"\n                       [rowData]=\"clusterGridOptions.rowData\"\n                       (cellClicked)=\"onDeviceLstCellClicked($event)\"\n                       (rowClicked) =\"loadVolumeInfo($event.node.data)\">\n          </ag-grid-angular>\n        </div>\n      </section>\n      <section class=\"cluster--volume flLeft\">\n        <header class=\"volume--header flLeft\">\n          <label class=\"header--label\">Volume Mapping</label>\n        </header>\n        <div style=\"width:100%;height: 200px;\" class=\"flLeft\">\n          <ag-grid-angular style=\"width: 100%;height: 100%;\" #agGrid class=\"ag-fresh\"\n                       [gridOptions]=\"volumeGridOptions\"\n                       [rowData]=\"volumeGridOptions.rowData\"\n                       (cellClicked)=\"onDeviceLstCellClicked($event)\">\n          </ag-grid-angular>\n        </div>\n      </section>\n    </tab>\n  </tabs>\n</section>\n<performanceDialog-component [data]=\"_tmpAreaChartData\"  (dialogClose) = \"closePerformanceDialog($event)\" headerTxt=\"Performance Graph\" *ngIf=\"showPerformanceDialog\" height=\"400\" title=\"\"></performanceDialog-component>\n<connected-host (closeConnectedHost)=\"hideConnectedHost()\" *ngIf=\"showHostDialog\"></connected-host>\n\n"
 
 /***/ }),
 
 /***/ 464:
 /***/ (function(module, exports) {
 
-module.exports = "<section class=\"dataCenterView \">\n  <tabs>\n    <tab tabTitle=\"Provisioning\" class=\"datacenter--provision\">\n      <section class=\"datacenter--system flLeft\">\n        <header class=\"system--header flLeft\">\n          <div>\n            <label class=\"header--label\">Systems</label>\n          </div>\n          <div style=\"width:100%\">\n            <div style=\"width:40%\" class=\"flLeft\">\n              <button (click)=\"addDataStoreDetails()\">Add Data Store</button>\n            </div>\n            <div style=\"width:40%\" class=\"flLeft\">\n                <label class=\"deviceLst--refreshTime flLeft\">{{_timeStamp}}</label>\n            </div>\n            <div style=\"width:20%\" class=\"flLeft\">\n                <button class=\"refresh\" (click)=\"loadDeviceLst($event)\">Refresh</button>\n             </div>\n           </div>\n        </header>\n        <div style=\"width: 100%;height: 200px;\" class=\"flLeft\">\n          <ag-grid-angular style=\"width: 80%;height: 100%;\" #agGrid class=\" vmWare--skyblue\"\n                       [gridOptions]=\"deviceGridOptions\"\n                       [rowData]=\"deviceGridOptions.rowData\"\n                       (cellClicked)=\"onDeviceLstCellClicked($event)\"\n                       (rowClicked) =\"loadVolumeInfo($event.node.data)\">\n          </ag-grid-angular>\n        </div>\n      </section>\n      <section class=\"datacenter--volume flLeft\">\n        <header class=\"volume--header flLeft\">\n          <label class=\"header--label\">Volume Mapping</label>\n        </header>\n        <div style=\"width:100%;height: 200px;\" class=\"flLeft\">\n          <ag-grid-angular style=\"width: 80%;height: 100%;\" #agGrid class=\"\"\n                       [gridOptions]=\"volumeGridOptions\"\n                       [rowData]=\"volumeGridOptions.rowData\"\n                       (cellClicked)=\"onDeviceLstCellClicked($event)\">\n          </ag-grid-angular>\n        </div>\n      </section>\n    </tab>\n  </tabs>\n</section>\n<!--DataCenter wizard component-->\n<datacenterWizard-component (navToWizard)=\"navToWizard()\" (previousStep)=\"previousStep()\" (nextWizStep)=\"wizardNextStep()\" (closeDataStoreWizard)=\"closeDataStr(dataStrFlag)\" *ngIf=\"showDataStoreWizard\" id=\"data-center-wizard\"></datacenterWizard-component>\n<performanceDialog-component [data]=\"_tmpAreaChartData\"  (dialogClose) = \"closePerformanceDialog($event)\" headerTxt=\"Performance Graph\" *ngIf=\"showPerformanceDialog\" height=\"400\" title=\"\"></performanceDialog-component>\n<connected-host (closeConnectedHost)=\"hideConnectedHost()\" *ngIf=\"showHostDialog\"></connected-host>\n"
+module.exports = "<section class=\"dataCenterView \">\n  <tabs>\n    <tab tabTitle=\"Provisioning\" class=\"datacenter--provision\">\n      <section class=\"datacenter--system flLeft\">\n        <header class=\"system--header flLeft\">\n          <div>\n            <label class=\"header--label\">Systems</label>\n          </div>\n          <div style=\"width:100%\">\n            <div style=\"width:40%\" class=\"flLeft\">\n              <button (click)=\"addDataStoreDetails()\">Add Data Store</button>\n            </div>\n            <div style=\"width:50%;text-align: right;\" class=\"flLeft\">\n                <label class=\"deviceLst--refreshTime\">{{_timeStamp}}</label>\n            </div>\n            <div style=\"width:10%;text-align: right;\" class=\"flLeft\">\n                <button class=\"refresh\" (click)=\"loadDeviceLst($event)\">Refresh</button>\n             </div>\n           </div>\n        </header>\n        <div style=\"width: 100%;height: 200px;\" class=\"flLeft\">\n          <ag-grid-angular style=\"width: 97%;height: 100%;\" #agGrid class=\" vmWare--skyblue\"\n                       [gridOptions]=\"deviceGridOptions\"\n                       [rowData]=\"deviceGridOptions.rowData\"\n                       (cellClicked)=\"onDeviceLstCellClicked($event)\"\n                       (rowClicked) =\"loadVolumeInfo($event.node.data)\">\n          </ag-grid-angular>\n        </div>\n      </section>\n      <section class=\"datacenter--volume flLeft\">\n        <header class=\"volume--header flLeft\">\n          <label class=\"header--label\">Volume Mapping</label>\n        </header>\n        <div style=\"width:100%;height: 200px;\" class=\"flLeft\">\n          <ag-grid-angular style=\"width: 97%;height: 100%;\" #agGrid class=\"\"\n                       [gridOptions]=\"volumeGridOptions\"\n                       [rowData]=\"volumeGridOptions.rowData\"\n                       (cellClicked)=\"onDeviceLstCellClicked($event)\">\n          </ag-grid-angular>\n        </div>\n      </section>\n    </tab>\n  </tabs>\n</section>\n<!--DataCenter wizard component-->\n<datacenterWizard-component (navToWizard)=\"navToWizard()\" (previousStep)=\"previousStep()\" (nextWizStep)=\"wizardNextStep()\" (closeDataStoreWizard)=\"closeDataStr(dataStrFlag)\" *ngIf=\"showDataStoreWizard\" id=\"data-center-wizard\"></datacenterWizard-component>\n<performanceDialog-component [data]=\"_tmpAreaChartData\"  (dialogClose) = \"closePerformanceDialog($event)\" headerTxt=\"Performance Graph\" *ngIf=\"showPerformanceDialog\" height=\"400\" title=\"\"></performanceDialog-component>\n<connected-host (closeConnectedHost)=\"hideConnectedHost()\" *ngIf=\"showHostDialog\"></connected-host>\n"
 
 /***/ }),
 
 /***/ 465:
 /***/ (function(module, exports) {
 
-module.exports = "<section class=\"dataCenterView\">\n  <tabs>\n    <tab tabTitle=\"Provision\" class=\"datacenter--provision\">\n      <section class=\"datastore--system flLeft\">\n        <header class=\"system--header flLeft\">\n          <label class=\"header--label\">System</label>\n          <button class=\"flRight btnAddDataStore\" (click)=\"addDataStoreDetails()\">Add Data Store</button>\n          <button class=\"refresh flRight\" (click)=\"loadDeviceLst($event)\"> Refresh</button>\n          <label class=\"deviceLst--refreshTime flRight\">Last Refreshed on {{_timeStamp}}</label>\n        </header>\n        <div style=\"width: 100%;\" class=\"flLeft\">\n          <ag-grid-angular style=\"width: 80%;height: 100%\" #agGrid class=\" ag-material\"\n                       [gridOptions]=\"deviceGridOptions\"\n                       [rowData]=\"deviceGridOptions.rowData\"\n                           [style.height.px]=\"deviceLstHeight\"\n                       (rowClicked) =\"loadVolumeInfo($event.node.data)\">\n          </ag-grid-angular>\n        </div>\n      </section>\n      <section class=\"datastore--volume flLeft\">\n        <header class=\"volume--header flLeft\">\n          <label class=\"header--label\">Volume Mapping</label>\n        </header>\n        <!--<div class=\"agGridWrapper flLeft\">-->\n        <div style=\"width:100%;\" class=\"flLeft\">\n          <ag-grid-angular style=\"width: 80%;height:100%\" #agGrid class=\" ag-material\"\n                       [gridOptions]=\"volumeGridOptions\"\n                       [rowData]=\"volumeGridOptions.rowData\"\n                           [style.height.px]=\"volumeLstHeight\"\n                       (cellClicked)=\"onDeviceLstCellClicked($event)\">\n          </ag-grid-angular>\n        </div>\n        <!--</div>-->\n      </section>\n    </tab>\n  </tabs>\n</section>\n<datacenterWizard-component (navToWizard)=\"navToWizard()\" (previousStep)=\"previousStep()\" (nextWizStep)=\"wizardNextStep()\" (closeDataStoreWizard)=\"closeDataStr(dataStrFlag)\" *ngIf=\"showDataStoreWizard\" id=\"data-center-wizard\"></datacenterWizard-component>\n<performanceDialog-component (dialogClose) = \"closePerformanceDialog($event)\" headerTxt=\"Performance Graph\" [data] = \"_tmpAreaChartData\" *ngIf=\"showPerformanceDialog\" height=\"400\" title=\"\"></performanceDialog-component>\n<connected-host (closeConnectedHost)=\"hideConnectedHost()\" *ngIf=\"showHostDialog\"></connected-host>\n\n"
+module.exports = "<section class=\"dataCenterView\">\n  <tabs>\n    <tab tabTitle=\"Provision\" class=\"datacenter--provision\">\n      <section class=\"datastore--system flLeft\">\n        <!--<header class=\"system&#45;&#45;header flLeft\">\n          <label class=\"header&#45;&#45;label\">System</label>\n          <button class=\"flRight btnAddDataStore\" (click)=\"addDataStoreDetails()\">Add Data Store</button>\n          <button class=\"refresh flRight\" (click)=\"loadDeviceLst($event)\"> Refresh</button>\n          <label class=\"deviceLst&#45;&#45;refreshTime flRight\">Last Refreshed on {{_timeStamp}}</label>\n        </header>-->\n        <header class=\"system--header flLeft\">\n          <div>\n            <label class=\"header--label\">Systems</label>\n          </div>\n          <div style=\"width:100%\">\n            <div style=\"width:40%\" class=\"flLeft\">\n              <button (click)=\"addDataStoreDetails()\">Add Data Store</button>\n            </div>\n            <div style=\"width:50%;text-align: right;\" class=\"flLeft\">\n              <label class=\"deviceLst--refreshTime\">{{_timeStamp}}</label>\n            </div>\n            <div style=\"width:10%;text-align: right;\" class=\"flLeft\">\n              <button class=\"refresh\" (click)=\"loadDeviceLst($event)\">Refresh</button>\n            </div>\n          </div>\n        </header>\n        <div style=\"width: 100%;\" class=\"flLeft\">\n\n          <ag-grid-angular style=\"width: 97%;height: 100%\" #agGrid class=\" ag-material\"\n                       [gridOptions]=\"deviceGridOptions\"\n                       [rowData]=\"deviceGridOptions.rowData\"\n                           [style.height.px]=\"deviceLstHeight\"\n                       (rowClicked) =\"loadVolumeInfo($event.node.data)\">\n          </ag-grid-angular>\n        </div>\n      </section>\n      <section class=\"datastore--volume flLeft\">\n        <header class=\"volume--header flLeft\">\n          <label class=\"header--label\">Volume Mapping</label>\n        </header>\n        <!--<div class=\"agGridWrapper flLeft\">-->\n        <div style=\"width:100%;\" class=\"flLeft\">\n          <ag-grid-angular style=\"width: 97%;height:100%\" #agGrid class=\" ag-material\"\n                       [gridOptions]=\"volumeGridOptions\"\n                       [rowData]=\"volumeGridOptions.rowData\"\n                           [style.height.px]=\"volumeLstHeight\"\n                       (cellClicked)=\"onDeviceLstCellClicked($event)\">\n          </ag-grid-angular>\n        </div>\n        <!--</div>-->\n      </section>\n    </tab>\n  </tabs>\n</section>\n<datacenterWizard-component (navToWizard)=\"navToWizard()\" (previousStep)=\"previousStep()\" (nextWizStep)=\"wizardNextStep()\" (closeDataStoreWizard)=\"closeDataStr(dataStrFlag)\" *ngIf=\"showDataStoreWizard\" id=\"data-center-wizard\"></datacenterWizard-component>\n<performanceDialog-component (dialogClose) = \"closePerformanceDialog($event)\" headerTxt=\"Performance Graph\" [data] = \"_tmpAreaChartData\" *ngIf=\"showPerformanceDialog\" height=\"400\" title=\"\"></performanceDialog-component>\n<connected-host (closeConnectedHost)=\"hideConnectedHost()\" *ngIf=\"showHostDialog\"></connected-host>\n\n"
 
 /***/ }),
 
 /***/ 466:
 /***/ (function(module, exports) {
 
-module.exports = "<header class=\"global--header flLeft\">\n  <label class=\"header--label\">System</label>\n</header>\n\n<section class=\"global--section flLeft\">\n  <section class=\"deviceLst\">\n    <header class=\"deviceLst--header flLeft\">\n      <div class=\"deviceLst--toolbar flLeft\">\n        <a class=\"deviceLst--add flLeft\" title=\"Add\"></a>\n        <a class=\"deviceLst--delete flLeft\" title=\"Delete\"></a>\n        <a class=\"deviceLst--refresh flLeft\" title=\"Refresh\" (click)=\"loadDeviceLst($event)\"></a>\n        <a class=\"deviceLst--edit flLeft\" title=\"Edit\"></a>\n      </div>\n      <label class=\"deviceLst--refreshTime flRight\">Last Refreshed on {{_timeStamp}}</label>\n    </header>\n    <section class=\"storageDeviceLst flLeft\">\n      <div class=\"grid--wrapper\">\n        <ag-grid-angular style=\"width: 100%;\" #agGrid class=\"ag-material\"\n                     [gridOptions]=\"deviceGridOptions\"\n                         [style.height.px]=\"deviceLstHeight\"\n                         [rowData]=\"deviceGridOptions.rowData\"\n                     (rowClicked)=\"loadDeviceInfo($event)\">\n        </ag-grid-angular>\n      </div>\n    </section>\n    <section class=\"detailedSummary flLeft\">\n      <tabs (onTabChange)=\"tabselectionChange($event)\">\n        <tab tabTitle=\"System\" class=\"System\">\n          <section class=\"systemInfo hide flLeft\">\n            <section class=\"systemSpec hide\">\n              <label class=\"systemSpec--ipAddress flLeft\"> Ip Address <span class=\"ipValue\">192.17.271.0</span></label>\n              <label class=\"systemSpec--upTime flLeft\"> Up Time<span class=\"ipValue\">Up since 1 Day 5 Hrs</span></label>\n              <label class=\"systemSpec--dataStore flLeft\"> 5 Datastores</label>\n              <section class=\"volumeCount flLeft\">\n                <label class=\"connectedVolumes flLeft\"> connected values : <span>6</span></label>\n                <label class=\"connectedGroup flLeft\"> connected volumeGroup : <span>2</span></label>\n              </section>\n            </section>\n            <!--<piechart-component height=\"300\" [data]=\"_tmpPieChartData\"></piechart-component>-->\n          </section>\n          <section class=\"performanceInfo hide flLeft\">\n            <select class=\"performanceInfo--timeFrame\" (change)='refreshAreaChart($event)'>\n              <option value=\"0.25\"> Last 15 Minutes</option>\n              <option value=\"1.00\"> Last 1 Hour</option>\n              <option value=\"24.0\"> Last 24 Hour</option>\n              <option value=\"10080\"> Last One week</option>\n            </select>\n            <areachart-component class=\"flLeft hide performanceInfo--areaChart\" height=\"250\" [data]=\"_tmpAreaChartData\"\n                                 title=\"Performance\"></areachart-component>\n            <multiBarChart-component class=\"flLeft  hide performanceInfo--barChart\" height=\"100\"\n                                     [data]=\"_tmpBarChart\"></multiBarChart-component>\n          </section>\n          <section class=\"volumeSummary\">\n            <section class=\"volumeLst hide flLeft\">\n              <label class=\"volumeLst--header\">Volumes List</label>\n              <ul class=\"volumeLst--ul\">\n                <li *ngFor=\"let volumeItem  of _volumeLst\" (click)=\"getVoumeItemSummary(volumeItem)\">\n                  <label>{{volumeItem.vol_name}}</label>\n                </li>\n              </ul>\n            </section>\n            <section class=\"volumeItemSummary flLeft\">\n              <ul>\n                <li class=\"flLeft volumeItemSummary--li\">\n                  <label class=\"key\">naa</label>\n                  <label class=\"value\">{{_volumeItemSummary.naa}}</label>\n                </li>\n                <li class=\"flLeft volumeItemSummary--li\">\n                  <label class=\"key\">HostName</label>\n                  <label class=\"value\">{{_volumeItemSummary.HostName}}</label>\n                </li>\n                <li class=\"flLeft volumeItemSummary--li\">\n                  <label class=\"key\">lunId</label>\n                  <label class=\"value\">{{_volumeItemSummary.lunId}}</label>\n                </li>\n                <li class=\"flLeft volumeItemSummary--li\">\n                  <label class=\"key\">extentType</label>\n                  <label class=\"value\">{{_volumeItemSummary.extentType}}</label>\n                </li>\n                <li class=\"flLeft volumeItemSummary--li\">\n                  <label class=\"key\">extentPath</label>\n                  <label class=\"value\">{{_volumeItemSummary.extentPath}}</label>\n                </li>\n                <li class=\"flLeft volumeItemSummary--li\">\n                  <label class=\"key\">VolumeName</label>\n                  <label class=\"value\">{{_volumeItemSummary.VolumeNames}}</label>\n                </li>\n                <li class=\"flLeft volumeItemSummary--li\">\n                  <label class=\"key\">type</label>\n                  <label class=\"value\">{{_volumeItemSummary.type}}</label>\n                </li>\n                <li class=\"flLeft volumeItemSummary--li\">\n                  <label class=\"key\">volMountpoint</label>\n                  <label class=\"value\">{{_volumeItemSummary.volMountpoint}}</label>\n                </li>\n                <li class=\"flLeft volumeItemSummary--li\">\n                  <label class=\"key\">volStatus</label>\n                  <label class=\"value\">{{_volumeItemSummary.volStatus}}</label>\n                </li>\n              </ul>\n            </section>\n            <section class=\"capacityGraph flLeft\">\n              <h3>Volume Capacity</h3>\n              <piechart-component height=\"300\" [data]=\"_volumeItemSummary.capacityGraphData\"></piechart-component>\n            </section>\n          </section>\n        </tab>\n        <tab tabTitle=\"Extents\" class=\"volExtents\">\n          <ag-grid-angular style=\"width: 100%;\" [style.height.px]=\"volExtentsHeight\" #agGrid class=\"ag-material\"\n                       [gridOptions]=\"extendGridOptions\"\n                       [rowData]=\"extendGridOptions.rowData\">\n          </ag-grid-angular>\n        </tab>\n        <tab tabTitle=\"Associated Targets\" class=\"extentTarget\">\n          <ag-grid-angular style=\"width: 100%;\" [style.height.px]=\"extentTargetHeight\"  #agGrid\n                       class=\"ag-material\"\n                       [gridOptions]=\"extentTargetGridOptions\"\n                       [rowData]=\"extentTargetGridOptions.rowData\">\n          </ag-grid-angular>\n        </tab>\n      </tabs>\n    </section>\n  </section>\n</section>\n<footer class=\"global--footer flLeft\"></footer>\n\n\n"
+module.exports = "<header class=\"global--header flLeft\">\n  <label class=\"header--label\">System</label>\n</header>\n\n<section class=\"global--section flLeft\">\n  <section class=\"deviceLst\">\n    <header class=\"deviceLst--header flLeft\">\n      <div class=\"deviceLst--toolbar flLeft\">\n        <!--<a class=\"deviceLst&#45;&#45;add flLeft\" title=\"Add\"></a>\n        <a class=\"deviceLst&#45;&#45;delete flLeft\" title=\"Delete\"></a>\n        <a class=\"deviceLst&#45;&#45;refresh flLeft\" title=\"Refresh\" (click)=\"loadDeviceLst($event)\"></a>\n        <a class=\"deviceLst&#45;&#45;edit flLeft\" title=\"Edit\"></a>-->\n      </div>\n      <label class=\"deviceLst--refreshTime flRight\">Last Refreshed on {{_timeStamp}}</label>\n    </header>\n    <section class=\"storageDeviceLst flLeft\">\n      <div class=\"grid--wrapper\">\n        <ag-grid-angular style=\"width: 100%;\" #agGrid class=\"ag-material\"\n                     [gridOptions]=\"deviceGridOptions\"\n                         [style.height.px]=\"deviceLstHeight\"\n                         [rowData]=\"deviceGridOptions.rowData\"\n                     (rowClicked)=\"loadDeviceInfo($event)\">\n        </ag-grid-angular>\n      </div>\n    </section>\n    <section class=\"detailedSummary flLeft\">\n      <tabs (onTabChange)=\"tabselectionChange($event)\">\n        <tab tabTitle=\"System\" class=\"System\">\n          <section class=\"systemInfo hide flLeft\">\n            <section class=\"systemSpec hide\">\n              <label class=\"systemSpec--ipAddress flLeft\"> Ip Address <span class=\"ipValue\">192.17.271.0</span></label>\n              <label class=\"systemSpec--upTime flLeft\"> Up Time<span class=\"ipValue\">Up since 1 Day 5 Hrs</span></label>\n              <label class=\"systemSpec--dataStore flLeft\"> 5 Datastores</label>\n              <section class=\"volumeCount flLeft\">\n                <label class=\"connectedVolumes flLeft\"> connected values : <span>6</span></label>\n                <label class=\"connectedGroup flLeft\"> connected volumeGroup : <span>2</span></label>\n              </section>\n            </section>\n            <!--<piechart-component height=\"300\" [data]=\"_tmpPieChartData\"></piechart-component>-->\n          </section>\n          <section class=\"performanceInfo hide flLeft\">\n            <select class=\"performanceInfo--timeFrame\" (change)='refreshAreaChart($event)'>\n              <option value=\"0.25\"> Last 15 Minutes</option>\n              <option value=\"1.00\"> Last 1 Hour</option>\n              <option value=\"24.0\"> Last 24 Hour</option>\n              <option value=\"10080\"> Last One week</option>\n            </select>\n            <areachart-component class=\"flLeft hide performanceInfo--areaChart\" height=\"250\" [data]=\"_tmpAreaChartData\"\n                                 title=\"Performance\"></areachart-component>\n            <multiBarChart-component class=\"flLeft  hide performanceInfo--barChart\" height=\"100\"\n                                     [data]=\"_tmpBarChart\"></multiBarChart-component>\n          </section>\n          <section class=\"volumeSummary\">\n            <section class=\"volumeLst hide flLeft\">\n              <label class=\"volumeLst--header\">Volumes List</label>\n              <ul class=\"volumeLst--ul\">\n                <li *ngFor=\"let volumeItem  of _volumeLst\" (click)=\"getVoumeItemSummary(volumeItem)\">\n                  <label>{{volumeItem.vol_name}}</label>\n                </li>\n              </ul>\n            </section>\n            <section class=\"volumeItemSummary flLeft\">\n              <ul>\n                <li class=\"flLeft volumeItemSummary--li\">\n                  <label class=\"key\">naa</label>\n                  <label class=\"value\">{{_volumeItemSummary.naa}}</label>\n                </li>\n                <li class=\"flLeft volumeItemSummary--li\">\n                  <label class=\"key\">HostName</label>\n                  <label class=\"value\">{{_volumeItemSummary.HostName}}</label>\n                </li>\n                <li class=\"flLeft volumeItemSummary--li\">\n                  <label class=\"key\">lunId</label>\n                  <label class=\"value\">{{_volumeItemSummary.lunId}}</label>\n                </li>\n                <li class=\"flLeft volumeItemSummary--li\">\n                  <label class=\"key\">extentType</label>\n                  <label class=\"value\">{{_volumeItemSummary.extentType}}</label>\n                </li>\n                <li class=\"flLeft volumeItemSummary--li\">\n                  <label class=\"key\">extentPath</label>\n                  <label class=\"value\">{{_volumeItemSummary.extentPath}}</label>\n                </li>\n                <li class=\"flLeft volumeItemSummary--li\">\n                  <label class=\"key\">VolumeName</label>\n                  <label class=\"value\">{{_volumeItemSummary.VolumeNames}}</label>\n                </li>\n                <li class=\"flLeft volumeItemSummary--li\">\n                  <label class=\"key\">type</label>\n                  <label class=\"value\">{{_volumeItemSummary.type}}</label>\n                </li>\n                <li class=\"flLeft volumeItemSummary--li\">\n                  <label class=\"key\">volMountpoint</label>\n                  <label class=\"value\">{{_volumeItemSummary.volMountpoint}}</label>\n                </li>\n                <li class=\"flLeft volumeItemSummary--li\">\n                  <label class=\"key\">volStatus</label>\n                  <label class=\"value\">{{_volumeItemSummary.volStatus}}</label>\n                </li>\n              </ul>\n            </section>\n            <section class=\"capacityGraph flLeft\">\n              <h3>Volume Capacity</h3>\n              <piechart-component height=\"300\" [data]=\"_volumeItemSummary.capacityGraphData\"></piechart-component>\n            </section>\n          </section>\n        </tab>\n        <tab tabTitle=\"Extents\" class=\"volExtents\">\n          <ag-grid-angular style=\"width: 100%;\" [style.height.px]=\"volExtentsHeight\" #agGrid class=\"ag-material\"\n                       [gridOptions]=\"extendGridOptions\"\n                       [rowData]=\"extendGridOptions.rowData\">\n          </ag-grid-angular>\n        </tab>\n        <tab tabTitle=\"Associated Targets\" class=\"extentTarget\">\n          <ag-grid-angular style=\"width: 100%;\" [style.height.px]=\"extentTargetHeight\"  #agGrid\n                       class=\"ag-material\"\n                       [gridOptions]=\"extentTargetGridOptions\"\n                       [rowData]=\"extentTargetGridOptions.rowData\">\n          </ag-grid-angular>\n        </tab>\n      </tabs>\n    </section>\n  </section>\n</section>\n<footer class=\"global--footer flLeft\"></footer>\n\n\n"
 
 /***/ }),
 
 /***/ 467:
 /***/ (function(module, exports) {
 
-module.exports = "<section class=\"dataCenterView\">\n  <tabs>\n    <tab tabTitle=\"Provisioning\" class=\"datacenter--provision\">\n      <section class=\"host--system flLeft\">\n        <header class=\"system--header flLeft\">\n          <div>\n            <label class=\"header--label\">Systems</label>\n          </div>\n          <div style=\"width:100%\">\n            <!--<div style=\"width:40%\" class=\"flLeft\">-->\n              <!--<button>Add Data Store</button>-->\n            <!--</div>-->\n            <div class=\"flRight deviceLst--refreshPanel\">\n                <label class=\"deviceLst--refreshTime flLeft\">{{_timeStamp}}</label>\n                <button class=\"refresh\" (click)=\"loadDeviceLst($event)\">Refresh</button>\n            </div>\n          </div>\n        </header>\n        <div style=\"width: 100%;height: 200px;\" class=\"flLeft\">\n          <ag-grid-angular style=\"width: 80%;height: 100%;\" #agGrid class=\"\"\n                       [gridOptions]=\"deviceGridOptions\"\n                       [rowData]=\"deviceGridOptions.rowData\"\n                       (rowClicked) =\"loadVolumeInfo($event.node.data)\"\n                           [style.height.px]=\"deviceLstHeight\"\n                       (cellClicked)=\"onDeviceLstCellClicked($event)\">\n          </ag-grid-angular>\n        </div>\n      </section>\n      <section class=\"host--volume flLeft\">\n        <header class=\"volume--header flLeft\">\n          <label class=\"header--label\">Volume Mapping</label>\n        </header>\n        <div style=\"width:100%;height: 200px;\" class=\"flLeft\">\n          <ag-grid-angular style=\"width: 80%;height: 100%;\" #agGrid class=\"\"\n                       [gridOptions]=\"volumeGridOptions\"\n                       [rowData]=\"volumeGridOptions.rowData\"\n                           [style.height.px]=\"volumeLstHeight\"\n                       (cellClicked)=\"onDeviceLstCellClicked($event)\">\n          </ag-grid-angular>\n        </div>\n      </section>\n    </tab>\n  </tabs>\n</section>\n<performanceDialog-component [data]=\"_tmpAreaChartData\" (dialogClose) = \"closePerformanceDialog($event)\" headerTxt=\"Performance Graph\" *ngIf=\"showPerformanceDialog\" height=\"400\" title=\"\"></performanceDialog-component>\n<connected-host (closeConnectedHost)=\"hideConnectedHost()\" *ngIf=\"showHostDialog\"></connected-host>\n"
+module.exports = "<section class=\"dataCenterView\">\n  <tabs>\n    <tab tabTitle=\"Provisioning\" class=\"datacenter--provision\">\n      <section class=\"host--system flLeft\">\n        <header class=\"system--header flLeft\">\n          <div>\n            <label class=\"header--label\">Systems</label>\n          </div>\n          <div style=\"width:100%\">\n            <div style=\"width:40%\" class=\"flLeft\">\n              <span>&nbsp;</span>\n            </div>\n            <div style=\"width:50%;text-align: right\" class=\"flLeft\">\n              <label class=\"deviceLst--refreshTime\">{{_timeStamp}}</label>\n            </div>\n            <div style=\"width:10%;text-align: right\" class=\"flLeft\">\n                <button class=\"refresh\" (click)=\"loadDeviceLst($event)\">Refresh</button>\n            </div>\n          </div>\n        </header>\n        <div style=\"width: 100%;height: 200px;\" class=\"flLeft\">\n          <ag-grid-angular style=\"width: 97%;height: 100%;\" #agGrid class=\"\"\n                       [gridOptions]=\"deviceGridOptions\"\n                       [rowData]=\"deviceGridOptions.rowData\"\n                       (rowClicked) =\"loadVolumeInfo($event.node.data)\"\n                           [style.height.px]=\"deviceLstHeight\"\n                       (cellClicked)=\"onDeviceLstCellClicked($event)\">\n          </ag-grid-angular>\n        </div>\n      </section>\n      <section class=\"host--volume flLeft\">\n        <header class=\"volume--header flLeft\">\n          <label class=\"header--label\">Volume Mapping</label>\n        </header>\n        <div style=\"width:100%;height: 200px;\" class=\"flLeft\">\n          <ag-grid-angular style=\"width: 97%;height: 100%;\" #agGrid class=\"\"\n                       [gridOptions]=\"volumeGridOptions\"\n                       [rowData]=\"volumeGridOptions.rowData\"\n                           [style.height.px]=\"volumeLstHeight\"\n                       (cellClicked)=\"onDeviceLstCellClicked($event)\">\n          </ag-grid-angular>\n        </div>\n      </section>\n    </tab>\n  </tabs>\n</section>\n<performanceDialog-component [data]=\"_tmpAreaChartData\" (dialogClose) = \"closePerformanceDialog($event)\" headerTxt=\"Performance Graph\" *ngIf=\"showPerformanceDialog\" height=\"400\" title=\"\"></performanceDialog-component>\n<connected-host (closeConnectedHost)=\"hideConnectedHost()\" *ngIf=\"showHostDialog\"></connected-host>\n"
 
 /***/ }),
 
@@ -4666,6 +4674,49 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgEAYAAAAj
 
 module.exports = __webpack_require__(302);
 
+
+/***/ }),
+
+/***/ 734:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(3);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DateUtil; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var DateUtil = (function () {
+    function DateUtil() {
+    }
+    //This can be improved by passing format type
+    // and returning date to that respective format
+    DateUtil.prototype.getCurrentDateAndTime = function () {
+        var date = new Date(), month = '' + (date.getMonth() + 1), day = '' + date.getDate(), year = date.getFullYear(), hours = '' + date.getHours(), minutes = '' + date.getMinutes();
+        if (month.length < 2)
+            month = '0' + month;
+        if (day.length < 2)
+            day = '0' + day;
+        if (hours.length < 2)
+            hours = '0' + hours;
+        if (minutes.length < 2)
+            minutes = '0' + minutes;
+        return [day, month, year].join('-') + ',' + [hours, minutes].join(':');
+    };
+    DateUtil = __decorate([
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(), 
+        __metadata('design:paramtypes', [])
+    ], DateUtil);
+    return DateUtil;
+}());
+//# sourceMappingURL=D:/workspace/VCP-UI/src/date-util.service.js.map
 
 /***/ }),
 
@@ -5059,6 +5110,7 @@ var DataCenterWizardComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_index__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__(25);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__models_index__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_date_util_service__ = __webpack_require__(734);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DATACENTERComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -5074,12 +5126,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var DATACENTERComponent = (function () {
-    function DATACENTERComponent(auth, service, router) {
+    function DATACENTERComponent(auth, service, router, dateUtil) {
         this.auth = auth;
         this.service = service;
         this.router = router;
-        this._timeStamp = new Date();
+        this.dateUtil = dateUtil;
+        this._timeStamp = '';
         this.showDialog = false;
         this.showDataStoreWizard = false;
         this.showHostDialog = false;
@@ -5110,6 +5164,7 @@ var DATACENTERComponent = (function () {
     DATACENTERComponent.prototype.ngOnInit = function () {
         var _this = this;
         console.log(this);
+        this._timeStamp = this.dateUtil.getCurrentDateAndTime();
         this.deviceGridOptions = {
             columnDefs: __WEBPACK_IMPORTED_MODULE_1__datacenter_component_config__["a" /* deviceColumnDefs */],
             rowData: null,
@@ -5175,12 +5230,12 @@ var DATACENTERComponent = (function () {
             selector: 'datacenter-component',
             styles: [__webpack_require__(445)],
             template: __webpack_require__(464),
-            providers: [__WEBPACK_IMPORTED_MODULE_2__services_index__["c" /* DataCenterService */]]
+            providers: [__WEBPACK_IMPORTED_MODULE_2__services_index__["c" /* DataCenterService */], __WEBPACK_IMPORTED_MODULE_5__services_date_util_service__["a" /* DateUtil */]]
         }), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_index__["b" /* AuthenticationService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__services_index__["b" /* AuthenticationService */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_index__["c" /* DataCenterService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__services_index__["c" /* DataCenterService */]) === 'function' && _b) || Object, (typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* Router */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* Router */]) === 'function' && _c) || Object])
+        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_index__["b" /* AuthenticationService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__services_index__["b" /* AuthenticationService */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_index__["c" /* DataCenterService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__services_index__["c" /* DataCenterService */]) === 'function' && _b) || Object, (typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* Router */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* Router */]) === 'function' && _c) || Object, (typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_5__services_date_util_service__["a" /* DateUtil */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_5__services_date_util_service__["a" /* DateUtil */]) === 'function' && _d) || Object])
     ], DATACENTERComponent);
     return DATACENTERComponent;
-    var _a, _b, _c;
+    var _a, _b, _c, _d;
 }());
 //# sourceMappingURL=D:/workspace/VCP-UI/src/datacenter.components.js.map
 
@@ -5194,6 +5249,7 @@ var DATACENTERComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__host_component_config__ = __webpack_require__(348);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_index__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_index__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_date_util_service__ = __webpack_require__(734);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HOSTComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -5208,11 +5264,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var HOSTComponent = (function () {
-    function HOSTComponent(auth, service) {
+    function HOSTComponent(auth, service, dateUtil) {
         this.auth = auth;
         this.service = service;
-        this._timeStamp = new Date();
+        this.dateUtil = dateUtil;
+        this._timeStamp = '';
         this.showHostDialog = false;
         this.showPerformanceDialog = false;
         this._tmpAreaChartData = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__models_index__["_tmpMultiAreaChartDatafn"])();
@@ -5236,6 +5294,7 @@ var HOSTComponent = (function () {
     };
     HOSTComponent.prototype.ngOnInit = function () {
         var _this = this;
+        this._timeStamp = this.dateUtil.getCurrentDateAndTime();
         console.log(decodeURIComponent(window['WEB_PLATFORM'].getObjectId()));
         this.deviceGridOptions = {
             columnDefs: __WEBPACK_IMPORTED_MODULE_1__host_component_config__["a" /* deviceColumnDefs */],
@@ -5299,12 +5358,12 @@ var HOSTComponent = (function () {
             selector: 'host-component',
             styles: [__webpack_require__(448)],
             template: __webpack_require__(467),
-            providers: [__WEBPACK_IMPORTED_MODULE_2__services_index__["c" /* DataCenterService */]]
+            providers: [__WEBPACK_IMPORTED_MODULE_2__services_index__["c" /* DataCenterService */], __WEBPACK_IMPORTED_MODULE_4__services_date_util_service__["a" /* DateUtil */]]
         }), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_index__["b" /* AuthenticationService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__services_index__["b" /* AuthenticationService */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_index__["c" /* DataCenterService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__services_index__["c" /* DataCenterService */]) === 'function' && _b) || Object])
+        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_index__["b" /* AuthenticationService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__services_index__["b" /* AuthenticationService */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_index__["c" /* DataCenterService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__services_index__["c" /* DataCenterService */]) === 'function' && _b) || Object, (typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__services_date_util_service__["a" /* DateUtil */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_4__services_date_util_service__["a" /* DateUtil */]) === 'function' && _c) || Object])
     ], HOSTComponent);
     return HOSTComponent;
-    var _a, _b;
+    var _a, _b, _c;
 }());
 //# sourceMappingURL=D:/workspace/VCP-UI/src/host.components.js.map
 
