@@ -190,7 +190,7 @@ var ProgressIndicator = (function () {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__global_components__ = __webpack_require__(292);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__global_components__ = __webpack_require__(293);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ag_grid_angular_main__ = __webpack_require__(112);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ag_grid_angular_main___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_ag_grid_angular_main__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shared_module_shared_module__ = __webpack_require__(95);
@@ -491,7 +491,7 @@ var DataCenterWizardComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_index__ = __webpack_require__(77);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__models_index__ = __webpack_require__(111);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_date_util_service__ = __webpack_require__(293);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_date_util_service__ = __webpack_require__(206);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DATACENTERComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -630,6 +630,7 @@ var DATACENTERComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__host_component_config__ = __webpack_require__(681);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_index__ = __webpack_require__(77);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_index__ = __webpack_require__(111);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_date_util_service__ = __webpack_require__(206);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HOSTComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -644,11 +645,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var HOSTComponent = (function () {
-    function HOSTComponent(auth, service) {
+    function HOSTComponent(auth, service, dateUtil) {
         this.auth = auth;
         this.service = service;
-        this._timeStamp = new Date();
+        this.dateUtil = dateUtil;
+        this._timeStamp = '';
         this.showHostDialog = false;
         this.showPerformanceDialog = false;
         this._tmpAreaChartData = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__models_index__["_tmpMultiAreaChartDatafn"])();
@@ -672,6 +675,7 @@ var HOSTComponent = (function () {
     };
     HOSTComponent.prototype.ngOnInit = function () {
         var _this = this;
+        this._timeStamp = this.dateUtil.getCurrentDateAndTime();
         console.log(decodeURIComponent(window['WEB_PLATFORM'].getObjectId()));
         this.deviceGridOptions = {
             columnDefs: __WEBPACK_IMPORTED_MODULE_1__host_component_config__["a" /* deviceColumnDefs */],
@@ -735,12 +739,12 @@ var HOSTComponent = (function () {
             selector: 'host-component',
             styles: [__webpack_require__(780)],
             template: __webpack_require__(800),
-            providers: [__WEBPACK_IMPORTED_MODULE_2__services_index__["c" /* DataCenterService */]]
+            providers: [__WEBPACK_IMPORTED_MODULE_2__services_index__["c" /* DataCenterService */], __WEBPACK_IMPORTED_MODULE_4__services_date_util_service__["a" /* DateUtil */]]
         }), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_index__["b" /* AuthenticationService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__services_index__["b" /* AuthenticationService */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_index__["c" /* DataCenterService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__services_index__["c" /* DataCenterService */]) === 'function' && _b) || Object])
+        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_index__["b" /* AuthenticationService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__services_index__["b" /* AuthenticationService */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_index__["c" /* DataCenterService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__services_index__["c" /* DataCenterService */]) === 'function' && _b) || Object, (typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__services_date_util_service__["a" /* DateUtil */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_4__services_date_util_service__["a" /* DateUtil */]) === 'function' && _c) || Object])
     ], HOSTComponent);
     return HOSTComponent;
-    var _a, _b;
+    var _a, _b, _c;
 }());
 //# sourceMappingURL=D:/Tintri/POC_06_06_2017_Angular/VCP-UI/src/host.components.js.map
 
@@ -757,7 +761,7 @@ var HOSTComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_catch__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Rx__ = __webpack_require__(121);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_Rx__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__get_service__ = __webpack_require__(206);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__get_service__ = __webpack_require__(207);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DataCenterService; });
 /**
  * Created by Dominic on 3/1/2017.
@@ -810,6 +814,49 @@ var DataCenterService = (function (_super) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DateUtil; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var DateUtil = (function () {
+    function DateUtil() {
+    }
+    //This can be improved by passing format type
+    // and returning date to that respective format
+    DateUtil.prototype.getCurrentDateAndTime = function () {
+        var date = new Date(), month = '' + (date.getMonth() + 1), day = '' + date.getDate(), year = date.getFullYear(), hours = '' + date.getHours(), minutes = '' + date.getMinutes();
+        if (month.length < 2)
+            month = '0' + month;
+        if (day.length < 2)
+            day = '0' + day;
+        if (hours.length < 2)
+            hours = '0' + hours;
+        if (minutes.length < 2)
+            minutes = '0' + minutes;
+        return [day, month, year].join('-') + ',' + [hours, minutes].join(':');
+    };
+    DateUtil = __decorate([
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(), 
+        __metadata('design:paramtypes', [])
+    ], DateUtil);
+    return DateUtil;
+}());
+//# sourceMappingURL=D:/Tintri/POC_06_06_2017_Angular/VCP-UI/src/date-util.service.js.map
+
+/***/ }),
+
+/***/ 207:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(141);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__ = __webpack_require__(121);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__);
@@ -852,7 +899,7 @@ var GetReq = (function () {
 
 /***/ }),
 
-/***/ 291:
+/***/ 292:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -861,7 +908,7 @@ var GetReq = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_index__ = __webpack_require__(77);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__models_index__ = __webpack_require__(111);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_date_util_service__ = __webpack_require__(293);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_date_util_service__ = __webpack_require__(206);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CLUSTERComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -973,7 +1020,7 @@ var CLUSTERComponent = (function () {
 
 /***/ }),
 
-/***/ 292:
+/***/ 293:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1134,49 +1181,6 @@ var GLOBALComponent = (function () {
     var _a, _b, _c;
 }());
 //# sourceMappingURL=D:/Tintri/POC_06_06_2017_Angular/VCP-UI/src/global.components.js.map
-
-/***/ }),
-
-/***/ 293:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DateUtil; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var DateUtil = (function () {
-    function DateUtil() {
-    }
-    //This can be improved by passing format type
-    // and returning date to that respective format
-    DateUtil.prototype.getCurrentDateAndTime = function () {
-        var date = new Date(), month = '' + (date.getMonth() + 1), day = '' + date.getDate(), year = date.getFullYear(), hours = '' + date.getHours(), minutes = '' + date.getMinutes();
-        if (month.length < 2)
-            month = '0' + month;
-        if (day.length < 2)
-            day = '0' + day;
-        if (hours.length < 2)
-            hours = '0' + hours;
-        if (minutes.length < 2)
-            minutes = '0' + minutes;
-        return [day, month, year].join('-') + ',' + [hours, minutes].join(':');
-    };
-    DateUtil = __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(), 
-        __metadata('design:paramtypes', [])
-    ], DateUtil);
-    return DateUtil;
-}());
-//# sourceMappingURL=D:/Tintri/POC_06_06_2017_Angular/VCP-UI/src/date-util.service.js.map
 
 /***/ }),
 
@@ -2065,7 +2069,7 @@ var DataCenterModule = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__datastore_component_config__ = __webpack_require__(677);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_index__ = __webpack_require__(77);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_index__ = __webpack_require__(111);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_date_util_service__ = __webpack_require__(293);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_date_util_service__ = __webpack_require__(206);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DATASTOREComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2283,7 +2287,7 @@ var DataStoreModule = (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__global_components__ = __webpack_require__(292);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__global_components__ = __webpack_require__(293);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__global_components__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__global_routing_module__ = __webpack_require__(678);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_1__global_routing_module__["a"]; });
@@ -3760,7 +3764,7 @@ var _tmpMultiBarChartDatafn = function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(55);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__cluster_components__ = __webpack_require__(291);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__cluster_components__ = __webpack_require__(292);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__ = __webpack_require__(36);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ClusterRoutingModule; });
 /**
@@ -3861,7 +3865,7 @@ var volumeColumnDefs = [
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__cluster_components__ = __webpack_require__(291);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__cluster_components__ = __webpack_require__(292);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__cluster_components__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__cluster_routing_module__ = __webpack_require__(670);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_1__cluster_routing_module__["a"]; });
@@ -4341,11 +4345,11 @@ var volumeColumnDefs = [
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__datacenter_datacenter_components__ = __webpack_require__(203);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__datacenter_datacenter_components__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__cluster_cluster_components__ = __webpack_require__(291);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__cluster_cluster_components__ = __webpack_require__(292);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_1__cluster_cluster_components__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__datastore_datastore_components__ = __webpack_require__(441);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_2__datastore_datastore_components__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__global_global_components__ = __webpack_require__(292);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__global_global_components__ = __webpack_require__(293);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_3__global_global_components__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__host_host_components__ = __webpack_require__(204);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_4__host_host_components__["a"]; });
@@ -4635,7 +4639,7 @@ var AuthenticationService = (function (_super) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__ = __webpack_require__(64);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__get_service__ = __webpack_require__(206);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__get_service__ = __webpack_require__(207);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch__ = __webpack_require__(158);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_Rx__ = __webpack_require__(121);
@@ -4699,7 +4703,7 @@ var ClusterService = (function (_super) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_catch__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Rx__ = __webpack_require__(121);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_Rx__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__get_service__ = __webpack_require__(206);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__get_service__ = __webpack_require__(207);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DataStoreWizardService; });
 /**
  * Created by Dominic on 5/3/2017.
@@ -4767,7 +4771,7 @@ var DataStoreWizardService = (function (_super) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_catch__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Rx__ = __webpack_require__(121);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_Rx__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__get_service__ = __webpack_require__(206);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__get_service__ = __webpack_require__(207);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GlobalService; });
 /**
  * Created by Dominic on 3/1/2017.
@@ -5340,7 +5344,7 @@ module.exports = "<header class=\"global--header flLeft\">\r\n  <label class=\"h
 /***/ 800:
 /***/ (function(module, exports) {
 
-module.exports = "<section class=\"dataCenterView\">\r\n  <tabs>\r\n    <tab tabTitle=\"Provisioning\" class=\"datacenter--provision\">\r\n      <section class=\"host--system flLeft\">\r\n        <header class=\"system--header flLeft\">\r\n          <div>\r\n            <label class=\"header--label\">Systems</label>\r\n          </div>\r\n          <div style=\"width:100%\">\r\n            <!--<div style=\"width:40%\" class=\"flLeft\">-->\r\n              <!--<button>Add Data Store</button>-->\r\n            <!--</div>-->\r\n            <div class=\"flRight deviceLst--refreshPanel\">\r\n                <label class=\"deviceLst--refreshTime flLeft\">{{_timeStamp}}</label>\r\n                <button class=\"refresh\" (click)=\"loadDeviceLst($event)\">Refresh</button>\r\n            </div>\r\n          </div>\r\n        </header>\r\n        <div style=\"width: 100%;height: 200px;\" class=\"flLeft\">\r\n          <ag-grid-angular style=\"width: 80%;height: 100%;\" #agGrid class=\"\"\r\n                       [gridOptions]=\"deviceGridOptions\"\r\n                       [rowData]=\"deviceGridOptions.rowData\"\r\n                       (rowClicked) =\"loadVolumeInfo($event.node.data)\"\r\n                           [style.height.px]=\"deviceLstHeight\"\r\n                       (cellClicked)=\"onDeviceLstCellClicked($event)\">\r\n          </ag-grid-angular>\r\n        </div>\r\n      </section>\r\n      <section class=\"host--volume flLeft\">\r\n        <header class=\"volume--header flLeft\">\r\n          <label class=\"header--label\">Volume Mapping</label>\r\n        </header>\r\n        <div style=\"width:100%;height: 200px;\" class=\"flLeft\">\r\n          <ag-grid-angular style=\"width: 80%;height: 100%;\" #agGrid class=\"\"\r\n                       [gridOptions]=\"volumeGridOptions\"\r\n                       [rowData]=\"volumeGridOptions.rowData\"\r\n                           [style.height.px]=\"volumeLstHeight\"\r\n                       (cellClicked)=\"onDeviceLstCellClicked($event)\">\r\n          </ag-grid-angular>\r\n        </div>\r\n      </section>\r\n    </tab>\r\n  </tabs>\r\n</section>\r\n<performanceDialog-component [data]=\"_tmpAreaChartData\" (dialogClose) = \"closePerformanceDialog($event)\" headerTxt=\"Performance Graph\" *ngIf=\"showPerformanceDialog\" height=\"400\" title=\"\"></performanceDialog-component>\r\n<connected-host (closeConnectedHost)=\"hideConnectedHost()\" *ngIf=\"showHostDialog\"></connected-host>\r\n"
+module.exports = "<section class=\"dataCenterView\">\r\n  <tabs>\r\n    <tab tabTitle=\"Provisioning\" class=\"datacenter--provision\">\r\n      <section class=\"host--system flLeft\">\r\n        <header class=\"system--header flLeft\">\r\n          <div>\r\n            <label class=\"header--label\">Systems</label>\r\n          </div>\r\n          <div style=\"width:100%\">\r\n            <div style=\"width:40%\" class=\"flLeft\">\r\n              <!--<button>Add Data Store</button>-->\r\n            </div>\r\n            <div style=\"width:50%;text-align: right\" class=\"flLeft\">\r\n              <label class=\"deviceLst--refreshTime flLeft\">{{_timeStamp}}</label>\r\n            </div>\r\n            <div style=\"width:10%;text-align: right\" class=\"flLeft\">\r\n                <button class=\"refresh\" (click)=\"loadDeviceLst($event)\">Refresh</button>\r\n            </div>\r\n          </div>\r\n        </header>\r\n        <div style=\"width: 100%;height: 200px;\" class=\"flLeft\">\r\n          <ag-grid-angular style=\"width: 97%;height: 100%;\" #agGrid class=\"\"\r\n                       [gridOptions]=\"deviceGridOptions\"\r\n                       [rowData]=\"deviceGridOptions.rowData\"\r\n                       (rowClicked) =\"loadVolumeInfo($event.node.data)\"\r\n                           [style.height.px]=\"deviceLstHeight\"\r\n                       (cellClicked)=\"onDeviceLstCellClicked($event)\">\r\n          </ag-grid-angular>\r\n        </div>\r\n      </section>\r\n      <section class=\"host--volume flLeft\">\r\n        <header class=\"volume--header flLeft\">\r\n          <label class=\"header--label\">Volume Mapping</label>\r\n        </header>\r\n        <div style=\"width:100%;height: 200px;\" class=\"flLeft\">\r\n          <ag-grid-angular style=\"width: 97%;height: 100%;\" #agGrid class=\"\"\r\n                       [gridOptions]=\"volumeGridOptions\"\r\n                       [rowData]=\"volumeGridOptions.rowData\"\r\n                           [style.height.px]=\"volumeLstHeight\"\r\n                       (cellClicked)=\"onDeviceLstCellClicked($event)\">\r\n          </ag-grid-angular>\r\n        </div>\r\n      </section>\r\n    </tab>\r\n  </tabs>\r\n</section>\r\n<performanceDialog-component [data]=\"_tmpAreaChartData\" (dialogClose) = \"closePerformanceDialog($event)\" headerTxt=\"Performance Graph\" *ngIf=\"showPerformanceDialog\" height=\"400\" title=\"\"></performanceDialog-component>\r\n<connected-host (closeConnectedHost)=\"hideConnectedHost()\" *ngIf=\"showHostDialog\"></connected-host>\r\n"
 
 /***/ }),
 
