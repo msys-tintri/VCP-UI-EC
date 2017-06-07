@@ -241,7 +241,50 @@ var GLOBALModule = (function () {
 
 /***/ }),
 
-/***/ 202:
+/***/ 148:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DateUtil; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var DateUtil = (function () {
+    function DateUtil() {
+    }
+    //This can be improved by passing format type
+    // and returning date to that respective format
+    DateUtil.prototype.getCurrentDateAndTime = function () {
+        var date = new Date(), month = '' + (date.getMonth() + 1), day = '' + date.getDate(), year = date.getFullYear(), hours = '' + date.getHours(), minutes = '' + date.getMinutes();
+        if (month.length < 2)
+            month = '0' + month;
+        if (day.length < 2)
+            day = '0' + day;
+        if (hours.length < 2)
+            hours = '0' + hours;
+        if (minutes.length < 2)
+            minutes = '0' + minutes;
+        return [day, month, year].join('-') + ',' + [hours, minutes].join(':');
+    };
+    DateUtil = __decorate([
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(), 
+        __metadata('design:paramtypes', [])
+    ], DateUtil);
+    return DateUtil;
+}());
+//# sourceMappingURL=D:/Tintri/POC_06_06_2017_Angular/VCP-UI/src/date-util.service.js.map
+
+/***/ }),
+
+/***/ 203:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -482,7 +525,7 @@ var DataCenterWizardComponent = (function () {
 
 /***/ }),
 
-/***/ 203:
+/***/ 204:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -491,7 +534,7 @@ var DataCenterWizardComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_index__ = __webpack_require__(77);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__models_index__ = __webpack_require__(111);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_date_util_service__ = __webpack_require__(206);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_date_util_service__ = __webpack_require__(148);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DATACENTERComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -622,7 +665,7 @@ var DATACENTERComponent = (function () {
 
 /***/ }),
 
-/***/ 204:
+/***/ 205:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -630,7 +673,7 @@ var DATACENTERComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__host_component_config__ = __webpack_require__(681);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_index__ = __webpack_require__(77);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_index__ = __webpack_require__(111);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_date_util_service__ = __webpack_require__(206);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_date_util_service__ = __webpack_require__(148);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HOSTComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -750,14 +793,14 @@ var HOSTComponent = (function () {
 
 /***/ }),
 
-/***/ 205:
+/***/ 206:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__ = __webpack_require__(64);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_catch__ = __webpack_require__(158);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_catch__ = __webpack_require__(159);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_catch__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Rx__ = __webpack_require__(121);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_Rx__);
@@ -806,49 +849,6 @@ var DataCenterService = (function (_super) {
     return DataCenterService;
 }(__WEBPACK_IMPORTED_MODULE_4__get_service__["a" /* GetReq */]));
 //# sourceMappingURL=D:/Tintri/POC_06_06_2017_Angular/VCP-UI/src/datacenter.service.js.map
-
-/***/ }),
-
-/***/ 206:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DateUtil; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var DateUtil = (function () {
-    function DateUtil() {
-    }
-    //This can be improved by passing format type
-    // and returning date to that respective format
-    DateUtil.prototype.getCurrentDateAndTime = function () {
-        var date = new Date(), month = '' + (date.getMonth() + 1), day = '' + date.getDate(), year = date.getFullYear(), hours = '' + date.getHours(), minutes = '' + date.getMinutes();
-        if (month.length < 2)
-            month = '0' + month;
-        if (day.length < 2)
-            day = '0' + day;
-        if (hours.length < 2)
-            hours = '0' + hours;
-        if (minutes.length < 2)
-            minutes = '0' + minutes;
-        return [day, month, year].join('-') + ',' + [hours, minutes].join(':');
-    };
-    DateUtil = __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(), 
-        __metadata('design:paramtypes', [])
-    ], DateUtil);
-    return DateUtil;
-}());
-//# sourceMappingURL=D:/Tintri/POC_06_06_2017_Angular/VCP-UI/src/date-util.service.js.map
 
 /***/ }),
 
@@ -908,7 +908,7 @@ var GetReq = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_index__ = __webpack_require__(77);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__models_index__ = __webpack_require__(111);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_date_util_service__ = __webpack_require__(206);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_date_util_service__ = __webpack_require__(148);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CLUSTERComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1028,6 +1028,7 @@ var CLUSTERComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__global_component_config__ = __webpack_require__(679);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_index__ = __webpack_require__(77);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_index__ = __webpack_require__(111);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_date_util_service__ = __webpack_require__(148);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GLOBALComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1042,12 +1043,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var GLOBALComponent = (function () {
-    function GLOBALComponent(auth, service, loaderService) {
+    function GLOBALComponent(auth, service, loaderService, dateUtil) {
         this.auth = auth;
         this.service = service;
         this.loaderService = loaderService;
+        this.dateUtil = dateUtil;
         this.filteredData = [];
+        this.__timeStamp = '';
         this.volExtentsHeight = 250;
         this.extentTargetHeight = 250;
         this.deviceLstHeight = 250;
@@ -1056,6 +1060,7 @@ var GLOBALComponent = (function () {
     }
     GLOBALComponent.prototype.ngOnInit = function () {
         var _this = this;
+        this.__timeStamp = this.dateUtil.getCurrentDateAndTime();
         this.deviceGridOptions = {
             columnDefs: __WEBPACK_IMPORTED_MODULE_1__global_component_config__["a" /* deviceLstColumnDefs */],
             rowData: null,
@@ -1173,12 +1178,12 @@ var GLOBALComponent = (function () {
             selector: 'global-component',
             template: __webpack_require__(799),
             styles: [__webpack_require__(779)],
-            providers: [__WEBPACK_IMPORTED_MODULE_2__services_index__["d" /* GlobalService */]],
+            providers: [__WEBPACK_IMPORTED_MODULE_2__services_index__["d" /* GlobalService */], __WEBPACK_IMPORTED_MODULE_4__services_date_util_service__["a" /* DateUtil */]],
         }), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_index__["b" /* AuthenticationService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__services_index__["b" /* AuthenticationService */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_index__["d" /* GlobalService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__services_index__["d" /* GlobalService */]) === 'function' && _b) || Object, (typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_index__["a" /* LoaderService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__services_index__["a" /* LoaderService */]) === 'function' && _c) || Object])
+        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_index__["b" /* AuthenticationService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__services_index__["b" /* AuthenticationService */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_index__["d" /* GlobalService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__services_index__["d" /* GlobalService */]) === 'function' && _b) || Object, (typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_index__["a" /* LoaderService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__services_index__["a" /* LoaderService */]) === 'function' && _c) || Object, (typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__services_date_util_service__["a" /* DateUtil */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_4__services_date_util_service__["a" /* DateUtil */]) === 'function' && _d) || Object])
     ], GLOBALComponent);
     return GLOBALComponent;
-    var _a, _b, _c;
+    var _a, _b, _c, _d;
 }());
 //# sourceMappingURL=D:/Tintri/POC_06_06_2017_Angular/VCP-UI/src/global.components.js.map
 
@@ -1847,7 +1852,7 @@ var AppHeader = (function () {
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_7__MultiBarChart_multiBarChart_component__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__PerformanceGraphDialog_performanceChartDialog_component__ = __webpack_require__(655);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "h", function() { return __WEBPACK_IMPORTED_MODULE_8__PerformanceGraphDialog_performanceChartDialog_component__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__DataCenterWizard_datacenterwizard_component__ = __webpack_require__(202);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__DataCenterWizard_datacenterwizard_component__ = __webpack_require__(203);
 /* unused harmony namespace reexport */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__TreeComponent_tree_component__ = __webpack_require__(434);
 /* unused harmony namespace reexport */
@@ -2017,7 +2022,7 @@ var ClusterModule = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__index__ = __webpack_require__(675);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ag_grid_angular_main__ = __webpack_require__(112);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ag_grid_angular_main___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_ag_grid_angular_main__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_datacenter_service__ = __webpack_require__(205);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_datacenter_service__ = __webpack_require__(206);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__shared_module_shared_module__ = __webpack_require__(95);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DataCenterModule; });
 /**
@@ -2069,7 +2074,7 @@ var DataCenterModule = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__datastore_component_config__ = __webpack_require__(677);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_index__ = __webpack_require__(77);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_index__ = __webpack_require__(111);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_date_util_service__ = __webpack_require__(206);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_date_util_service__ = __webpack_require__(148);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DATASTOREComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2218,7 +2223,7 @@ var DATASTOREComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__index__ = __webpack_require__(443);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ag_grid_angular_main__ = __webpack_require__(112);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ag_grid_angular_main___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_ag_grid_angular_main__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_datacenter_service__ = __webpack_require__(205);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_datacenter_service__ = __webpack_require__(206);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__shared_module_shared_module__ = __webpack_require__(95);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DataStoreModule; });
 /**
@@ -2426,7 +2431,7 @@ __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dyna
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_login_login_component__ = __webpack_require__(438);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__modules_host_host_components__ = __webpack_require__(204);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__modules_host_host_components__ = __webpack_require__(205);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common__ = __webpack_require__(38);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppRoutingModule; });
 /**
@@ -2552,7 +2557,7 @@ var AppComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__modules_host_host_module__ = __webpack_require__(445);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__modules_summary_portlet_summary_module__ = __webpack_require__(685);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_MultiBarChart_multiBarChart_component__ = __webpack_require__(431);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_DataCenterWizard_datacenterwizard_component__ = __webpack_require__(202);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_DataCenterWizard_datacenterwizard_component__ = __webpack_require__(203);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_DataCenterWizard_datacenterwizard_module__ = __webpack_require__(654);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_ProgressIndicator_progressindicator_component__ = __webpack_require__(146);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__angular_common__ = __webpack_require__(38);
@@ -2782,7 +2787,7 @@ var BarChartComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(38);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(55);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__modules_datacenter_datacenter_components__ = __webpack_require__(203);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__modules_datacenter_datacenter_components__ = __webpack_require__(204);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DataCenterWizardRoutingModule; });
 /**
  * Created by Venkatesh on 3/7/2017.
@@ -3889,9 +3894,9 @@ var volumeColumnDefs = [
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(38);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(55);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__datacenter_components__ = __webpack_require__(203);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__datacenter_components__ = __webpack_require__(204);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__global_global_module__ = __webpack_require__(147);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_DataCenterWizard_datacenterwizard_component__ = __webpack_require__(202);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_DataCenterWizard_datacenterwizard_component__ = __webpack_require__(203);
 /* unused harmony export DataCenterRoutingModule */
 /**
  * Created by Venkatesh on 3/2/2017.
@@ -4002,7 +4007,7 @@ var volumeColumnDefs = [
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__datacenter_components__ = __webpack_require__(203);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__datacenter_components__ = __webpack_require__(204);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__datacenter_components__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__datacenter_routing_module__ = __webpack_require__(673);
 /* unused harmony namespace reexport */
@@ -4223,7 +4228,7 @@ var deviceListColumnDefs = [
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(38);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(55);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__host_components__ = __webpack_require__(204);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__host_components__ = __webpack_require__(205);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__global_global_module__ = __webpack_require__(147);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HostRoutingModule; });
 /**
@@ -4323,7 +4328,7 @@ var volumeColumnDefs = [
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__host_components__ = __webpack_require__(204);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__host_components__ = __webpack_require__(205);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__host_components__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__host_module__ = __webpack_require__(445);
 /* unused harmony namespace reexport */
@@ -4343,7 +4348,7 @@ var volumeColumnDefs = [
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__datacenter_datacenter_components__ = __webpack_require__(203);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__datacenter_datacenter_components__ = __webpack_require__(204);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__datacenter_datacenter_components__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__cluster_cluster_components__ = __webpack_require__(292);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_1__cluster_cluster_components__["a"]; });
@@ -4351,7 +4356,7 @@ var volumeColumnDefs = [
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_2__datastore_datastore_components__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__global_global_components__ = __webpack_require__(293);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_3__global_global_components__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__host_host_components__ = __webpack_require__(204);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__host_host_components__ = __webpack_require__(205);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_4__host_host_components__["a"]; });
 /**
  * Created by Dominic on 2/25/2017.
@@ -4640,7 +4645,7 @@ var AuthenticationService = (function (_super) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__ = __webpack_require__(64);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__get_service__ = __webpack_require__(207);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch__ = __webpack_require__(158);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch__ = __webpack_require__(159);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_Rx__ = __webpack_require__(121);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_Rx__);
@@ -4699,7 +4704,7 @@ var ClusterService = (function (_super) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__ = __webpack_require__(64);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_catch__ = __webpack_require__(158);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_catch__ = __webpack_require__(159);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_catch__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Rx__ = __webpack_require__(121);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_Rx__);
@@ -4767,7 +4772,7 @@ var DataStoreWizardService = (function (_super) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__ = __webpack_require__(64);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_catch__ = __webpack_require__(158);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_catch__ = __webpack_require__(159);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_catch__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Rx__ = __webpack_require__(121);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_Rx__);
@@ -5002,7 +5007,7 @@ module.exports = module.exports.toString();
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_3__global_service__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__cluster_service__ = __webpack_require__(689);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_4__cluster_service__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__datacenter_service__ = __webpack_require__(205);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__datacenter_service__ = __webpack_require__(206);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_5__datacenter_service__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__loader_service__ = __webpack_require__(692);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_6__loader_service__["a"]; });
@@ -5337,7 +5342,7 @@ module.exports = "<section class=\"dataCenterView\">\r\n  <tabs>\r\n    <tab tab
 /***/ 799:
 /***/ (function(module, exports) {
 
-module.exports = "<header class=\"global--header flLeft\">\r\n  <label class=\"header--label\">System</label>\r\n</header>\r\n\r\n<section class=\"global--section flLeft\">\r\n  <section class=\"deviceLst\">\r\n    <header class=\"deviceLst--header flLeft\">\r\n      <div class=\"deviceLst--toolbar flLeft\">\r\n        <a class=\"deviceLst--add flLeft\" title=\"Add\"></a>\r\n        <a class=\"deviceLst--delete flLeft\" title=\"Delete\"></a>\r\n        <a class=\"deviceLst--refresh flLeft\" title=\"Refresh\" (click)=\"loadDeviceLst($event)\"></a>\r\n        <a class=\"deviceLst--edit flLeft\" title=\"Edit\"></a>\r\n      </div>\r\n      <label class=\"deviceLst--refreshTime flRight\">Last Refreshed on {{_timeStamp}}</label>\r\n    </header>\r\n    <section class=\"storageDeviceLst flLeft\">\r\n      <div class=\"grid--wrapper\">\r\n        <ag-grid-angular style=\"width: 100%;\" #agGrid class=\"ag-material\"\r\n                     [gridOptions]=\"deviceGridOptions\"\r\n                         [style.height.px]=\"deviceLstHeight\"\r\n                         [rowData]=\"deviceGridOptions.rowData\"\r\n                     (rowClicked)=\"loadDeviceInfo($event)\">\r\n        </ag-grid-angular>\r\n      </div>\r\n    </section>\r\n    <section class=\"detailedSummary flLeft\">\r\n      <tabs (onTabChange)=\"tabselectionChange($event)\">\r\n        <tab tabTitle=\"System\" class=\"System\">\r\n          <section class=\"systemInfo hide flLeft\">\r\n            <section class=\"systemSpec hide\">\r\n              <label class=\"systemSpec--ipAddress flLeft\"> Ip Address <span class=\"ipValue\">192.17.271.0</span></label>\r\n              <label class=\"systemSpec--upTime flLeft\"> Up Time<span class=\"ipValue\">Up since 1 Day 5 Hrs</span></label>\r\n              <label class=\"systemSpec--dataStore flLeft\"> 5 Datastores</label>\r\n              <section class=\"volumeCount flLeft\">\r\n                <label class=\"connectedVolumes flLeft\"> connected values : <span>6</span></label>\r\n                <label class=\"connectedGroup flLeft\"> connected volumeGroup : <span>2</span></label>\r\n              </section>\r\n            </section>\r\n            <!--<piechart-component height=\"300\" [data]=\"_tmpPieChartData\"></piechart-component>-->\r\n          </section>\r\n          <section class=\"performanceInfo hide flLeft\">\r\n            <select class=\"performanceInfo--timeFrame\" (change)='refreshAreaChart($event)'>\r\n              <option value=\"0.25\"> Last 15 Minutes</option>\r\n              <option value=\"1.00\"> Last 1 Hour</option>\r\n              <option value=\"24.0\"> Last 24 Hour</option>\r\n              <option value=\"10080\"> Last One week</option>\r\n            </select>\r\n            <areachart-component class=\"flLeft hide performanceInfo--areaChart\" height=\"250\" [data]=\"_tmpAreaChartData\"\r\n                                 title=\"Performance\"></areachart-component>\r\n            <multiBarChart-component class=\"flLeft  hide performanceInfo--barChart\" height=\"100\"\r\n                                     [data]=\"_tmpBarChart\"></multiBarChart-component>\r\n          </section>\r\n          <section class=\"volumeSummary\">\r\n            <section class=\"volumeLst hide flLeft\">\r\n              <label class=\"volumeLst--header\">Volumes List</label>\r\n              <ul class=\"volumeLst--ul\">\r\n                <li *ngFor=\"let volumeItem  of _volumeLst\" (click)=\"getVoumeItemSummary(volumeItem)\">\r\n                  <label>{{volumeItem.vol_name}}</label>\r\n                </li>\r\n              </ul>\r\n            </section>\r\n            <section class=\"volumeItemSummary flLeft\">\r\n              <ul>\r\n                <li class=\"flLeft volumeItemSummary--li\">\r\n                  <label class=\"key\">naa</label>\r\n                  <label class=\"value\">{{_volumeItemSummary.naa}}</label>\r\n                </li>\r\n                <li class=\"flLeft volumeItemSummary--li\">\r\n                  <label class=\"key\">HostName</label>\r\n                  <label class=\"value\">{{_volumeItemSummary.HostName}}</label>\r\n                </li>\r\n                <li class=\"flLeft volumeItemSummary--li\">\r\n                  <label class=\"key\">lunId</label>\r\n                  <label class=\"value\">{{_volumeItemSummary.lunId}}</label>\r\n                </li>\r\n                <li class=\"flLeft volumeItemSummary--li\">\r\n                  <label class=\"key\">extentType</label>\r\n                  <label class=\"value\">{{_volumeItemSummary.extentType}}</label>\r\n                </li>\r\n                <li class=\"flLeft volumeItemSummary--li\">\r\n                  <label class=\"key\">extentPath</label>\r\n                  <label class=\"value\">{{_volumeItemSummary.extentPath}}</label>\r\n                </li>\r\n                <li class=\"flLeft volumeItemSummary--li\">\r\n                  <label class=\"key\">VolumeName</label>\r\n                  <label class=\"value\">{{_volumeItemSummary.VolumeNames}}</label>\r\n                </li>\r\n                <li class=\"flLeft volumeItemSummary--li\">\r\n                  <label class=\"key\">type</label>\r\n                  <label class=\"value\">{{_volumeItemSummary.type}}</label>\r\n                </li>\r\n                <li class=\"flLeft volumeItemSummary--li\">\r\n                  <label class=\"key\">volMountpoint</label>\r\n                  <label class=\"value\">{{_volumeItemSummary.volMountpoint}}</label>\r\n                </li>\r\n                <li class=\"flLeft volumeItemSummary--li\">\r\n                  <label class=\"key\">volStatus</label>\r\n                  <label class=\"value\">{{_volumeItemSummary.volStatus}}</label>\r\n                </li>\r\n              </ul>\r\n            </section>\r\n            <section class=\"capacityGraph flLeft\">\r\n              <h3>Volume Capacity</h3>\r\n              <piechart-component height=\"300\" [data]=\"_volumeItemSummary.capacityGraphData\"></piechart-component>\r\n            </section>\r\n          </section>\r\n        </tab>\r\n        <tab tabTitle=\"Extents\" class=\"volExtents\">\r\n          <ag-grid-angular style=\"width: 100%;\" [style.height.px]=\"volExtentsHeight\" #agGrid class=\"ag-material\"\r\n                       [gridOptions]=\"extendGridOptions\"\r\n                       [rowData]=\"extendGridOptions.rowData\">\r\n          </ag-grid-angular>\r\n        </tab>\r\n        <tab tabTitle=\"Associated Targets\" class=\"extentTarget\">\r\n          <ag-grid-angular style=\"width: 100%;\" [style.height.px]=\"extentTargetHeight\"  #agGrid\r\n                       class=\"ag-material\"\r\n                       [gridOptions]=\"extentTargetGridOptions\"\r\n                       [rowData]=\"extentTargetGridOptions.rowData\">\r\n          </ag-grid-angular>\r\n        </tab>\r\n      </tabs>\r\n    </section>\r\n  </section>\r\n</section>\r\n<footer class=\"global--footer flLeft\"></footer>\r\n\r\n\r\n"
+module.exports = "<header class=\"global--header flLeft\">\r\n  <label class=\"header--label\">System</label>\r\n</header>\r\n\r\n<section class=\"global--section flLeft\">\r\n  <section class=\"deviceLst\">\r\n    <header class=\"deviceLst--header flLeft\">\r\n      <div class=\"deviceLst--toolbar flLeft\">\r\n        <!--<a class=\"deviceLst&#45;&#45;add flLeft\" title=\"Add\"></a>\r\n        <a class=\"deviceLst&#45;&#45;delete flLeft\" title=\"Delete\"></a>\r\n        <a class=\"deviceLst&#45;&#45;refresh flLeft\" title=\"Refresh\" (click)=\"loadDeviceLst($event)\"></a>\r\n        <a class=\"deviceLst&#45;&#45;edit flLeft\" title=\"Edit\"></a>-->\r\n      </div>\r\n      <label class=\"deviceLst--refreshTime flRight\">Last Refreshed on {{_timeStamp}}</label>\r\n    </header>\r\n    <section class=\"storageDeviceLst flLeft\">\r\n      <div class=\"grid--wrapper\">\r\n        <ag-grid-angular style=\"width: 100%;\" #agGrid class=\"ag-material\"\r\n                     [gridOptions]=\"deviceGridOptions\"\r\n                         [style.height.px]=\"deviceLstHeight\"\r\n                         [rowData]=\"deviceGridOptions.rowData\"\r\n                     (rowClicked)=\"loadDeviceInfo($event)\">\r\n        </ag-grid-angular>\r\n      </div>\r\n    </section>\r\n    <section class=\"detailedSummary flLeft\">\r\n      <tabs (onTabChange)=\"tabselectionChange($event)\">\r\n        <tab tabTitle=\"System\" class=\"System\">\r\n          <section class=\"systemInfo hide flLeft\">\r\n            <section class=\"systemSpec hide\">\r\n              <label class=\"systemSpec--ipAddress flLeft\"> Ip Address <span class=\"ipValue\">192.17.271.0</span></label>\r\n              <label class=\"systemSpec--upTime flLeft\"> Up Time<span class=\"ipValue\">Up since 1 Day 5 Hrs</span></label>\r\n              <label class=\"systemSpec--dataStore flLeft\"> 5 Datastores</label>\r\n              <section class=\"volumeCount flLeft\">\r\n                <label class=\"connectedVolumes flLeft\"> connected values : <span>6</span></label>\r\n                <label class=\"connectedGroup flLeft\"> connected volumeGroup : <span>2</span></label>\r\n              </section>\r\n            </section>\r\n            <!--<piechart-component height=\"300\" [data]=\"_tmpPieChartData\"></piechart-component>-->\r\n          </section>\r\n          <section class=\"performanceInfo hide flLeft\">\r\n            <select class=\"performanceInfo--timeFrame\" (change)='refreshAreaChart($event)'>\r\n              <option value=\"0.25\"> Last 15 Minutes</option>\r\n              <option value=\"1.00\"> Last 1 Hour</option>\r\n              <option value=\"24.0\"> Last 24 Hour</option>\r\n              <option value=\"10080\"> Last One week</option>\r\n            </select>\r\n            <areachart-component class=\"flLeft hide performanceInfo--areaChart\" height=\"250\" [data]=\"_tmpAreaChartData\"\r\n                                 title=\"Performance\"></areachart-component>\r\n            <multiBarChart-component class=\"flLeft  hide performanceInfo--barChart\" height=\"100\"\r\n                                     [data]=\"_tmpBarChart\"></multiBarChart-component>\r\n          </section>\r\n          <section class=\"volumeSummary\">\r\n            <section class=\"volumeLst hide flLeft\">\r\n              <label class=\"volumeLst--header\">Volumes List</label>\r\n              <ul class=\"volumeLst--ul\">\r\n                <li *ngFor=\"let volumeItem  of _volumeLst\" (click)=\"getVoumeItemSummary(volumeItem)\">\r\n                  <label>{{volumeItem.vol_name}}</label>\r\n                </li>\r\n              </ul>\r\n            </section>\r\n            <section class=\"volumeItemSummary flLeft\">\r\n              <ul>\r\n                <li class=\"flLeft volumeItemSummary--li\">\r\n                  <label class=\"key\">naa</label>\r\n                  <label class=\"value\">{{_volumeItemSummary.naa}}</label>\r\n                </li>\r\n                <li class=\"flLeft volumeItemSummary--li\">\r\n                  <label class=\"key\">HostName</label>\r\n                  <label class=\"value\">{{_volumeItemSummary.HostName}}</label>\r\n                </li>\r\n                <li class=\"flLeft volumeItemSummary--li\">\r\n                  <label class=\"key\">lunId</label>\r\n                  <label class=\"value\">{{_volumeItemSummary.lunId}}</label>\r\n                </li>\r\n                <li class=\"flLeft volumeItemSummary--li\">\r\n                  <label class=\"key\">extentType</label>\r\n                  <label class=\"value\">{{_volumeItemSummary.extentType}}</label>\r\n                </li>\r\n                <li class=\"flLeft volumeItemSummary--li\">\r\n                  <label class=\"key\">extentPath</label>\r\n                  <label class=\"value\">{{_volumeItemSummary.extentPath}}</label>\r\n                </li>\r\n                <li class=\"flLeft volumeItemSummary--li\">\r\n                  <label class=\"key\">VolumeName</label>\r\n                  <label class=\"value\">{{_volumeItemSummary.VolumeNames}}</label>\r\n                </li>\r\n                <li class=\"flLeft volumeItemSummary--li\">\r\n                  <label class=\"key\">type</label>\r\n                  <label class=\"value\">{{_volumeItemSummary.type}}</label>\r\n                </li>\r\n                <li class=\"flLeft volumeItemSummary--li\">\r\n                  <label class=\"key\">volMountpoint</label>\r\n                  <label class=\"value\">{{_volumeItemSummary.volMountpoint}}</label>\r\n                </li>\r\n                <li class=\"flLeft volumeItemSummary--li\">\r\n                  <label class=\"key\">volStatus</label>\r\n                  <label class=\"value\">{{_volumeItemSummary.volStatus}}</label>\r\n                </li>\r\n              </ul>\r\n            </section>\r\n            <section class=\"capacityGraph flLeft\">\r\n              <h3>Volume Capacity</h3>\r\n              <piechart-component height=\"300\" [data]=\"_volumeItemSummary.capacityGraphData\"></piechart-component>\r\n            </section>\r\n          </section>\r\n        </tab>\r\n        <tab tabTitle=\"Extents\" class=\"volExtents\">\r\n          <ag-grid-angular style=\"width: 100%;\" [style.height.px]=\"volExtentsHeight\" #agGrid class=\"ag-material\"\r\n                       [gridOptions]=\"extendGridOptions\"\r\n                       [rowData]=\"extendGridOptions.rowData\">\r\n          </ag-grid-angular>\r\n        </tab>\r\n        <tab tabTitle=\"Associated Targets\" class=\"extentTarget\">\r\n          <ag-grid-angular style=\"width: 100%;\" [style.height.px]=\"extentTargetHeight\"  #agGrid\r\n                       class=\"ag-material\"\r\n                       [gridOptions]=\"extentTargetGridOptions\"\r\n                       [rowData]=\"extentTargetGridOptions.rowData\">\r\n          </ag-grid-angular>\r\n        </tab>\r\n      </tabs>\r\n    </section>\r\n  </section>\r\n</section>\r\n<footer class=\"global--footer flLeft\"></footer>\r\n\r\n\r\n"
 
 /***/ }),
 
@@ -5363,11 +5368,11 @@ module.exports = "<section class=\"portletWrapper\">\r\n  <router-outlet></route
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(36);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ag_grid_angular_main__ = __webpack_require__(112);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ag_grid_angular_main___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_ag_grid_angular_main__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_datacenter_service__ = __webpack_require__(205);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_datacenter_service__ = __webpack_require__(206);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__index__ = __webpack_require__(683);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_index__ = __webpack_require__(437);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__helper_ng2_nvd3__ = __webpack_require__(662);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_DataCenterWizard_datacenterwizard_component__ = __webpack_require__(202);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_DataCenterWizard_datacenterwizard_component__ = __webpack_require__(203);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_ProgressIndicator_progressindicator_component__ = __webpack_require__(146);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_ConnectedHost_connectedHost_component__ = __webpack_require__(430);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_TreeComponent_tree_component__ = __webpack_require__(434);
