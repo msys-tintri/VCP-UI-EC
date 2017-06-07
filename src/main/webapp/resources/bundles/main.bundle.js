@@ -1101,6 +1101,27 @@ var GLOBALComponent = (function () {
         };
         this.loadDeviceLst();
     };
+    //This method shows first row data
+    GLOBALComponent.prototype.showFirstRow = function (data) {
+        console.log("-------showFirstRow method --------");
+        console.log(data);
+        if (data.storage && data.storage.vol) {
+            var volumeCapacityObj = {
+                "totalVolume": parseFloat(data.storage.vol.volAvail.split(' ')[0]),
+                "occupied": parseFloat(data.storage.vol.volUsed.split(' ')[0])
+            };
+            this._volumeItemSummary['capacityGraphData'] = this.getPieChartData(volumeCapacityObj);
+            this._volumeItemSummary['naa'] = data['naa'];
+            this._volumeItemSummary['HostName'] = data['hostName'];
+            this._volumeItemSummary['lunId'] = data['lunId'];
+            this._volumeItemSummary['extentType'] = data['extentType'];
+            this._volumeItemSummary['VolumeName'] = data.storage.vol['volName'];
+            this._volumeItemSummary['volMountpoint'] = data.storage.vol['volMountpoint'];
+            this._volumeItemSummary['volStatus'] = data.storage.vol['volStatus'];
+            this._volumeItemSummary['extentPath'] = data['extentPath'];
+            this._volumeItemSummary['type'] = data['type'];
+        }
+    };
     GLOBALComponent.prototype.loadDeviceInfo = function (event) {
         var data = event.data;
         if (data.storage && data.storage.vol) {
@@ -1134,7 +1155,8 @@ var GLOBALComponent = (function () {
             _this.extendGridOptions.rowData = data;
             _this.extentTargetGridOptions.rowData = data;
             if (_this.filteredData.length > 0) {
-                _this.loadDeviceInfo({ data: _this.filteredData[0] });
+                //this.loadDeviceInfo({data: this.filteredData[0]});
+                _this.showFirstRow({ data: _this.filteredData[0] });
             }
             _this.loaderService.display(false);
             if (data.length > 0) {
