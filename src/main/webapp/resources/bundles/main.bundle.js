@@ -611,7 +611,7 @@ var DATACENTERComponent = (function () {
             selector: 'datacenter-component',
             styles: [__webpack_require__(777)],
             template: __webpack_require__(797),
-            providers: [__WEBPACK_IMPORTED_MODULE_2__services_index__["c" /* DataCenterService */]]
+            providers: [__WEBPACK_IMPORTED_MODULE_2__services_index__["c" /* DataCenterService */], __WEBPACK_IMPORTED_MODULE_5__services_date_util_service__["a" /* DateUtil */]]
         }), 
         __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_index__["b" /* AuthenticationService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__services_index__["b" /* AuthenticationService */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_index__["c" /* DataCenterService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__services_index__["c" /* DataCenterService */]) === 'function' && _b) || Object, (typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* Router */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* Router */]) === 'function' && _c) || Object, (typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_5__services_date_util_service__["a" /* DateUtil */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_5__services_date_util_service__["a" /* DateUtil */]) === 'function' && _d) || Object])
     ], DATACENTERComponent);
