@@ -1051,7 +1051,7 @@ var GLOBALComponent = (function () {
         this.loaderService = loaderService;
         this.dateUtil = dateUtil;
         this.filteredData = [];
-        this.__timeStamp = '';
+        this._timeStamp = '';
         this.volExtentsHeight = 250;
         this.extentTargetHeight = 250;
         this.deviceLstHeight = 250;
@@ -1060,7 +1060,7 @@ var GLOBALComponent = (function () {
     }
     GLOBALComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.__timeStamp = this.dateUtil.getCurrentDateAndTime();
+        this._timeStamp = this.dateUtil.getCurrentDateAndTime();
         this.deviceGridOptions = {
             columnDefs: __WEBPACK_IMPORTED_MODULE_1__global_component_config__["a" /* deviceLstColumnDefs */],
             rowData: null,
