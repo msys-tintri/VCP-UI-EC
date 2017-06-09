@@ -2018,27 +2018,27 @@ DataCenterWizardRoutingModule = __decorate([
  */
 var DataStoreWizardConfig = {
     existingVolumes: {
-        url: 'https://172.30.36.223:9443/ui/tintristorage/rest/ttstorage/volumes',
+        url: 'https://win-rhq2-vc65.tintri.local.com/ui/tintristorage/rest/ttstorage/volumes',
         type: 'GET',
         contentType: 'application/json'
     },
     targetNames: {
-        url: 'https://172.30.36.223:9443/ui/tintristorage/rest/ttstorage/targets',
+        url: 'https://win-rhq2-vc65.tintri.local.com/ui/tintristorage/rest/ttstorage/targets',
         type: 'GET',
         contentType: 'application/json'
     },
     hostLst: {
-        url: 'https://172.30.36.223:9443/ui/tintristorage/rest/ttstorage/hosts',
+        url: 'https://win-rhq2-vc65.tintri.local.com/ui/tintristorage/rest/ttstorage/hosts',
         type: 'GET',
         contentType: 'application/json'
     },
     NaaID: {
-        url: 'https://172.30.36.223:9443/ui/tintristorage/rest/ttstorage/naa?hostname=${hostIP}',
+        url: 'https://win-rhq2-vc65.tintri.local.com/ui/tintristorage/rest/ttstorage/naa?hostname=${hostIP}',
         type: 'GET',
         contentType: 'application/json'
     },
     createNewZvol: {
-        url: 'https://172.30.36.223:9443/ui/tintristorage/rest/ttstorage/extentvol?volumename=${volName}&&zvolname=${zVolName}&&zvolsize=${zVolSize}&&targetname=${targetName}',
+        url: 'https://win-rhq2-vc65.tintri.local.com/ui/tintristorage/rest/ttstorage/extentvol?volumename=${volName}&&zvolname=${zVolName}&&zvolsize=${zVolSize}&&targetname=${targetName}',
         type: 'GET',
         contentType: 'application/json'
     },
@@ -5074,7 +5074,7 @@ var DataCenterWizardComponent = (function () {
     };
     DataCenterWizardComponent.prototype.nextStep = function () {
         var _this = this;
-        if (this.wizardConfig.selectedPathId === 2) {
+        if (this.wizardConfig.selectedPathId === 1) {
             this.createNewVol().subscribe(function (data) {
                 console.log("NAA" + data);
                 _this.wizardConfig.volumeConfig.createdNAAId = data.naa;
