@@ -5079,7 +5079,7 @@ var DataCenterWizardComponent = (function () {
                 console.log("NAA" + data);
                 _this.wizardConfig.volumeConfig.createdNAAId = data.naa;
                 _this.wizardConfig.selectedPathId++;
-                _this.navigateToWizard(2);
+                _this.navigateToWizard(3);
             }, function (err) {
                 console.log(err);
                 alert("volume creation failed;");
@@ -5126,7 +5126,7 @@ var DataCenterWizardComponent = (function () {
     };
     DataCenterWizardComponent.prototype.finishWizard = function (event) {
         this.createNewDataStore().subscribe(function (data) {
-            // this.successMsgFlag=true;
+            //this.successMsgFlag=true;
             console.log(data);
             alert("Data Store Created");
         }, function (err) {
