@@ -5,7 +5,7 @@ webpackJsonp([0,5],{
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(65);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__ = __webpack_require__(74);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(37);
@@ -55,7 +55,7 @@ var GetReq = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__cluster_component_config__ = __webpack_require__(339);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_index__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__models_index__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__models_index__ = __webpack_require__(66);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_date_util_service__ = __webpack_require__(78);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CLUSTERComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -175,7 +175,7 @@ var CLUSTERComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__global_component_config__ = __webpack_require__(347);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_index__ = __webpack_require__(47);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_index__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_index__ = __webpack_require__(66);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_date_util_service__ = __webpack_require__(78);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GLOBALComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -364,7 +364,7 @@ var GLOBALComponent = (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(65);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__ = __webpack_require__(74);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(37);
@@ -1150,7 +1150,7 @@ var LoginComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_module_shared_module__ = __webpack_require__(57);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__index__ = __webpack_require__(340);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ag_grid_angular_main__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ag_grid_angular_main__ = __webpack_require__(58);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ag_grid_angular_main___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_ag_grid_angular_main__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ClusterModule; });
 /**
@@ -1204,7 +1204,7 @@ var ClusterModule = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__index__ = __webpack_require__(343);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ag_grid_angular_main__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ag_grid_angular_main__ = __webpack_require__(58);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ag_grid_angular_main___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_ag_grid_angular_main__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_datacenter_service__ = __webpack_require__(99);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__shared_module_shared_module__ = __webpack_require__(57);
@@ -1257,7 +1257,7 @@ var DataCenterModule = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__datastore_component_config__ = __webpack_require__(345);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_index__ = __webpack_require__(47);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_index__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_index__ = __webpack_require__(66);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_date_util_service__ = __webpack_require__(78);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DATASTOREComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1405,7 +1405,7 @@ var DATASTOREComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__index__ = __webpack_require__(197);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ag_grid_angular_main__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ag_grid_angular_main__ = __webpack_require__(58);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ag_grid_angular_main___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_ag_grid_angular_main__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_datacenter_service__ = __webpack_require__(99);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__shared_module_shared_module__ = __webpack_require__(57);
@@ -1499,7 +1499,7 @@ var DataStoreModule = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__index__ = __webpack_require__(350);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ag_grid_angular_main__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ag_grid_angular_main__ = __webpack_require__(58);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ag_grid_angular_main___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_ag_grid_angular_main__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shared_module_shared_module__ = __webpack_require__(57);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HostModule; });
@@ -1715,7 +1715,7 @@ var AppComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(65);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__(316);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_appHeader_component__ = __webpack_require__(190);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_platform_browser_animations__ = __webpack_require__(314);
@@ -1734,6 +1734,8 @@ var AppComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__angular_common__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__services_index__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__components_index__ = __webpack_require__(191);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22_ag_grid_angular__ = __webpack_require__(58);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22_ag_grid_angular___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_22_ag_grid_angular__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /**
  * Created by Dominic on 2/22/2017.
@@ -1747,6 +1749,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -1789,7 +1792,8 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_13__modules_host_host_module__["a" /* HostModule */],
                 __WEBPACK_IMPORTED_MODULE_14__modules_summary_portlet_summary_module__["a" /* SummaryModule */],
                 __WEBPACK_IMPORTED_MODULE_17__components_DataCenterWizard_datacenterwizard_module__["a" /* DataCenterWizardModule */],
-                __WEBPACK_IMPORTED_MODULE_9__app_routing_module__["a" /* AppRoutingModule */]
+                __WEBPACK_IMPORTED_MODULE_9__app_routing_module__["a" /* AppRoutingModule */],
+                __WEBPACK_IMPORTED_MODULE_22_ag_grid_angular__["AgGridModule"]
             ],
             declarations: [
                 __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */], __WEBPACK_IMPORTED_MODULE_5__components_appHeader_component__["a" /* AppHeader */], __WEBPACK_IMPORTED_MODULE_21__components_index__["a" /* LoginComponent */]
@@ -2016,27 +2020,27 @@ var DataCenterWizardRoutingModule = (function () {
  */
 var DataStoreWizardConfig = {
     existingVolumes: {
-        url: 'https://172.30.36.223:9443/ui/tintristorage/rest/ttstorage/volumes',
+        url: 'https://win-rhq2-vc65.tintri.local.com/ui/tintristorage/rest/ttstorage/volumes',
         type: 'GET',
         contentType: 'application/json'
     },
     targetNames: {
-        url: 'https://172.30.36.223:9443/ui/tintristorage/rest/ttstorage/targets',
+        url: 'https://win-rhq2-vc65.tintri.local.com/ui/tintristorage/rest/ttstorage/targets',
         type: 'GET',
         contentType: 'application/json'
     },
     hostLst: {
-        url: 'https://172.30.36.223:9443/ui/tintristorage/rest/ttstorage/hosts',
+        url: 'https://win-rhq2-vc65.tintri.local.com/ui/tintristorage/rest/ttstorage/hosts',
         type: 'GET',
         contentType: 'application/json'
     },
     NaaID: {
-        url: 'https://172.30.36.223:9443/ui/tintristorage/rest/ttstorage/naa?hostname=${hostIP}',
+        url: 'https://win-rhq2-vc65.tintri.local.com/ui/tintristorage/rest/ttstorage/naa?hostname=${hostIP}',
         type: 'GET',
         contentType: 'application/json'
     },
     createNewZvol: {
-        url: 'https://172.30.36.223:9443/ui/tintristorage/rest/ttstorage/extentvol?volumename=${volName}&&zvolname=${zVolName}&&zvolsize=${zVolSize}&&targetname=${targetName}',
+        url: 'https://win-rhq2-vc65.tintri.local.com/ui/tintristorage/rest/ttstorage/extentvol?volumename=${volName}&&zvolname=${zVolName}&&zvolsize=${zVolSize}&&targetname=${targetName}',
         type: 'GET',
         contentType: 'application/json'
     },
@@ -2100,7 +2104,7 @@ var DataCenterWizardModule = (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_index__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_index__ = __webpack_require__(66);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PerformanceChartDialogComponent; });
 /**
  * Created by Venkatesh on 2/28/2017.
@@ -4045,7 +4049,7 @@ var LoaderService = (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(65);
 /* unused harmony export UserProfile */
 /**
  * Created by Dominic on 28-02-2017.
@@ -4120,7 +4124,7 @@ exports = module.exports = __webpack_require__(14)();
 
 
 // module
-exports.push([module.i, ".data_wizard_popup--layout {\n  position: fixed;\n  width: 60%;\n  height: 60%;\n  left: 150px;\n  z-index: 1;\n  border: 1px solid black;\n  background: #ffffff;\n  border: 1px solid #CDCFD3;\n  border-radius: 5px; }\n\n.data_wizard_popup--main-container {\n  width: 100%;\n  height: 88%; }\n\n.clearfix {\n  clear: both; }\n\n.data_wizard--left--side--pane {\n  width: 25%;\n  height: 100%;\n  border-right: 1px solid #000000; }\n\n.datastore_wizard_popup--layout {\n  position: fixed;\n  width: 80%;\n  height: 90%;\n  left: 100px;\n  z-index: 1;\n  top: 5%;\n  border: 1px solid black;\n  background: #ffffff;\n  border: 1px solid #CDCFD3;\n  border-radius: 5px; }\n\n.data_wizard--left--side--pane ul {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n  left: 15px;\n  text-align: left; }\n\n.data_wizard--left--side--pane ul li {\n  padding: 0;\n  margin: 0;\n  line-height: 61px;\n  padding-left: 10px;\n  cursor: pointer; }\n\n.data_wizard--left--side--pane a {\n  color: #000000; }\n\n.txtDbName, .selectbox-memory, .host--system {\n  float: left;\n  width: 100%; }\n\n.txtDbName label, .selectbox-memory label, .host--system label {\n  float: left;\n  width: 20%;\n  text-align: right; }\n\n.txtDbName input {\n  width: 75%;\n  margin-left: 2%; }\n\n.text .button input {\n  margin-right: 2px; }\n\n.text .button input {\n  margin-right: 2px; }\n\ndiv.selectbox-memory {\n  margin: 0 0 1.5em 0; }\n\n.selectbox-memory label {\n  padding-top: 1.5%; }\n\n.mem-slider {\n  width: 60%;\n  float: left;\n  margin-left: 2%; }\n\n.host--system .connectedTree {\n  margin: 0 auto; }\n\n.lblmemory-size {\n  padding-top: 1.5%;\n  float: left;\n  width: 16%;\n  margin-left: 2%; }\n\n.selectbox-memory .memory-units {\n  width: 18%; }\n\ndiv.selectbox-vmfs {\n  clear: left;\n  margin: 0 0 1.5em 0; }\n\n.selectbox-vmfs label {\n  float: left;\n  width: 37%;\n  text-align: right; }\n\n.selectbox-vmfs .vmfs-version {\n  width: 60%;\n  margin-left: 3%; }\n\n.selectbox-vmfs block-size-label {\n  float: right;\n  width: 15%;\n  text-align: right; }\n\n.selectbox-vmfs .block-size {\n  width: 56%;\n  margin-left: 1%; }\n\n.dialog--sub--header {\n  width: 100%;\n  height: 32px;\n  border-bottom: 1px solid #CDCFD3;\n  text-transform: capitalize;\n  padding: 0.5% 3%; }\n\n.selected {\n  background-color: #CDCFD3 !important;\n  color: #319fdc !important; }\n\n.checkboxGroup label {\n  margin: 0 1%; }\n\n.newVolumeNameWrapper {\n  margin: 3%; }\n\n.connectedTree {\n  margin: 5% auto; }\n\n.volumeGroup li {\n  margin: 3% auto;\n  float: left;\n  width: 100%; }\n  .volumeGroup li > label {\n    float: left;\n    width: 45%; }\n  .volumeGroup li > div {\n    width: 50%;\n    float: left; }\n\n.wizard--summary li {\n  margin: 1% auto;\n  float: left;\n  width: 100%; }\n  .wizard--summary li > label {\n    float: left;\n    width: 45%; }\n\n.datastore_wizard_popup--layout {\n  position: fixed;\n  width: 65%;\n  height: 65%;\n  left: 100px;\n  z-index: 1;\n  top: 22%;\n  left: 22%;\n  border: 1px solid black;\n  background: #ffffff;\n  border: 1px solid #CDCFD3;\n  border-radius: 5px; }\n", ""]);
+exports.push([module.i, ".data_wizard_popup--layout {\n  position: fixed;\n  width: 60%;\n  height: 60%;\n  left: 150px;\n  z-index: 1;\n  border: 1px solid black;\n  background: #ffffff;\n  border: 1px solid #CDCFD3;\n  border-radius: 5px; }\n\n.data_wizard_popup--main-container {\n  width: 100%;\n  height: 88%; }\n\n.clearfix {\n  clear: both; }\n\n.data_wizard--left--side--pane {\n  width: 25%;\n  height: 100%;\n  border-right: 1px solid #000000; }\n\n.datastore_wizard_popup--layout {\n  position: fixed;\n  width: 80%;\n  height: 90%;\n  left: 100px;\n  z-index: 1;\n  top: 5%;\n  border: 1px solid black;\n  background: #ffffff;\n  border: 1px solid #CDCFD3;\n  border-radius: 5px; }\n\n.data_wizard--left--side--pane ul {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n  left: 15px;\n  text-align: left; }\n\n.data_wizard--left--side--pane ul li {\n  padding: 0;\n  margin: 0;\n  line-height: 61px;\n  padding-left: 10px;\n  cursor: pointer; }\n\n.data_wizard--left--side--pane a {\n  color: #000000; }\n\n.txtDbName, .selectbox-memory, .host--system {\n  float: left;\n  width: 100%; }\n\n.txtDbName label, .selectbox-memory label, .host--system label {\n  float: left;\n  width: 20%;\n  text-align: right; }\n\n.txtDbName input {\n  width: 75%;\n  margin-left: 2%; }\n\n.text .button input {\n  margin-right: 2px; }\n\n.text .button input {\n  margin-right: 2px; }\n\ndiv.selectbox-memory {\n  margin: 0 0 1.5em 0; }\n\n.selectbox-memory label {\n  padding-top: 1.5%; }\n\n.mem-slider {\n  width: 60%;\n  float: left;\n  margin-left: 2%; }\n\n.host--system .connectedTree {\n  margin: 0 auto; }\n\n.lblmemory-size {\n  padding-top: 1.5%;\n  float: left;\n  width: 16%;\n  margin-left: 2%; }\n\n.selectbox-memory .memory-units {\n  width: 18%; }\n\ndiv.selectbox-vmfs {\n  clear: left;\n  margin: 0 0 1.5em 0; }\n\n.selectbox-vmfs label {\n  float: left;\n  width: 37%;\n  text-align: right; }\n\n.selectbox-vmfs .vmfs-version {\n  width: 60%;\n  margin-left: 3%; }\n\n.selectbox-vmfs block-size-label {\n  float: right;\n  width: 15%;\n  text-align: right; }\n\n.selectbox-vmfs .block-size {\n  width: 56%;\n  margin-left: 1%; }\n\n.dialog--sub--header {\n  width: 100%;\n  height: 32px;\n  border-bottom: 1px solid #CDCFD3;\n  text-transform: capitalize;\n  padding: 0.5% 3%; }\n\n.selected {\n  background-color: #CDCFD3 !important;\n  color: #319fdc !important; }\n\n.checkboxGroup label {\n  margin: 0 1%; }\n\n.newVolumeNameWrapper {\n  margin: 3%; }\n\n.connectedTree {\n  margin: 5% auto; }\n\n.volumeGroup li {\n  margin: 3% auto;\n  float: left;\n  width: 100%; }\n  .volumeGroup li > label {\n    float: left;\n    width: 45%; }\n  .volumeGroup li > div {\n    width: 50%;\n    float: left; }\n\n.wizard--summary li {\n  margin: 1% auto;\n  float: left;\n  width: 100%; }\n  .wizard--summary li > label {\n    float: left;\n    width: 45%; }\n\n.datastore_wizard_popup--layout {\n  position: fixed;\n  width: 80%;\n  height: 80%;\n  left: 100px;\n  z-index: 1;\n  top: 15%;\n  left: 10%;\n  border: 1px solid black;\n  background: #ffffff;\n  border: 1px solid #CDCFD3;\n  border-radius: 5px; }\n", ""]);
 
 // exports
 
@@ -4300,7 +4304,7 @@ exports = module.exports = __webpack_require__(14)();
 
 
 // module
-exports.push([module.i, "/**\n * Created by Dominic on 3/3/2017.\n */\n.system--header {\n  width: 95%; }\n\n.datacenter--volume, .datacenter--system {\n  width: 100%;\n  min-height: 200px;\n  margin-bottom: 5%; }\n\n.refresh {\n  margin: 0 2%; }\n\n.data_wizard_popup--layout {\n  position: fixed;\n  width: 60%;\n  left: 150px;\n  z-index: 1;\n  border: 1px solid black;\n  background: #ffffff; }\n\n.data_wizard_popup--main-container {\n  width: 100%; }\n\n.form_dialog--footer {\n  width: 75%;\n  height: 42px;\n  background-color: #CDCFD3; }\n\n.clearfix {\n  clear: both; }\n\n.data_wizard--left--side--pane {\n  width: 25%;\n  height: inherit;\n  border-right: 1px solid #000000; }\n\n.data_wizard--left--side--pane ul {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n  left: 15px;\n  text-align: left; }\n\n.data_wizard--left--side--pane ul li {\n  padding: 0;\n  margin: 0;\n  line-height: 60px;\n  padding-left: 10px; }\n\n.data_wizard--left--side--pane a {\n  color: #000000; }\n\n.data_wizard--right--side--pane {\n  width: 75%;\n  height: inherit; }\n\ndiv.txtDbName {\n  clear: left;\n  margin: 0 0 1.5em 0; }\n\n.txtDbName label {\n  float: left;\n  width: 20%;\n  text-align: right; }\n\n.txtDbName input {\n  width: 75%;\n  margin-left: 2%; }\n\n.text .button input {\n  margin-right: 2px;\n  /* Textbox borders */ }\n\n.text .button input {\n  margin-right: 2px;\n  /* Textbox borders */ }\n", ""]);
+exports.push([module.i, "/**\n * Created by Dominic on 3/3/2017.\n */\n.system--header {\n  width: 95%; }\n\n.datacenter--volume, .datacenter--system {\n  width: 100%;\n  min-height: 200px;\n  margin-bottom: 5%; }\n\n.refresh {\n  margin: 0 2%; }\n\n.data_wizard_popup--layout {\n  position: fixed;\n  width: 60%;\n  left: 150px;\n  z-index: 1;\n  border: 1px solid black;\n  background: #ffffff; }\n\n.data_wizard_popup--main-container {\n  width: 100%; }\n\n.form_dialog--footer {\n  width: 75%;\n  height: 42px;\n  background-color: #CDCFD3; }\n\n.clearfix {\n  clear: both; }\n\n.data_wizard--left--side--pane {\n  width: 30%;\n  height: inherit;\n  border-right: 1px solid #000000; }\n\n.data_wizard--left--side--pane ul {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n  left: 15px;\n  text-align: left; }\n\n.data_wizard--left--side--pane ul li {\n  padding: 0;\n  margin: 0;\n  line-height: 60px;\n  padding-left: 10px; }\n\n.data_wizard--left--side--pane a {\n  color: #000000; }\n\n.data_wizard--right--side--pane {\n  width: 70%;\n  height: inherit; }\n\ndiv.txtDbName {\n  clear: left;\n  margin: 0 0 1.5em 0; }\n\n.txtDbName label {\n  float: left;\n  width: 20%;\n  text-align: right; }\n\n.txtDbName input {\n  width: 75%;\n  margin-left: 2%; }\n\n.text .button input {\n  margin-right: 2px;\n  /* Textbox borders */ }\n\n.text .button input {\n  margin-right: 2px;\n  /* Textbox borders */ }\n", ""]);
 
 // exports
 
@@ -4399,7 +4403,7 @@ module.exports = "<section class=\"dialog \" >\n  <header class=\"dialog--header
 /***/ 455:
 /***/ (function(module, exports) {
 
-module.exports = "<section class=\"datastore_wizard_popup--layout dialog\">\n  <div class=\"alert alert-success fade in\" *ngIf=\"successMsgFlag\"\n       style=\"height: 37px;padding-top: 10px;padding-left: 5px;margin-bottom:0px\">\n    <strong>Data Store created successfully!</strong>.\n  </div>\n  <header class=\"dialog--header  dialog--header-vmWare\">\n    <div style=\"width:100%\">\n      <label class=\"headerTxt\">Create DataStore</label>\n      <span class=\"dialog--close flRight\" (click)=\"closeWizard()\">x</span>\n    </div>\n  </header>\n  <!--<section>-->\n  <div class=\"data_wizard_popup--main-container dialog--body\">\n    <div class=\"data_wizard--left--side--pane flLeft\">\n      <ul>\n        <li *ngFor=\"let wizardObj of wizardConfig.wizard_path ;let i=index\"\n            [class.selected]=\"i === wizardConfig.selectedPathId\" (click)=\"navigateToWizard(i)\">\n          <a class=\"link\">{{wizardObj.wizard}}</a>\n        </li>\n      </ul>\n    </div>\n    <div style=\"width:75%;height: inherit\" class=\"flRight\">\n      <header class=\"dialog--sub--header\">\n        <label>{{wizardConfig.headerLbl}}</label>\n      </header>\n      <section>\n        <div [ngSwitch]=\"wizardConfig.selectedPathId\">\n          <div *ngSwitchCase=\"'0'\" style=\"padding-top:10px;\">\n            <form method=\"post\">\n              <div>\n                <div class=\"txtDbName\">\n                  <label for=\"name\">Name:</label>\n                  <input id=\"name\" name=\"name\" type=\"text\" [value]=\"wizardConfig.dataStoreDetails.dataStoreName\"\n                         (input)=\"wizardConfig.dataStoreDetails.dataStoreName = $event.target.value\" size=\"20\"\n                         [(ngModel)]=\"selectedValueFromWizard.dsName\">\n                </div>\n                <div class=\"selectbox-memory\">\n                  <label for=\"size\">Size:</label>\n                  <!--<input id=\"size\" class=\"memory-size hide\" name=\"memChunk\"-->\n                         <!--[(ngModel)]=\"selectedValueFromWizard.dsSize\">-->\n                  <md-slider #memSlider class=\"mem-slider\"  id=\"size\" min=\"1\" max=\"1000\" step=\"25\" value=\"1\"  thumbLabel tickInterval=\"4\" (change) = \"wizardConfig.dataStoreDetails.selectedMemorySize = $event.value\" ></md-slider>\n                  <span class=\"lblmemory-size\">{{memSlider.value + \"  GiB\"}}</span>\n                </div>\n                <div class=\"host--system\">\n                  <label for=\"host\">Size:</label>\n                  <tree id=\"host\" class=\"connectedTree flLeft\" showCheckBox=\"wizardConfig.hostSelection.showCheckBox\"\n                        [data]=\"wizardConfig.hostSelection.dataLst\" (notify)=\"onNotify($event)\"></tree>\n                </div>\n              </div>\n            </form>\n          </div>\n          <div *ngSwitchCase=\"'11'\">\n            <form>\n              <tree class=\"connectedTree flLeft\" showCheckBox=\"wizardConfig.hostSelection.showCheckBox\"\n                    [data]=\"wizardConfig.hostSelection.dataLst\" (notify)=\"onNotify($event)\"></tree>\n            </form>\n          </div>\n          <div *ngSwitchCase=\"'1'\">\n            <form>\n              <div>\n                <div class=\"checkboxGroup hide\" >\n                  <label>Create DataStore With </label>\n                  <label>\n                    <input type=\"checkbox\" [(ngModel)]=\"wizardConfig.volumeConfig.isNewVolumeSelected\"\n                           name=\"newVolumeConfig\" (click)=\"volumeTypeToggleClick($event.currentTarget.name)\"/>New Volume</label>\n                  <label>\n                    <input type=\"checkbox\" [(ngModel)]=\"wizardConfig.volumeConfig.isExistingVolumeSelected\"\n                           name=\"existingVolumeConfig\" (click)=\"volumeTypeToggleClick($event.currentTarget.name)\"/>Existing\n                    Volume</label>\n                </div>\n                <div style=\"clear: left;margin: 0 0 1.5em 0;margin-top:10px;\">\n                    <label style=\"float: left;width: 25%;text-align: right;\">Volume : </label>\n                    <select style=\"width:50%\" (change)=\"getVolmeChange($event.target.value)\" name=\"selectedVolume\">\n                      <option val=\"select\">Select</option>\n                      <option *ngFor=\"let volumeName of wizardConfig.volumeConfig.volumeNames\" [ngValue]=\"volumeName\">{{volumeName}}\n                      </option>\n                    </select>\n                </div>\n                <div style=\"clear: left;margin: 0 0 1.5em 0;margin-top:10px;\">\n                    <label style=\"float: left;width: 25%;text-align: right;\">Target Name : </label>\n                    <select style=\"width:50%\" (change)=\"getTargetChange($event.target.value)\">\n                      <option val=\"select\">Select</option>\n                      <option *ngFor=\"let targetName of wizardConfig.volumeConfig.targetNames\" [ngValue]=\"targetName\">{{targetName}}\n                      </option>\n                    </select>\n                </div>\n                <div style=\"clear: left;margin: 0 0 1.5em 0;\">\n                  <label for=\"zvol\" style=\"float: left;width: 25%;text-align: right;\">Z-Vol:</label>\n                  <input style=\"width: 50%\" id=\"zvol\" name=\"name\" type=\"text\" [(ngModel)]=\"selectedValueFromWizard.zvol\">\n                </div>\n                <div *ngIf=\"wizardConfig.volumeConfig.isExistingVolumeSelected\">\n                  <ag-grid-angular style=\"width: 100%;height: inherit;\" #agGrid class=\"ag-material\"\n                                   [gridOptions]=\"wizardConfig.volumeConfig.volumeGridOptions\"\n                                   [rowData]=\"wizardConfig.volumeConfig.volumeGridOptions.rowData\">\n                  </ag-grid-angular>\n                </div>\n              </div>\n            </form>\n          </div>\n          <div *ngSwitchCase=\"'10'\">\n            <form>\n              <div class=\"volumeGroup\">\n                <ul>\n                  <li>\n                    <label>Map Volume To</label>\n\n                    <div>\n                      <label>\n                        <input type=\"checkbox\" name=\"chooseExistingVolume\"> Choose Existing Volume Group</label>\n\n                      <label>\n                        <input type=\"checkbox\" name=\"createNewVolume\">Create a new Volume Group</label>\n                    </div>\n                  </li>\n                  <li *ngIf=\"wizardConfig.volumeGroupConfig.isExistingVolumeSelected\">\n                    <label> Existing Volume Group </label>\n                    <select ([ngModel])=\"wizardConfig.volumeGroupConfig.volumeGroup\">\n                      <option>Volume Group 1</option>\n                      <option>Volume Group 2</option>\n                      <option>Volume Group 3</option>\n                    </select>\n                  </li>\n                  <li *ngIf=\"wizardConfig.volumeGroupConfig.isNewVolumeSelected\">\n                    <label> Volume Group Name </label>\n                    <input type=\"text\" class=\"volumeGroupName\" [value]=\"wizardConfig.volumeConfig.volumeName\"\n                           (input)=\"wizardConfig.volumeConfig.volumeName = $event.target.value\">\n                  </li>\n                  <li>\n                    <label>Capacity Quota</label>\n                    <label> Unlimited </label>\n                  </li>\n                  <li>\n                    <label>Dedup Enabled</label>\n                    <div>\n                      <label>\n                        <input type=\"checkbox\" name=\"Yes\"> Yes</label>\n\n                      <label>\n                        <input type=\"checkbox\" name=\"No\">Yes</label>\n                    </div>\n                  </li>\n                </ul>\n              </div>\n            </form>\n          </div>\n          <div *ngSwitchCase=\"'2'\">\n            <form>\n              <ul class=\"wizard--summary\">\n                <li>\n                  <label>Name</label>\n                  <label>{{selectedValueFromWizard.dsName}}</label>\n                </li>\n                <li>\n                  <label>Size</label>\n                  <label>{{wizardConfig.dataStoreDetails.selectedMemorySize + \" GiB\"}}</label>\n                </li>\n                <li>\n                  <label>Connected Host</label>\n                  <label>{{selectedValueFromWizard.selectedHost}}</label>\n                </li>\n                <li>\n                  <label>Volume Name</label>\n                  <label>{{selectedValueFromWizard.volumeVal}}</label>\n                </li>\n              </ul>\n            </form>\n          </div>\n          <div *ngSwitchDefault>\n          </div>\n        </div>\n      </section>\n    </div>\n    <div class=\"clearfix\"></div>\n  </div>\n  <footer class=\"dialog--footer\" style=\"position: absolute;bottom:0px;right:0%\">\n    <div style=\"width:100%;text-align: right;\">\n      <button class=\"auth--action-cancel\" (click)=\"prevStep($event)\">Back</button>\n      <button class=\"auth--action-cancel\" (click)=\"nextStep($event)\">Next</button>\n      <button class=\"auth--action-cancel\" (click)=\"finishWizard($event)\">Finish</button>\n      <button class=\"auth--action-cancel\" (click)=\"closeWizard($event)\">Cancel</button>\n    </div>\n  </footer>\n  <!--</section>-->\n</section>\n"
+module.exports = "<section class=\"datastore_wizard_popup--layout dialog\">\n  <!--<div class=\"alert alert-success fade in\" *ngIf=\"successMsgFlag\"\n       style=\"height: 37px;padding-top: 10px;padding-left: 5px;margin-bottom:0px\">\n    <strong>Data Store created successfully!</strong>.\n  </div>-->\n  <header class=\"dialog--header  dialog--header-vmWare\">\n    <div style=\"width:100%\">\n      <label class=\"headerTxt\">Create DataStore</label>\n      <span class=\"dialog--close flRight\" (click)=\"closeWizard()\">x</span>\n    </div>\n  </header>\n  <!--<section>-->\n  <div class=\"data_wizard_popup--main-container dialog--body\">\n    <div class=\"data_wizard--left--side--pane flLeft\">\n      <ul>\n        <li *ngFor=\"let wizardObj of wizardConfig.wizard_path ;let i=index\"\n            [class.selected]=\"i === wizardConfig.selectedPathId\" (click)=\"navigateToWizard(i)\">\n          <a class=\"link\">{{wizardObj.wizard}}</a>\n        </li>\n      </ul>\n    </div>\n    <div style=\"width:75%;height: inherit\" class=\"flRight\">\n      <header class=\"dialog--sub--header\">\n        <label>{{wizardConfig.headerLbl}}</label>\n      </header>\n      <section>\n        <div [ngSwitch]=\"wizardConfig.selectedPathId\">\n          <div *ngSwitchCase=\"'0'\" style=\"padding-top:10px;\">\n            <form method=\"post\">\n              <div>\n                <div class=\"txtDbName\">\n                  <label for=\"name\">Name:</label>\n                  <input id=\"name\" name=\"name\" type=\"text\" [value]=\"wizardConfig.dataStoreDetails.dataStoreName\"\n                         (input)=\"wizardConfig.dataStoreDetails.dataStoreName = $event.target.value\" size=\"20\"\n                         [(ngModel)]=\"selectedValueFromWizard.dsName\">\n                </div>\n                <div class=\"selectbox-memory\">\n                  <label for=\"size\">Size:</label>\n                  <!--<input id=\"size\" class=\"memory-size hide\" name=\"memChunk\"-->\n                         <!--[(ngModel)]=\"selectedValueFromWizard.dsSize\">-->\n                  <md-slider #memSlider class=\"mem-slider\"  id=\"size\" min=\"1\" max=\"1000\" step=\"25\" value=\"1\"  thumbLabel tickInterval=\"4\" (change) = \"wizardConfig.dataStoreDetails.selectedMemorySize = $event.value\" ></md-slider>\n                  <span class=\"lblmemory-size\">{{memSlider.value + \"  GiB\"}}</span>\n                </div>\n                <div class=\"host--system\">\n                  <header class=\"dialog--sub--header\">\n                    <b>Host Selection:</b>\n                  </header>\n                  <!--<label for=\"host\">Host Selection:</label>-->\n                  <tree id=\"host\" class=\"connectedTree flLeft\" showCheckBox=\"wizardConfig.hostSelection.showCheckBox\"\n                        [data]=\"wizardConfig.hostSelection.dataLst\" (notify)=\"onNotify($event)\"></tree>\n                </div>\n              </div>\n            </form>\n          </div>\n          <div *ngSwitchCase=\"'11'\">\n            <form>\n              <tree class=\"connectedTree flLeft\" showCheckBox=\"wizardConfig.hostSelection.showCheckBox\"\n                    [data]=\"wizardConfig.hostSelection.dataLst\" (notify)=\"onNotify($event)\"></tree>\n            </form>\n          </div>\n          <div *ngSwitchCase=\"'1'\">\n            <form>\n              <div>\n                <div class=\"checkboxGroup hide\" >\n                  <label>Create DataStore With </label>\n                  <label>\n                    <input type=\"checkbox\" [(ngModel)]=\"wizardConfig.volumeConfig.isNewVolumeSelected\"\n                           name=\"newVolumeConfig\" (click)=\"volumeTypeToggleClick($event.currentTarget.name)\"/>New Volume</label>\n                  <label>\n                    <input type=\"checkbox\" [(ngModel)]=\"wizardConfig.volumeConfig.isExistingVolumeSelected\"\n                           name=\"existingVolumeConfig\" (click)=\"volumeTypeToggleClick($event.currentTarget.name)\"/>Existing\n                    Volume</label>\n                </div>\n                <div style=\"clear: left;margin: 0 0 1.5em 0;margin-top:10px;\">\n                    <label style=\"float: left;width: 25%;text-align: right;\">Volume : </label>\n                    <select style=\"width:50%\" (change)=\"getVolmeChange($event.target.value)\" name=\"selectedVolume\">\n                      <option val=\"select\">Select</option>\n                      <option *ngFor=\"let volumeName of wizardConfig.volumeConfig.volumeNames\" [ngValue]=\"volumeName\">{{volumeName}}\n                      </option>\n                    </select>\n                </div>\n                <div style=\"clear: left;margin: 0 0 1.5em 0;margin-top:10px;\">\n                    <label style=\"float: left;width: 25%;text-align: right;\">Target Name : </label>\n                    <select style=\"width:50%\" (change)=\"getTargetChange($event.target.value)\">\n                      <option val=\"select\">Select</option>\n                      <option *ngFor=\"let targetName of wizardConfig.volumeConfig.targetNames\" [ngValue]=\"targetName\">{{targetName}}\n                      </option>\n                    </select>\n                </div>\n                <div style=\"clear: left;margin: 0 0 1.5em 0;\">\n                  <label for=\"zvol\" style=\"float: left;width: 25%;text-align: right;\">Z-Vol:</label>\n                  <input style=\"width: 50%\" id=\"zvol\" name=\"name\" type=\"text\" [(ngModel)]=\"selectedValueFromWizard.zvol\">\n                </div>\n                <div *ngIf=\"wizardConfig.volumeConfig.isExistingVolumeSelected\">\n                  <ag-grid-angular style=\"width: 100%;height: inherit;\" #agGrid class=\"ag-material\"\n                                   [gridOptions]=\"wizardConfig.volumeConfig.volumeGridOptions\"\n                                   [rowData]=\"wizardConfig.volumeConfig.volumeGridOptions.rowData\">\n                  </ag-grid-angular>\n                </div>\n              </div>\n            </form>\n          </div>\n          <div *ngSwitchCase=\"'10'\">\n            <form>\n              <div class=\"volumeGroup\">\n                <ul>\n                  <li>\n                    <label>Map Volume To</label>\n\n                    <div>\n                      <label>\n                        <input type=\"checkbox\" name=\"chooseExistingVolume\"> Choose Existing Volume Group</label>\n\n                      <label>\n                        <input type=\"checkbox\" name=\"createNewVolume\">Create a new Volume Group</label>\n                    </div>\n                  </li>\n                  <li *ngIf=\"wizardConfig.volumeGroupConfig.isExistingVolumeSelected\">\n                    <label> Existing Volume Group </label>\n                    <select ([ngModel])=\"wizardConfig.volumeGroupConfig.volumeGroup\">\n                      <option>Volume Group 1</option>\n                      <option>Volume Group 2</option>\n                      <option>Volume Group 3</option>\n                    </select>\n                  </li>\n                  <li *ngIf=\"wizardConfig.volumeGroupConfig.isNewVolumeSelected\">\n                    <label> Volume Group Name </label>\n                    <input type=\"text\" class=\"volumeGroupName\" [value]=\"wizardConfig.volumeConfig.volumeName\"\n                           (input)=\"wizardConfig.volumeConfig.volumeName = $event.target.value\">\n                  </li>\n                  <li>\n                    <label>Capacity Quota</label>\n                    <label> Unlimited </label>\n                  </li>\n                  <li>\n                    <label>Dedup Enabled</label>\n                    <div>\n                      <label>\n                        <input type=\"checkbox\" name=\"Yes\"> Yes</label>\n\n                      <label>\n                        <input type=\"checkbox\" name=\"No\">Yes</label>\n                    </div>\n                  </li>\n                </ul>\n              </div>\n            </form>\n          </div>\n          <div *ngSwitchCase=\"'2'\">\n            <form>\n              <ul class=\"wizard--summary\">\n                <li>\n                  <label>Name</label>\n                  <label>{{selectedValueFromWizard.dsName}}</label>\n                </li>\n                <li>\n                  <label>Size</label>\n                  <label>{{wizardConfig.dataStoreDetails.selectedMemorySize + \" GiB\"}}</label>\n                </li>\n                <li>\n                  <label>Connected Host</label>\n                  <label>{{selectedValueFromWizard.selectedHost}}</label>\n                </li>\n                <li>\n                  <label>Volume Name</label>\n                  <label>{{selectedValueFromWizard.volumeVal}}</label>\n                </li>\n              </ul>\n            </form>\n          </div>\n          <div *ngSwitchDefault>\n          </div>\n        </div>\n      </section>\n    </div>\n    <div class=\"clearfix\"></div>\n  </div>\n  <footer class=\"dialog--footer\" style=\"position: absolute;bottom:0px;right:0%\">\n    <div style=\"width:100%;text-align: right;\">\n      <button class=\"auth--action-cancel\" (click)=\"prevStep($event)\">Back</button>\n      <button class=\"auth--action-cancel\" (click)=\"nextStep($event)\">Next</button>\n      <button class=\"auth--action-cancel\" (click)=\"finishWizard($event)\">Finish</button>\n      <button class=\"auth--action-cancel\" (click)=\"closeWizard($event)\">Cancel</button>\n    </div>\n  </footer>\n  <!--</section>-->\n</section>\n"
 
 /***/ }),
 
@@ -4539,7 +4543,7 @@ module.exports = "<section class=\"portletWrapper\">\n  <router-outlet></router-
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ag_grid_angular_main__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ag_grid_angular_main__ = __webpack_require__(58);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ag_grid_angular_main___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_ag_grid_angular_main__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_datacenter_service__ = __webpack_require__(99);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__index__ = __webpack_require__(351);
@@ -4650,7 +4654,7 @@ var SharedModule = (function () {
 
 /***/ }),
 
-/***/ 65:
+/***/ 66:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4841,7 +4845,7 @@ var ProgressIndicator = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__global_components__ = __webpack_require__(133);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ag_grid_angular_main__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ag_grid_angular_main__ = __webpack_require__(58);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ag_grid_angular_main___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_ag_grid_angular_main__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shared_module_shared_module__ = __webpack_require__(57);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__index__ = __webpack_require__(198);
@@ -4965,7 +4969,7 @@ var DataCenterWizardComponent = (function () {
         this.previousStep = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.nextWizStep = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.closeDataStoreWizard = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-        this.successMsgFlag = false;
+        //private successMsgFlag=false;
         //The data has to be moved to configuration
         this.wizardConfig = {
             wizard_path: [{ 'path': 'dataStore_details', 'wizard': 'DataStore Details', 'step': 1 },
@@ -5042,7 +5046,7 @@ var DataCenterWizardComponent = (function () {
         };
     };
     DataCenterWizardComponent.prototype.ngOnInit = function () {
-        this.successMsgFlag = false;
+        //this.successMsgFlag=false;
         this.navigateToWizard(0);
         this.loadData();
         this.initModel();
@@ -5083,12 +5087,12 @@ var DataCenterWizardComponent = (function () {
     };
     DataCenterWizardComponent.prototype.nextStep = function () {
         var _this = this;
-        if (this.wizardConfig.selectedPathId === 2) {
+        if (this.wizardConfig.selectedPathId === 1) {
             this.createNewVol().subscribe(function (data) {
                 console.log("NAA" + data);
                 _this.wizardConfig.volumeConfig.createdNAAId = data.naa;
                 _this.wizardConfig.selectedPathId++;
-                _this.navigateToWizard(3);
+                _this.navigateToWizard(2);
             }, function (err) {
                 console.log(err);
                 alert("volume creation failed;");
@@ -5105,7 +5109,7 @@ var DataCenterWizardComponent = (function () {
         this.selectedValueFromWizard;
         this.closeDataStoreWizard.emit(false);
         this.initModel();
-        this.successMsgFlag = false;
+        //this.successMsgFlag=false;
     };
     DataCenterWizardComponent.prototype.volumeTypeToggleClick = function (name) {
         if (name === "newVolumeConfig") {
@@ -5134,9 +5138,8 @@ var DataCenterWizardComponent = (function () {
         this.selectedValueFromWizard.targetVal = data;
     };
     DataCenterWizardComponent.prototype.finishWizard = function (event) {
-        var _this = this;
         this.createNewDataStore().subscribe(function (data) {
-            _this.successMsgFlag = true;
+            //this.successMsgFlag=true;
             console.log(data);
             alert("Data Store Created");
         }, function (err) {
@@ -5183,7 +5186,7 @@ var DataCenterWizardComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__datacenter_component_config__ = __webpack_require__(342);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_index__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__models_index__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__models_index__ = __webpack_require__(66);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_date_util_service__ = __webpack_require__(78);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DATACENTERComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -5322,7 +5325,7 @@ var DATACENTERComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__host_component_config__ = __webpack_require__(349);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_index__ = __webpack_require__(47);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_index__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_index__ = __webpack_require__(66);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_date_util_service__ = __webpack_require__(78);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HOSTComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
