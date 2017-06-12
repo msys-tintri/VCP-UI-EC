@@ -5105,7 +5105,7 @@ var DataCenterWizardComponent = (function () {
                         _this.showPleaseWait = false;
                         clearInterval(naaListTimer);
                     });
-                }, 60000);
+                }, 1000);
                 //this.navigateToWizard(2);
             }, function (err) {
                 console.log(err);
