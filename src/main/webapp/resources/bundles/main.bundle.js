@@ -312,7 +312,8 @@ var GLOBALComponent = (function () {
             _this.extendGridOptions.rowData = data;
             _this.extentTargetGridOptions.rowData = data;
             if (_this.filteredData.length > 0) {
-                _this.loadDeviceInfo({ data: _this.filteredData[0] });
+                //this.loadDeviceInfo({data: this.filteredData[0]});
+                _this.showFirstRow({ data: _this.filteredData[0] });
             }
             _this.loaderService.display(false);
             if (data.length > 0) {
